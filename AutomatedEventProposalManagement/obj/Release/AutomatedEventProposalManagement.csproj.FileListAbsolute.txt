@@ -1,0 +1,3 @@
+D:\C#\AutomatedEventProposalManagement\AutomatedEventProposalManagement\obj\Release\AutomatedEventProposalManagement.Form1.resources
+D:\C#\AutomatedEventProposalManagement\AutomatedEventProposalManagement\obj\Release\AutomatedEventProposalManagement.loginForm.resources
+D:\C#\AutomatedEventProposalManagement\AutomatedEventProposalManagement\obj\Release\AutomatedEventProposalManagement.csproj.GenerateResource.cache
