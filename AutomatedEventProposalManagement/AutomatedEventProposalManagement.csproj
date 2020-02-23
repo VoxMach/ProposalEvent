@@ -180,6 +180,12 @@
     </Compile>
     <Compile Include="class\venregis.cs" />
     <Compile Include="class\VenueReservation.cs" />
+    <Compile Include="VenueApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VenueApp.Designer.cs">
+      <DependentUpon>VenueApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Venue\venue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="signup.resx">
       <DependentUpon>signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VenueApp.resx">
+      <DependentUpon>VenueApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venue\venue.resx">
       <DependentUpon>venue.cs</DependentUpon>

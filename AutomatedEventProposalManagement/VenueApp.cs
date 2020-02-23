@@ -10,23 +10,22 @@ using System.Windows.Forms;
 
 namespace AutomatedEventProposalManagement
 {
-    public partial class apphome : Form
+    public partial class VenueApp : Form
     {
-        public apphome()
+        public VenueApp()
         {
             InitializeComponent();
         }
 
-        private void apphome_Load(object sender, EventArgs e)
+        private void VenueApp_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.WindowState = FormWindowState.Normal;
 
-            nameu.Text = loginForm.s1 + ","+ loginForm.s6 +" "+ loginForm.s7;
+            nameu.Text = loginForm.s1 + "," + loginForm.s3 + " " + loginForm.s4;
             label2.Text = loginForm.s2;
-            label3.Text = loginForm.s3;
-            label4.Text = loginForm.s4;
+           
             label5.Text = loginForm.s5;
         }
 

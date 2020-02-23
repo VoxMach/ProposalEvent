@@ -207,7 +207,7 @@ namespace AutomatedEventProposalManagement
                     s3 = cl.lastname;
                     s4 = cl.middlename;
                     s5 = cl.approver_name;
-                    apphome h = new apphome();
+                    VenueApp h = new VenueApp();
                         this.Hide();
                         h.ShowDialog();
                         this.Close();
@@ -218,7 +218,7 @@ namespace AutomatedEventProposalManagement
                     s3 = cl1.lastname;
                     s4 = cl1.middlename;
                     s5 = cl1.approver_name;
-                    apphome h = new apphome();
+                    VenueApp h = new VenueApp();
                     this.Hide();
                     h.ShowDialog();
                     this.Close();
@@ -229,7 +229,7 @@ namespace AutomatedEventProposalManagement
                     s3 = cl2.lastname;
                     s4 = cl2.middlename;
                     s5 = cl2.approver_name;
-                    apphome h = new apphome();
+                    VenueApp h = new VenueApp();
                     this.Hide();
                     h.ShowDialog();
                     this.Close();
