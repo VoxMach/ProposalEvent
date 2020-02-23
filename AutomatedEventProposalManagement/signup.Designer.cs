@@ -58,8 +58,9 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(-3, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(523, 588);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(524, 588);
             this.bunifuGradientPanel1.TabIndex = 0;
+            this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
             // 
             // label4
             // 
@@ -135,6 +136,7 @@
             this.ClientSize = new System.Drawing.Size(518, 587);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(518, 587);
             this.Name = "signup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "signup";

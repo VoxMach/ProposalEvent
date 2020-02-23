@@ -51,10 +51,19 @@ namespace AutomatedEventProposalManagement
 
         private void signup_Load(object sender, EventArgs e)
         {
-           
+
+            this.CenterToScreen();
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.WindowState = FormWindowState.Normal;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
