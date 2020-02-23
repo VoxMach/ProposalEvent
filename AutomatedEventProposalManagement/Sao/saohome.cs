@@ -48,13 +48,5 @@ namespace AutomatedEventProposalManagement
             orgalist org = new orgalist();
             org.ShowDialog();
         }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            manageacc man = new manageacc();
-            this.Hide();
-            man.ShowDialog();
-            this.Close();
-        }
     }
 }

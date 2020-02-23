@@ -1,6 +1,6 @@
 ﻿namespace AutomatedEventProposalManagement
 {
-    partial class Approver
+    partial class approver
     {
         /// <summary>
         /// Required designer variable.

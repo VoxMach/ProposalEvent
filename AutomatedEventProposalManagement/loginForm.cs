@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -81,105 +82,127 @@ namespace AutomatedEventProposalManagement
 
         private void button1_Click_1(object sender, System.EventArgs e)
         {
-            
             string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
             if (sel1.Equals("Approver"))
             {
-                FirebaseResponse resp = client.Get("User/Approver/" + bunifuMaterialTextbox1.Text);
-
-                Class1 cl = resp.ResultAs<Class1>();
-
-                if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                try
                 {
-                    s1 = cl.firstname;
-                    s2 = cl.id;
-                    s6 = cl.lastname;
-                    s7 = cl.middlename;
-                    s3 = cl.org_name;
-                    s4 = cl.org_type;
-                    s5 = cl.organization_type;
+                    FirebaseResponse resp = client.Get("User/Approver/" + bunifuMaterialTextbox1.Text);
 
-                    apphome ho = new apphome();
-                    this.Hide();
-                    ho.ShowDialog();
-                    this.Close();
+                    Class1 cl = resp.ResultAs<Class1>();
+
+                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    {
+                        s1 = cl.firstname;
+                        s2 = cl.id;
+                        s6 = cl.lastname;
+                        s7 = cl.middlename;
+                        s3 = cl.org_name;
+                        s4 = cl.org_type;
+                        s5 = cl.organization_type;
+
+                        apphome ho = new apphome();
+                        this.Hide();
+                        ho.ShowDialog();
+                        this.Close();
 
 
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Credentials");
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Wrong Credentials");
-                    bunifuMaterialTextbox2.Text = string.Empty;
+                    MessageBox.Show("Wrong Account Credentials");
                 }
 
             }
             else if (sel1.Equals("Organization"))
             {
 
-
-                FirebaseResponse resp = client.Get("User/Organization/" + bunifuMaterialTextbox1.Text);
-                orgregis cl = resp.ResultAs<orgregis>();
-
-                if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                try
                 {
+                    FirebaseResponse resp = client.Get("User/Organization/" + bunifuMaterialTextbox1.Text);
+                    orgregis cl = resp.ResultAs<orgregis>();
 
-                    s1 = cl.firstname;
-                    s2 = cl.id;
-                    s5 = cl.lastname;
-                    s6 = cl.middlename;
-                    s3 = cl.org_name;
-                    s4 = cl.org_type;
+                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    {
 
-                    home h = new home();
-                    this.Hide();
-                    h.ShowDialog();
-                    this.Close();
+                        s1 = cl.firstname;
+                        s2 = cl.id;
+                        s5 = cl.lastname;
+                        s6 = cl.middlename;
+                        s3 = cl.org_name;
+                        s4 = cl.org_type;
+
+                        home h = new home();
+                        this.Hide();
+                        h.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Credentials");
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                    }
                 }
-                else
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Wrong Credentials");
-                    bunifuMaterialTextbox2.Text = string.Empty;
+                    MessageBox.Show("Wrong Account Credentials");
                 }
+               
             }
             else if (sel1.Equals("Student Affairs Office"))
             {
 
-               
-
-                FirebaseResponse resp = client.Get("User/Sao/" + bunifuMaterialTextbox1.Text);
-                saoregis cl = resp.ResultAs<saoregis>();
-                if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                try
                 {
 
-                    s1 = cl.firstname;
-                    s2 = cl.id;
-                    s3 = cl.lastname;
-                    s4 = cl.middlename;
-                    saohome hi = new saohome();
-                    this.Hide();
-                    hi.ShowDialog();
-                    this.Close();
+                    FirebaseResponse resp = client.Get("User/Sao/" + bunifuMaterialTextbox1.Text);
+                    saoregis cl = resp.ResultAs<saoregis>();
+                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    {
+
+                        s1 = cl.firstname;
+                        s2 = cl.id;
+                        s3 = cl.lastname;
+                        s4 = cl.middlename;
+                        saohome hi = new saohome();
+                        this.Hide();
+                        hi.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Credentials");
+                    }
                 }
-                else
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Wrong Credentials");
+                    MessageBox.Show("Wrong Account Credentials");
                 }
+
             }
             else if (sel1.Equals("Venue"))
             {
-                FirebaseResponse resp = client.Get("User/Venue/" + bunifuMaterialTextbox1.Text);
-                venregis cl = resp.ResultAs<venregis>();
-                if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                try
                 {
+                    FirebaseResponse resp = client.Get("User/Venue/" + bunifuMaterialTextbox1.Text);
+                    venregis cl = resp.ResultAs<venregis>();
+                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    {
 
-                    s1 = cl.firstname;
-                    s2 = cl.id;
-                    s3 = cl.lastname;
-                    s4 = cl.middlename;
-                    s5 = cl.org_type;
+                        s1 = cl.firstname;
+                        s2 = cl.id;
+                        s3 = cl.lastname;
+                        s4 = cl.middlename;
+                        s5 = cl.org_type;
 
-                    venhome h = new venhome();
+                    apphome h = new apphome();
                     this.Hide();
                     h.ShowDialog();
                     this.Close();
@@ -192,14 +215,17 @@ namespace AutomatedEventProposalManagement
             }
             else if (sel1.Equals("Venue Approvers"))
             {
-                FirebaseResponse resp = client.Get("User/VenueApprovers/assistantdirector");
-                FirebaseResponse resp1 = client.Get("User/VenueApprovers/chancellor");
-                FirebaseResponse resp2 = client.Get("User/VenueApprovers/deanOffice");
+                try
+                {
 
-                VenAppro cl = resp.ResultAs<VenAppro>();
-                VenAppro cl1 = resp1.ResultAs<VenAppro>();
-                VenAppro cl2 = resp2.ResultAs<VenAppro>();
-                if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    FirebaseResponse resp = client.Get("User/VenueApprovers/assistantdirector");
+                    FirebaseResponse resp1 = client.Get("User/VenueApprovers/chancellor");
+                    FirebaseResponse resp2 = client.Get("User/VenueApprovers/deanOffice");
+
+                    VenAppro cl = resp.ResultAs<VenAppro>();
+                    VenAppro cl1 = resp1.ResultAs<VenAppro>();
+                    VenAppro cl2 = resp2.ResultAs<VenAppro>();
+                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
                     {
 
                     s1 = cl.firstname;
@@ -207,7 +233,7 @@ namespace AutomatedEventProposalManagement
                     s3 = cl.lastname;
                     s4 = cl.middlename;
                     s5 = cl.approver_name;
-                    VenueApp h = new VenueApp();
+                    apphome h = new apphome();
                         this.Hide();
                         h.ShowDialog();
                         this.Close();
@@ -218,7 +244,7 @@ namespace AutomatedEventProposalManagement
                     s3 = cl1.lastname;
                     s4 = cl1.middlename;
                     s5 = cl1.approver_name;
-                    VenueApp h = new VenueApp();
+                    apphome h = new apphome();
                     this.Hide();
                     h.ShowDialog();
                     this.Close();
@@ -229,7 +255,7 @@ namespace AutomatedEventProposalManagement
                     s3 = cl2.lastname;
                     s4 = cl2.middlename;
                     s5 = cl2.approver_name;
-                    VenueApp h = new VenueApp();
+                    apphome h = new apphome();
                     this.Hide();
                     h.ShowDialog();
                     this.Close();
@@ -238,6 +264,13 @@ namespace AutomatedEventProposalManagement
                 {
                     MessageBox.Show("Wrong Credentials");
                     bunifuMaterialTextbox2.Text = string.Empty;
+                }
+
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Wrong Account Credentials");
                 }
 
 

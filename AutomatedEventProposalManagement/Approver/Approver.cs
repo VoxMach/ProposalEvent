@@ -13,7 +13,7 @@ using FireSharp.Response;
 
 namespace AutomatedEventProposalManagement
 {
-    public partial class Approver : Form
+    public partial class approver : Form
     {
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -21,7 +21,7 @@ namespace AutomatedEventProposalManagement
             BasePath = "https://event-proposal.firebaseio.com/"
         };
         IFirebaseClient client;
-        public Approver()
+        public approver()
         {
             InitializeComponent();
         }
