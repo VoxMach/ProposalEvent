@@ -179,7 +179,7 @@ namespace AutomatedEventProposalManagement
                     s4 = cl.middlename;
                     s5 = cl.org_type;
 
-                    apphome h = new apphome();
+                    venhome h = new venhome();
                     this.Hide();
                     h.ShowDialog();
                     this.Close();

@@ -25,7 +25,7 @@ namespace AutomatedEventProposalManagement
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.WindowState = FormWindowState.Normal;
 
-            nameu.Text = loginForm.s1;
+            nameu.Text = loginForm.s1 +","+loginForm.s5 +" "+loginForm.s6;
             label2.Text = loginForm.s2;
             label3.Text = loginForm.s3;
             label4.Text = loginForm.s4;

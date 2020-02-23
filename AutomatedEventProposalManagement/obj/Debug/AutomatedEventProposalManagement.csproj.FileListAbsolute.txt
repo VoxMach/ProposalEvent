@@ -231,3 +231,4 @@ C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalMana
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.pdb
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.manageacc.resources
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.VenueApp.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.venhome.resources
