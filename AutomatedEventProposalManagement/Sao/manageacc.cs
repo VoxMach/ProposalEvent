@@ -92,68 +92,98 @@ namespace AutomatedEventProposalManagement
             if (sel1.Equals("Approver"))
             {
                 bunifuMaterialTextbox1.Enabled = true;
-
-                FirebaseResponse resp = client.Get("User/Approver/" + bunifuMaterialTextbox1.Text);
-
-                Class1 cl = resp.ResultAs<Class1>();
-
-                if (bunifuMaterialTextbox1.Text == cl.id)
+                try
                 {
-                    bunifuMaterialTextbox2.Text = cl.firstname;
-                    bunifuMaterialTextbox3.Text = cl.lastname;
-                    bunifuMaterialTextbox4.Text = cl.middlename;
-                    bunifuMaterialTextbox5.Text = cl.password;
+                    FirebaseResponse resp = client.Get("User/Approver/" + bunifuMaterialTextbox1.Text);
 
-                    MessageBox.Show("Found Exact Data. ");
+                    Class1 cl = resp.ResultAs<Class1>();
 
+                    if (bunifuMaterialTextbox1.Text == cl.id)
+                    {
+                        bunifuMaterialTextbox2.Text = cl.firstname;
+                        bunifuMaterialTextbox3.Text = cl.lastname;
+                        bunifuMaterialTextbox4.Text = cl.middlename;
+                        bunifuMaterialTextbox5.Text = cl.password;
+
+                        MessageBox.Show("Found Exact Data. ");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not Found Data. ");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
                     MessageBox.Show("Not Found Data. ");
                 }
+               
+
+               
 
             }
             else if (sel1.Equals("Organization"))
             {
                 bunifuMaterialTextbox1.Enabled = true;
 
-                FirebaseResponse resp = client.Get("User/Organization/" + bunifuMaterialTextbox1.Text);
-                orgregis cl = resp.ResultAs<orgregis>();
 
-
-                if (bunifuMaterialTextbox1.Text == cl.id)
+                try
                 {
-                    bunifuMaterialTextbox2.Text = cl.firstname;
-                    bunifuMaterialTextbox3.Text = cl.lastname;
-                    bunifuMaterialTextbox4.Text = cl.middlename;
-                    bunifuMaterialTextbox5.Text = cl.password;
+                    FirebaseResponse resp = client.Get("User/Organization/" + bunifuMaterialTextbox1.Text);
+                    orgregis cl = resp.ResultAs<orgregis>();
 
-                    MessageBox.Show("Found Exact Data. ");
+
+                    if (bunifuMaterialTextbox1.Text == cl.id)
+                    {
+                        bunifuMaterialTextbox2.Text = cl.firstname;
+                        bunifuMaterialTextbox3.Text = cl.lastname;
+                        bunifuMaterialTextbox4.Text = cl.middlename;
+                        bunifuMaterialTextbox5.Text = cl.password;
+
+                        MessageBox.Show("Found Exact Data. ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not Found Data. ");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
                     MessageBox.Show("Not Found Data. ");
                 }
+
+                
             }
             else if(sel1.Equals("Venue"))
             {
                 bunifuMaterialTextbox1.Enabled = true;
-                FirebaseResponse resp = client.Get("User/Venue/" + bunifuMaterialTextbox1.Text);
-                venregis cl = resp.ResultAs<venregis>();
 
-                if (bunifuMaterialTextbox1.Text == cl.id)
+                try
                 {
-                    bunifuMaterialTextbox2.Text = cl.firstname;
-                    bunifuMaterialTextbox3.Text = cl.lastname;
-                    bunifuMaterialTextbox4.Text = cl.middlename;
-                    bunifuMaterialTextbox5.Text = cl.password;
 
-                    MessageBox.Show("Found Exact Data. ");
+                    FirebaseResponse resp = client.Get("User/Venue/" + bunifuMaterialTextbox1.Text);
+                    venregis cl = resp.ResultAs<venregis>();
+
+                    if (bunifuMaterialTextbox1.Text == cl.id)
+                    {
+                        bunifuMaterialTextbox2.Text = cl.firstname;
+                        bunifuMaterialTextbox3.Text = cl.lastname;
+                        bunifuMaterialTextbox4.Text = cl.middlename;
+                        bunifuMaterialTextbox5.Text = cl.password;
+
+                        MessageBox.Show("Found Exact Data. ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not Found Data. ");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Not Found Data. ");
+
                 }
+
+               
             }
            
         }
