@@ -41,5 +41,13 @@ namespace AutomatedEventProposalManagement
                 this.Close();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            venAppen vrn = new venAppen();
+            this.Hide();
+            vrn.ShowDialog();
+            this.Close();
+        }
     }
 }
