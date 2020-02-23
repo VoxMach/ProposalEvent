@@ -20,7 +20,7 @@ namespace AutomatedEventProposalManagement
         private void label4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            loginForm f1 = new loginForm();
+            saohome f1 = new saohome();
             f1.ShowDialog();
             this.Close();
         }
@@ -35,7 +35,7 @@ namespace AutomatedEventProposalManagement
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Approver app = new Approver();
+            approver app = new approver();
             this.Hide();
             app.ShowDialog();
             this.Close();

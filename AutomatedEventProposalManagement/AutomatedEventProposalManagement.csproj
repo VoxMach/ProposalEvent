@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>AutomatedEventProposalManagement</RootNamespace>
     <AssemblyName>AutomatedEventProposalManagement</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -29,6 +29,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -100,12 +101,19 @@
     <Compile Include="Approver\apphome.Designer.cs">
       <DependentUpon>apphome.cs</DependentUpon>
     </Compile>
-    <Compile Include="class\Appregis.cs" />
-    <Compile Include="Approver\Approver.cs">
+    <Compile Include="Approver\pending.cs" />
+    <Compile Include="Approver\pendingApprover.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Approver\Approver.Designer.cs">
-      <DependentUpon>Approver.cs</DependentUpon>
+    <Compile Include="Approver\pendingApprover.Designer.cs">
+      <DependentUpon>pendingApprover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class\Appregis.cs" />
+    <Compile Include="Approver\approver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Approver\approver.Designer.cs">
+      <DependentUpon>approver.cs</DependentUpon>
     </Compile>
     <Compile Include="class\apu.cs" />
     <Compile Include="class\Class1.cs" />
@@ -136,6 +144,12 @@
       <DependentUpon>organization.cs</DependentUpon>
     </Compile>
     <Compile Include="class\orgregis.cs" />
+    <Compile Include="Organization\pending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organization\pending.Designer.cs">
+      <DependentUpon>pending.cs</DependentUpon>
+    </Compile>
     <Compile Include="org\homeOrgForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,8 +341,11 @@
     <EmbeddedResource Include="Approver\apphome.resx">
       <DependentUpon>apphome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Approver\Approver.resx">
-      <DependentUpon>Approver.cs</DependentUpon>
+    <EmbeddedResource Include="Approver\approver.resx">
+      <DependentUpon>approver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Approver\pendingApprover.resx">
+      <DependentUpon>pendingApprover.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Organization\createv.resx">
       <DependentUpon>createv.cs</DependentUpon>
@@ -341,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Organization\organization.resx">
       <DependentUpon>organization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organization\pending.resx">
+      <DependentUpon>pending.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="org\homeOrgForm.resx">
       <DependentUpon>homeOrgForm.cs</DependentUpon>
@@ -373,6 +393,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="globalAnnouncementToday\" />
+    <Folder Include="globalAnnouncementUpcoming\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

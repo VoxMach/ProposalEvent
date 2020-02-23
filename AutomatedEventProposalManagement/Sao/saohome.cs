@@ -48,5 +48,24 @@ namespace AutomatedEventProposalManagement
             orgalist org = new orgalist();
             org.ShowDialog();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            signup sign = new signup();
+            this.Hide();
+            sign.ShowDialog();
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            signup sign = new signup();
+            this.Hide();
+            sign.ShowDialog();
+        }
     }
 }
