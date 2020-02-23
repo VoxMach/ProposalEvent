@@ -100,6 +100,7 @@
             this.button9.TabIndex = 15;
             this.button9.Text = "Manage Account";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -160,7 +161,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(-9, 731);
+            this.button4.Location = new System.Drawing.Point(-9, 718);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(236, 81);
             this.button4.TabIndex = 10;

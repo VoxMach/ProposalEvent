@@ -19,11 +19,7 @@ namespace AutomatedEventProposalManagement
         public loginForm()
         {
             InitializeComponent();
-            comboBox1.Items.Add("Approver");
-            comboBox1.Items.Add("Organization");
-            comboBox1.Items.Add("Student Affairs Office");
-            comboBox1.Items.Add("Venue");
-            comboBox1.Items.Add("Venue Approvers");
+           
 
         }
         public static string s1;
@@ -66,7 +62,14 @@ namespace AutomatedEventProposalManagement
                 MessageBox.Show("No Internet or Connection Problem");
             }
 
+            comboBox1.Items.Add("Approver");
+            comboBox1.Items.Add("Organization");
+            comboBox1.Items.Add("Student Affairs Office");
+            comboBox1.Items.Add("Venue");
+            comboBox1.Items.Add("Venue Approvers");
 
+            bunifuMaterialTextbox1.Enabled = false;
+            bunifuMaterialTextbox2.Enabled = false;
 
 
         }
@@ -263,7 +266,35 @@ namespace AutomatedEventProposalManagement
 
         private void comboBox1_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            
+            string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
+            if (sel1.Equals("Approver"))
+            {
+                bunifuMaterialTextbox1.Enabled = true;
+                bunifuMaterialTextbox2.Enabled = true;
+
+            }
+            else if (sel1.Equals("Organization"))
+            {
+                bunifuMaterialTextbox1.Enabled = true;
+                bunifuMaterialTextbox2.Enabled = true;
+
+            }
+            else if (sel1.Equals("Student Affairs Office"))
+            {
+                bunifuMaterialTextbox1.Enabled = true;
+                bunifuMaterialTextbox2.Enabled = true;
+            }
+            else if (sel1.Equals("Venue"))
+            {
+                bunifuMaterialTextbox1.Enabled = true;
+                bunifuMaterialTextbox2.Enabled = true;
+            }
+            else if (sel1.Equals("Venue Approvers"))
+            {
+                bunifuMaterialTextbox1.Enabled = true;
+                bunifuMaterialTextbox2.Enabled = true;
+
+            }
         }
 
         private void bunifuMaterialTextbox1_OnValueChanged(object sender, System.EventArgs e)
