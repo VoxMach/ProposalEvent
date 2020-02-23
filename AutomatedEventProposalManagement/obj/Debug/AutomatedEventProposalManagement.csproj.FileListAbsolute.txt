@@ -229,3 +229,9 @@ C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalMana
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.csproj.CopyComplete
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.exe
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.pdb
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.Approver.pendingApprover.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.manageacc.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.Organization.pending.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.venAppen.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.venhome.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.VenueApp.resources

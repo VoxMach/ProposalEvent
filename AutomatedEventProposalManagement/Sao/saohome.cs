@@ -48,5 +48,47 @@ namespace AutomatedEventProposalManagement
             orgalist org = new orgalist();
             org.ShowDialog();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            var select = MessageBox.Show("Are you Sure Want to LagOut?", "", MessageBoxButtons.OKCancel);
+
+            if (select == DialogResult.OK)
+            {
+                loginForm form = new loginForm();
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            manageacc man = new manageacc();
+            this.Hide();
+            man.ShowDialog();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            orgalist list = new orgalist();
+            this.Hide();
+            list.ShowDialog();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            signup si = new signup();
+            this.Hide();
+            si.ShowDialog();
+            this.Close();
+        }
     }
 }

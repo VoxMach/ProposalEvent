@@ -194,10 +194,10 @@
     </Compile>
     <Compile Include="class\venregis.cs" />
     <Compile Include="class\VenueReservation.cs" />
-    <Compile Include="venAppen.cs">
+    <Compile Include="Venue\venAppen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="venAppen.Designer.cs">
+    <Compile Include="Venue\venAppen.Designer.cs">
       <DependentUpon>venAppen.cs</DependentUpon>
     </Compile>
     <Compile Include="Venue\venhome.cs">
@@ -405,7 +405,7 @@
     <EmbeddedResource Include="signup.resx">
       <DependentUpon>signup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="venAppen.resx">
+    <EmbeddedResource Include="Venue\venAppen.resx">
       <DependentUpon>venAppen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venue\venhome.resx">

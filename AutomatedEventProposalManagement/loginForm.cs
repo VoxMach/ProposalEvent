@@ -150,11 +150,11 @@ namespace AutomatedEventProposalManagement
                         bunifuMaterialTextbox2.Text = string.Empty;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Wrong Account Credentials");
                 }
-               
+
             }
             else if (sel1.Equals("Student Affairs Office"))
             {
@@ -181,7 +181,7 @@ namespace AutomatedEventProposalManagement
                         MessageBox.Show("Wrong Credentials");
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Wrong Account Credentials");
                 }
@@ -202,15 +202,20 @@ namespace AutomatedEventProposalManagement
                         s4 = cl.middlename;
                         s5 = cl.org_type;
 
-                    apphome h = new apphome();
-                    this.Hide();
-                    h.ShowDialog();
-                    this.Close();
+                        venhome h = new venhome();
+                        this.Hide();
+                        h.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Credentials");
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Wrong Credentials");
-                    bunifuMaterialTextbox2.Text = string.Empty;
+                    MessageBox.Show("Wrong Account Credentials");
                 }
             }
             else if (sel1.Equals("Venue Approvers"))
@@ -228,47 +233,47 @@ namespace AutomatedEventProposalManagement
                     if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
                     {
 
-                    s1 = cl.firstname;
-                    s2 = cl.id;
-                    s3 = cl.lastname;
-                    s4 = cl.middlename;
-                    s5 = cl.approver_name;
-                    apphome h = new apphome();
+                        s1 = cl.firstname;
+                        s2 = cl.id;
+                        s3 = cl.lastname;
+                        s4 = cl.middlename;
+                        s5 = cl.approver_name;
+                        VenueApp h = new VenueApp();
                         this.Hide();
                         h.ShowDialog();
                         this.Close();
-                    }else if (bunifuMaterialTextbox2.Text == resp1.ResultAs<apu>().password)
-                {
-                    s1 = cl1.firstname;
-                    s2 = cl1.id;
-                    s3 = cl1.lastname;
-                    s4 = cl1.middlename;
-                    s5 = cl1.approver_name;
-                    apphome h = new apphome();
-                    this.Hide();
-                    h.ShowDialog();
-                    this.Close();
-                }else if (bunifuMaterialTextbox2.Text == resp2.ResultAs<apu>().password)
-                {
-                    s1 = cl2.firstname;
-                    s2 = cl2.id;
-                    s3 = cl2.lastname;
-                    s4 = cl2.middlename;
-                    s5 = cl2.approver_name;
-                    apphome h = new apphome();
-                    this.Hide();
-                    h.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong Credentials");
-                    bunifuMaterialTextbox2.Text = string.Empty;
-                }
+                    } else if (bunifuMaterialTextbox2.Text == resp1.ResultAs<apu>().password)
+                    {
+                        s1 = cl1.firstname;
+                        s2 = cl1.id;
+                        s3 = cl1.lastname;
+                        s4 = cl1.middlename;
+                        s5 = cl1.approver_name;
+                        VenueApp h = new VenueApp();
+                        this.Hide();
+                        h.ShowDialog();
+                        this.Close();
+                    } else if (bunifuMaterialTextbox2.Text == resp2.ResultAs<apu>().password)
+                    {
+                        s1 = cl2.firstname;
+                        s2 = cl2.id;
+                        s3 = cl2.lastname;
+                        s4 = cl2.middlename;
+                        s5 = cl2.approver_name;
+                        VenueApp h = new VenueApp();
+                        this.Hide();
+                        h.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Credentials");
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                    }
 
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Wrong Account Credentials");
                 }
@@ -298,6 +303,37 @@ namespace AutomatedEventProposalManagement
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+           
+        }
+
+        private void bunifuMaterialTextbox1_OnValueChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void bunifuMaterialTextbox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void bunifuMaterialTextbox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void bunifuMaterialTextbox2_OnValueChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
             if (sel1.Equals("Approver"))
@@ -330,32 +366,9 @@ namespace AutomatedEventProposalManagement
             }
         }
 
-        private void bunifuMaterialTextbox1_OnValueChanged(object sender, System.EventArgs e)
+        private void label4_Click_1(object sender, EventArgs e)
         {
-
+            this.Close();
         }
-
-        private void bunifuMaterialTextbox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void bunifuMaterialTextbox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void bunifuMaterialTextbox2_OnValueChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-
     }
 }
