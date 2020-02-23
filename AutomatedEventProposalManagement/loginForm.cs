@@ -67,9 +67,7 @@ namespace AutomatedEventProposalManagement
             }
 
 
-            bunifuMaterialTextbox1.Enabled = false;
-            bunifuMaterialTextbox2.Enabled = false;
-            button1.Enabled = false;
+
 
         }
 
@@ -84,9 +82,6 @@ namespace AutomatedEventProposalManagement
             string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
             if (sel1.Equals("Approver"))
             {
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
-                button1.Enabled = true;
                 FirebaseResponse resp = client.Get("User/Approver/" + bunifuMaterialTextbox1.Text);
 
                 Class1 cl = resp.ResultAs<Class1>();
@@ -111,9 +106,6 @@ namespace AutomatedEventProposalManagement
                 }
                 else
                 {
-                    bunifuMaterialTextbox1.Enabled = true;
-                    bunifuMaterialTextbox2.Enabled = true;
-                    button1.Enabled = true;
                     MessageBox.Show("Wrong Credentials");
                     bunifuMaterialTextbox2.Text = string.Empty;
                 }
@@ -121,9 +113,7 @@ namespace AutomatedEventProposalManagement
             }
             else if (sel1.Equals("Organization"))
             {
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
-                button1.Enabled = true;
+
 
                 FirebaseResponse resp = client.Get("User/Organization/" + bunifuMaterialTextbox1.Text);
                 orgregis cl = resp.ResultAs<orgregis>();
@@ -145,9 +135,6 @@ namespace AutomatedEventProposalManagement
                 }
                 else
                 {
-                    bunifuMaterialTextbox1.Enabled = true;
-                    bunifuMaterialTextbox2.Enabled = true;
-                    button1.Enabled = true;
                     MessageBox.Show("Wrong Credentials");
                     bunifuMaterialTextbox2.Text = string.Empty;
                 }
@@ -155,9 +142,7 @@ namespace AutomatedEventProposalManagement
             else if (sel1.Equals("Student Affairs Office"))
             {
 
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
-                button1.Enabled = true;
+               
 
                 FirebaseResponse resp = client.Get("User/Sao/" + bunifuMaterialTextbox1.Text);
                 saoregis cl = resp.ResultAs<saoregis>();
@@ -175,17 +160,11 @@ namespace AutomatedEventProposalManagement
                 }
                 else
                 {
-                    bunifuMaterialTextbox1.Enabled = true;
-                    bunifuMaterialTextbox2.Enabled = true;
-                    button1.Enabled = true;
                     MessageBox.Show("Wrong Credentials");
                 }
             }
             else if (sel1.Equals("Venue"))
             {
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
-                button1.Enabled = true;
                 FirebaseResponse resp = client.Get("User/Venue/" + bunifuMaterialTextbox1.Text);
                 venregis cl = resp.ResultAs<venregis>();
                 if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
@@ -204,18 +183,12 @@ namespace AutomatedEventProposalManagement
                 }
                 else
                 {
-                    bunifuMaterialTextbox1.Enabled = true;
-                    bunifuMaterialTextbox2.Enabled = true;
-                    button1.Enabled = true;
                     MessageBox.Show("Wrong Credentials");
                     bunifuMaterialTextbox2.Text = string.Empty;
                 }
             }
             else if (sel1.Equals("Venue Approvers"))
             {
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
-                button1.Enabled = true;
                 FirebaseResponse resp = client.Get("User/VenueApprovers/assistantdirector");
                 FirebaseResponse resp1 = client.Get("User/VenueApprovers/chancellor");
                 FirebaseResponse resp2 = client.Get("User/VenueApprovers/deanOffice");
@@ -260,9 +233,6 @@ namespace AutomatedEventProposalManagement
                 }
                 else
                 {
-                    bunifuMaterialTextbox1.Enabled = true;
-                    bunifuMaterialTextbox2.Enabled = true;
-                    button1.Enabled = true;
                     MessageBox.Show("Wrong Credentials");
                     bunifuMaterialTextbox2.Text = string.Empty;
                 }
