@@ -36,7 +36,9 @@ namespace AutomatedEventProposalManagement
         {
 
         }
-
+        public static string id;
+        public static string orgname;
+        public static string orgtype;
         private void button4_Click(object sender, EventArgs e)
         {
             var select = MessageBox.Show("Are you Sure Want to LagOut?", "",MessageBoxButtons.OKCancel);
@@ -49,6 +51,19 @@ namespace AutomatedEventProposalManagement
                 this.Close();
             }
            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            id = label2.Text;
+            orgname = label3.Text;
+            orgtype = label4.Text;
+
+            createv c = new createv();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
         }
     }
 }

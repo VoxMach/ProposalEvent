@@ -50,7 +50,7 @@ namespace AutomatedEventProposalManagement
                 client = new FireSharp.FirebaseClient(config);
                 if(client != null)
                 {
-                    MessageBox.Show("Connection Established");
+                    
                     this.CenterToScreen();
                     this.Size = Screen.PrimaryScreen.WorkingArea.Size;
                     this.WindowState = FormWindowState.Normal;

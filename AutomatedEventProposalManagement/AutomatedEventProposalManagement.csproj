@@ -111,6 +111,12 @@
     <Compile Include="class\Class1.cs" />
     <Compile Include="class\saoregis.cs" />
     <Compile Include="class\VenAppro.cs" />
+    <Compile Include="Organization\createv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organization\createv.Designer.cs">
+      <DependentUpon>createv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Organization\home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,7 @@
       <DependentUpon>signup.cs</DependentUpon>
     </Compile>
     <Compile Include="class\venregis.cs" />
+    <Compile Include="class\VenueReservation.cs" />
     <Compile Include="Venue\venue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Approver\Approver.resx">
       <DependentUpon>Approver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organization\createv.resx">
+      <DependentUpon>createv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Organization\home.resx">
       <DependentUpon>home.cs</DependentUpon>
