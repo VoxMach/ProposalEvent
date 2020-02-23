@@ -11,6 +11,8 @@ namespace AutomatedEventProposalManagement
 
         public string firstname { get; set; }
         public string id { get; set; }
+        public string lastname { get; set; }
+        public string middlename { get; set; }
         public string org_name { get; set; }
         public string org_type { get; set; }
         public string organization_type { get; set; }

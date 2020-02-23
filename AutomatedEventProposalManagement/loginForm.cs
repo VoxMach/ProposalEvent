@@ -31,6 +31,9 @@ namespace AutomatedEventProposalManagement
         public static string s3;
         public static string s4;
         public static string s5;
+        public static string s6;
+        public static string s7;
+        public static string s8;
 
         private void button1_Click(object sender, System.EventArgs e)
         {
@@ -83,6 +86,8 @@ namespace AutomatedEventProposalManagement
                 {
                     s1 = cl.firstname;
                     s2 = cl.id;
+                    s6 = cl.lastname;
+                    s7 = cl.middlename;
                     s3 = cl.org_name;
                     s4 = cl.org_type;
                     s5 = cl.organization_type;
@@ -114,6 +119,8 @@ namespace AutomatedEventProposalManagement
 
                     s1 = cl.firstname;
                     s2 = cl.id;
+                    s5 = cl.lastname;
+                    s6 = cl.middlename;
                     s3 = cl.org_name;
                     s4 = cl.org_type;
 
