@@ -13,6 +13,11 @@ namespace AutomatedEventProposalManagement.Approver
             get;
             set;
         }
+        public string committee_in_charge
+        {
+            get;
+            set;
+        }
         public string org_type
         {
             get;
