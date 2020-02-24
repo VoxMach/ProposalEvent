@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(apphome));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.calendar = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.calendar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -63,6 +63,21 @@
             this.panel1.Size = new System.Drawing.Size(200, 650);
             this.panel1.TabIndex = 7;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // calendar
+            // 
+            this.calendar.FlatAppearance.BorderSize = 0;
+            this.calendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.calendar.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calendar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.calendar.Location = new System.Drawing.Point(3, 257);
+            this.calendar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.calendar.Name = "calendar";
+            this.calendar.Size = new System.Drawing.Size(197, 68);
+            this.calendar.TabIndex = 11;
+            this.calendar.Text = "Calendar";
+            this.calendar.UseVisualStyleBackColor = true;
+            this.calendar.Click += new System.EventHandler(this.calendar_Click);
             // 
             // button4
             // 
@@ -186,20 +201,6 @@
             this.label4.Size = new System.Drawing.Size(72, 23);
             this.label4.TabIndex = 6;
             this.label4.Text = "label4";
-            // 
-            // calendar
-            // 
-            this.calendar.FlatAppearance.BorderSize = 0;
-            this.calendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.calendar.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calendar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.calendar.Location = new System.Drawing.Point(3, 257);
-            this.calendar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.calendar.Name = "calendar";
-            this.calendar.Size = new System.Drawing.Size(197, 68);
-            this.calendar.TabIndex = 11;
-            this.calendar.Text = "Calendar";
-            this.calendar.UseVisualStyleBackColor = true;
             // 
             // apphome
             // 
