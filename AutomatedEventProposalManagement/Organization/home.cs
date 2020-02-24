@@ -65,5 +65,18 @@ namespace AutomatedEventProposalManagement
             c.ShowDialog();
             this.Close();
         }
+        public static string names;
+        public static string typ2;
+        private void button5_Click(object sender, EventArgs e)
+        {
+            myevents me = new myevents();
+            names = nameu.Text;
+            id = label2.Text;
+            typ2 = label4.Text;
+            this.Hide();
+            me.ShowDialog();
+            this.Close();
+
+        }
     }
 }

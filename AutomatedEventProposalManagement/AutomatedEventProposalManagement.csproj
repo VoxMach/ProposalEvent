@@ -126,10 +126,23 @@
     <Compile Include="class\Class1.cs" />
     <Compile Include="class\saoregis.cs" />
     <Compile Include="class\VenAppro.cs" />
-    <Compile Include="FormVen.cs">
+    <Compile Include="Organization\myevents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormVen.Designer.cs">
+    <Compile Include="Organization\myevents.Designer.cs">
+      <DependentUpon>myevents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class\propose.cs" />
+    <Compile Include="Organization\ProView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organization\ProView.Designer.cs">
+      <DependentUpon>ProView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venue\FormVen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venue\FormVen.Designer.cs">
       <DependentUpon>FormVen.cs</DependentUpon>
     </Compile>
     <Compile Include="VenueApprover\Formtrans.cs">
@@ -219,10 +232,10 @@
     <Compile Include="VenueApprover\venAppen.Designer.cs">
       <DependentUpon>venAppen.cs</DependentUpon>
     </Compile>
-    <Compile Include="VenuePen.cs">
+    <Compile Include="Venue\VenuePen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VenuePen.Designer.cs">
+    <Compile Include="Venue\VenuePen.Designer.cs">
       <DependentUpon>VenuePen.cs</DependentUpon>
     </Compile>
     <Compile Include="Venue\venhome.cs">
@@ -399,7 +412,13 @@
     <EmbeddedResource Include="Approver\pendingApprover.resx">
       <DependentUpon>pendingApprover.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormVen.resx">
+    <EmbeddedResource Include="Organization\myevents.resx">
+      <DependentUpon>myevents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organization\ProView.resx">
+      <DependentUpon>ProView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venue\FormVen.resx">
       <DependentUpon>FormVen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VenueApprover\Formtrans.resx">
@@ -442,7 +461,7 @@
     <EmbeddedResource Include="VenueApprover\venAppen.resx">
       <DependentUpon>venAppen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VenuePen.resx">
+    <EmbeddedResource Include="Venue\VenuePen.resx">
       <DependentUpon>VenuePen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venue\venhome.resx">

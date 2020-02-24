@@ -100,6 +100,7 @@ namespace AutomatedEventProposalManagement
             string orgp = vr0.org_president;
             string orgps = vr0.org_president_status;
             string stats = vr0.status;
+            string orgtype = vr0.org_type;
             VenueReservation vr = new VenueReservation() {
 
                 
@@ -123,7 +124,7 @@ namespace AutomatedEventProposalManagement
                 org_name = orname,
                 org_president = orgp,
                 org_president_status = orgps,
-                org_type = orname,
+                org_type = orgtype,
                 status = stats,
                 time_from = time1,
                 time_to = time2,

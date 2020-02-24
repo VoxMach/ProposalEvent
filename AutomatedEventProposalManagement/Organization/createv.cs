@@ -158,46 +158,96 @@ namespace AutomatedEventProposalManagement
             string timeU = dateTimePicker2.Text;
             string dateev = dateTimePicker3.Text;
 
-            VenueReservation vr = new VenueReservation() {
+            if (home.orgtype.Equals("Campus-Wide"))
+            {
+                VenueReservation vr = new VenueReservation()
+                {
 
-                approver = pending,
-                approver_name = bunifuMaterialTextbox4.Text,
-                beneficiaries = bunifuMaterialTextbox7.Text,
-                committee_in_charge = bunifuMaterialTextbox3.Text,
-                date = today,
-                date_of_event = dateev,
-                description = bunifuMaterialTextbox5.Text,
-                id = id,
-                incharge = pending,
-                name_approver = "Nothing Yet",
-                name_incharge = "Nothing Yet",
-                name_of_project = bunifuMaterialTextbox1.Text,
-                nature_of_project = bunifuMaterialTextbox2.Text,
-                org_adviser = "Nothing Yet",
-                org_adviser_status = pending,
-                org_dean = "Nothing Yet",
-                org_dean_status = pending,
-                org_name = oname,
-                org_president = "Nothing Yet",
-                org_president_status = pending,
-                org_type = home.orgtype,
-                status = pending,
-                time_from = timef,    
-                time_to = timeU,
-                venue = sel1
-            };
+                    approver = pending,
+                    approver_name = bunifuMaterialTextbox4.Text,
+                    beneficiaries = bunifuMaterialTextbox7.Text,
+                    committee_in_charge = bunifuMaterialTextbox3.Text,
+                    date = today,
+                    date_of_event = dateev,
+                    description = bunifuMaterialTextbox5.Text,
+                    id = id,
+                    incharge = pending,
+                    name_approver = "Nothing Yet",
+                    name_incharge = "Nothing Yet",
+                    name_of_project = bunifuMaterialTextbox1.Text,
+                    nature_of_project = bunifuMaterialTextbox2.Text,
+                    org_adviser = "Nothing Yet",
+                    org_adviser_status = pending,
+                    org_name = oname,
+                    org_president = "Nothing Yet",
+                    org_president_status = pending,
+                    org_type = home.orgtype,
+                    status = pending,
+                    time_from = timef,
+                    time_to = timeU,
+                    venue = sel1
+                };
 
-            var set = client.Push(@"Venue/VenueReservation/",vr);
+                var set = client.Push(@"Venue/VenueReservation/", vr);
 
-            MessageBox.Show("Register Success.");
+                MessageBox.Show("Register Success.");
 
-            bunifuMaterialTextbox1.Text = string.Empty;
-            bunifuMaterialTextbox2.Text = string.Empty;
-            bunifuMaterialTextbox3.Text = string.Empty;
-            bunifuMaterialTextbox4.Text = string.Empty;
-            bunifuMaterialTextbox5.Text = string.Empty;
-            bunifuMaterialTextbox7.Text = string.Empty;
-            comboBox1.Text = string.Empty;
+                bunifuMaterialTextbox1.Text = string.Empty;
+                bunifuMaterialTextbox2.Text = string.Empty;
+                bunifuMaterialTextbox3.Text = string.Empty;
+                bunifuMaterialTextbox4.Text = string.Empty;
+                bunifuMaterialTextbox5.Text = string.Empty;
+                bunifuMaterialTextbox7.Text = string.Empty;
+                comboBox1.Text = string.Empty;
+            }
+            else
+            {
+                VenueReservation vr = new VenueReservation()
+                {
+
+                    approver = pending,
+                    approver_name = bunifuMaterialTextbox4.Text,
+                    beneficiaries = bunifuMaterialTextbox7.Text,
+                    committee_in_charge = bunifuMaterialTextbox3.Text,
+                    date = today,
+                    date_of_event = dateev,
+                    description = bunifuMaterialTextbox5.Text,
+                    id = id,
+                    incharge = pending,
+                    name_approver = "Nothing Yet",
+                    name_incharge = "Nothing Yet",
+                    name_of_project = bunifuMaterialTextbox1.Text,
+                    nature_of_project = bunifuMaterialTextbox2.Text,
+                    org_adviser = "Nothing Yet",
+                    org_adviser_status = pending,
+                    org_dean = "Nothing Yet",
+                    org_dean_status = pending,
+                    org_name = oname,
+                    org_president = "Nothing Yet",
+                    org_president_status = pending,
+                    org_type = home.orgtype,
+                    status = pending,
+                    time_from = timef,
+                    time_to = timeU,
+                    venue = sel1
+                };
+
+                var set = client.Push(@"Venue/VenueReservation/", vr);
+
+                MessageBox.Show("Register Success.");
+
+                bunifuMaterialTextbox1.Text = string.Empty;
+                bunifuMaterialTextbox2.Text = string.Empty;
+                bunifuMaterialTextbox3.Text = string.Empty;
+                bunifuMaterialTextbox4.Text = string.Empty;
+                bunifuMaterialTextbox5.Text = string.Empty;
+                bunifuMaterialTextbox7.Text = string.Empty;
+                comboBox1.Text = string.Empty;
+
+
+
+            }
+
 
 
 
