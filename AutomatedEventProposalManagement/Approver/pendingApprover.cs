@@ -28,10 +28,13 @@ namespace AutomatedEventProposalManagement.Approver
         public pendingApprover(String name, String orgtype, String approvertype, String orgname)
         {
             InitializeComponent();
-            name = fullname;
-            orgtype = org_type;
+            fullname = name;
+            org_type = orgtype;
             approver_type = approvertype;
             org_name = orgname;
+         
+            
+           
             
         }
 
@@ -57,10 +60,40 @@ namespace AutomatedEventProposalManagement.Approver
 
             try
             {
-                FirebaseResponse pen = client.Get(@"Venue/VenueReservation");
+                FirebaseResponse pen = client.Get("Venue/VenueReservation/");
+                Dictionary<string, pending> pending = pen.ResultAs<Dictionary<string, pending>>();
+                foreach(var find in pending)
+                {
+                    string isCompare = find.Value.org_type;
+                    string isApprover = find.Value.approver;
+                    string isAdviser = find.Value.org_adviser_status;
+                    string isPresident = find.Value.org_president_status;
+                    string isDean = find.Value.org_dean_status;
 
-                pending pending = pen.ResultAs<pending>();
-                MessageBox.Show(pending.approver+" "+ pending.beneficiaries+" "+pending.incharge +" "+pending.name_of_project.ToString());
+                    if (approver_type.Equals("Adviser"))
+                    {
+                        if (isCompare.Equals(org_type) && isApprover.Equals("Accepted") && isAdviser.Equals("Pending"))
+                        {
+                            pendinggrid.Rows.Add(find.Value.name_of_project, find.Value.beneficiaries);
+                        }
+                    }else if (approver_type.Equals("Organization President"))
+                    {
+                        if (isCompare.Equals(org_type) && isApprover.Equals("Accepted") && isAdviser.Equals("Pending") && isPresident.Equals("Pending"))
+                        {
+                            pendinggrid.Rows.Add(find.Value.name_of_project, find.Value.beneficiaries);
+                        }
+                    }
+                    else if (approver_type.Equals("Dean's Office"))
+                    {
+                        if (isCompare.Equals(org_type) && isApprover.Equals("Accepted") && isAdviser.Equals("Pending") && isDean.Equals("Pending"))
+                        {
+                            pendinggrid.Rows.Add(find.Value.name_of_project, find.Value.beneficiaries);
+                        }
+                    }
+
+
+                }
+                
                 
             }
             catch (Exception)

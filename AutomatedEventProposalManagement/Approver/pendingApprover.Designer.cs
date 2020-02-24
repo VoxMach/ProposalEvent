@@ -30,13 +30,17 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pending = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pendinggrid = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewButtonColumn();
             this.beneficiaries = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +54,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orgpres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pending)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pendinggrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,16 +72,29 @@
             this.panel2.TabIndex = 10;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label1
+            // button2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(105, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 33);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Pending Request";
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Location = new System.Drawing.Point(846, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(234, 54);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Accept Request";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Location = new System.Drawing.Point(1118, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(234, 54);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Reject Request";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -92,21 +109,41 @@
             this.label4.Text = "<";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // pending
+            // label1
             // 
-            this.pending.AllowUserToAddRows = false;
-            this.pending.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(52, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(237, 33);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Pending Request";
+            // 
+            // pendinggrid
+            // 
+            this.pendinggrid.AllowUserToAddRows = false;
+            this.pendinggrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(4, 2, 5, 5);
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Crimson;
-            this.pending.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.pending.BackgroundColor = System.Drawing.Color.GhostWhite;
-            this.pending.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pending.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.pending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pending.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pendinggrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.pendinggrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.pendinggrid.BackgroundColor = System.Drawing.Color.GhostWhite;
+            this.pendinggrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pendinggrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pendinggrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.pendinggrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pendinggrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.beneficiaries,
             this.Column1,
@@ -119,38 +156,34 @@
             this.Column4,
             this.Column5,
             this.orgpres});
-            this.pending.GridColor = System.Drawing.SystemColors.HighlightText;
-            this.pending.Location = new System.Drawing.Point(-1, 80);
-            this.pending.Name = "pending";
-            this.pending.ReadOnly = true;
-            this.pending.RowTemplate.Height = 24;
-            this.pending.Size = new System.Drawing.Size(1375, 643);
-            this.pending.TabIndex = 11;
-            this.pending.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(1118, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 54);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Reject Request";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(846, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 54);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Accept Request";
-            this.button2.UseVisualStyleBackColor = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pendinggrid.DefaultCellStyle = dataGridViewCellStyle5;
+            this.pendinggrid.GridColor = System.Drawing.SystemColors.HighlightText;
+            this.pendinggrid.Location = new System.Drawing.Point(-1, 80);
+            this.pendinggrid.Name = "pendinggrid";
+            this.pendinggrid.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pendinggrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pendinggrid.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.pendinggrid.RowTemplate.Height = 24;
+            this.pendinggrid.Size = new System.Drawing.Size(1375, 643);
+            this.pendinggrid.TabIndex = 11;
+            this.pendinggrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // name
             // 
@@ -164,8 +197,8 @@
             // beneficiaries
             // 
             this.beneficiaries.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.beneficiaries.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.beneficiaries.DefaultCellStyle = dataGridViewCellStyle3;
             this.beneficiaries.HeaderText = "Beneficiaries";
             this.beneficiaries.Name = "beneficiaries";
             this.beneficiaries.ReadOnly = true;
@@ -173,9 +206,9 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column1.HeaderText = "Nature of Project";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -250,7 +283,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1374, 724);
             this.ControlBox = false;
-            this.Controls.Add(this.pending);
+            this.Controls.Add(this.pendinggrid);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1374, 724);
@@ -260,7 +293,7 @@
             this.Load += new System.EventHandler(this.pendingApprover_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pending)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pendinggrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -270,7 +303,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView pending;
+        private System.Windows.Forms.DataGridView pendinggrid;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewButtonColumn name;
