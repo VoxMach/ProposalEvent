@@ -39,23 +39,19 @@ namespace AutomatedEventProposalManagement.Approver
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            
+            MessageBox.Show(monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd"));
+            string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
+           
         }
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
-            MessageBox.Show(monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd"));
-            FirebaseResponse pen = client.Get("Sao/Proposal/");
-            Dictionary<string, pending> pending = pen.ResultAs<Dictionary<string, pending>>();
-            foreach (var find in pending)
-            {
-                string isDate = find.Value.date_of_event;
-                
-            }
+            
         }
 
         private void Calendar_Load(object sender, EventArgs e)
         {
+            
             try
             {
                 client = new FireSharp.FirebaseClient(config);
@@ -73,6 +69,22 @@ namespace AutomatedEventProposalManagement.Approver
             {
                 MessageBox.Show("No Internet or Connection Problem");
             }
+            FirebaseResponse pen = client.Get("SAO/Proposal/");
+            Dictionary<string, pending> pending = pen.ResultAs<Dictionary<string, pending>>();
+            foreach (var find in pending)
+            {
+                string isDate = find.Value.date_of_event;
+                if (isDate.Equals("2020-02-24"))
+                {
+                    calendarDataGrid.Rows.Add(find.Value.date_of_event);
+                }
+
+            }
+        }
+
+        private void calendarGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.calendarGrid = new System.Windows.Forms.DataGridView();
+            this.calendarDataGrid = new System.Windows.Forms.DataGridView();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +61,7 @@
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.calendarGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -100,14 +100,14 @@
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // calendarGrid
+            // calendarDataGrid
             // 
-            this.calendarGrid.AllowUserToAddRows = false;
-            this.calendarGrid.AllowUserToDeleteRows = false;
-            this.calendarGrid.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.calendarGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.calendarGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.calendarGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.calendarDataGrid.AllowUserToAddRows = false;
+            this.calendarDataGrid.AllowUserToDeleteRows = false;
+            this.calendarDataGrid.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.calendarDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.calendarDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.calendarDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13,
             this.Column1,
             this.Column2,
@@ -134,20 +134,21 @@
             this.Column21,
             this.Column22,
             this.Column23});
-            this.calendarGrid.GridColor = System.Drawing.Color.White;
-            this.calendarGrid.Location = new System.Drawing.Point(528, 86);
-            this.calendarGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.calendarGrid.Name = "calendarGrid";
-            this.calendarGrid.ReadOnly = true;
-            this.calendarGrid.RowHeadersWidth = 62;
-            this.calendarGrid.RowTemplate.Height = 28;
-            this.calendarGrid.Size = new System.Drawing.Size(821, 587);
-            this.calendarGrid.TabIndex = 20;
+            this.calendarDataGrid.GridColor = System.Drawing.Color.White;
+            this.calendarDataGrid.Location = new System.Drawing.Point(307, 86);
+            this.calendarDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.calendarDataGrid.Name = "calendarDataGrid";
+            this.calendarDataGrid.ReadOnly = true;
+            this.calendarDataGrid.RowHeadersWidth = 62;
+            this.calendarDataGrid.RowTemplate.Height = 28;
+            this.calendarDataGrid.Size = new System.Drawing.Size(1042, 587);
+            this.calendarDataGrid.TabIndex = 20;
+            this.calendarDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.calendarGrid_CellContentClick);
             // 
             // Column13
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column13.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column13.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column13.HeaderText = "ID";
             this.Column13.MinimumWidth = 8;
             this.Column13.Name = "Column13";
@@ -330,7 +331,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(4, 3);
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 3);
             this.monthCalendar1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.monthCalendar1.Location = new System.Drawing.Point(0, 86);
             this.monthCalendar1.MaximumSize = new System.Drawing.Size(528, 587);
@@ -347,7 +348,7 @@
             this.ClientSize = new System.Drawing.Size(1350, 676);
             this.ControlBox = false;
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.calendarGrid);
+            this.Controls.Add(this.calendarDataGrid);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1350, 676);
@@ -357,7 +358,7 @@
             this.Load += new System.EventHandler(this.Calendar_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.calendarGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -367,7 +368,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView calendarGrid;
+        private System.Windows.Forms.DataGridView calendarDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

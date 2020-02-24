@@ -26,46 +26,22 @@ namespace AutomatedEventProposalManagement.Approver
         String ID;
 
 
-        String org_type;
-        String approvers;
-        String fullname;
-        public acceptform(string key,
-        string approver,
-        string approver_name,
-        string beneficiaries,
-        string committee_in_charge,
-        string date,
-        string date_of_event,
-        string description,
-        string id,
-        string incharge,
-        string name_approver,
-        string name_incharge,
-        string name_of_project,
-        string nature_of_project,
-        string org_adviser,
-        string org_adviser_status,
-        string org_dean,
-        string org_dean_status,
-        string org_name,
-        string org_president,
-        string org_president_status,
-        string org_type,
-        string status,
-        string time_from,
-        string time_to,
-        string venue,
-        string approver_type, string name, string organization_type)
+        
+        string approvers;
+        string fullname;
+        string orgtype;
+        public acceptform(string key, string date_of_event, string name_of_project, string nature_of_project, string venue, string org_type, string approver_type, string name)
         {
             InitializeComponent();
             ID = key;
+            venuepending.Text = venue;
             nameofproject.Text = name_of_project;
             natureofproject.Text = nature_of_project;
-            venuepending.Text = venue;
             pendingdate.Text = date_of_event;
-            approvers = approver_type;
+            orgtype = org_type;
             fullname = name;
-            org_type = organization_type;
+            approvers = approver_type;
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -93,6 +69,8 @@ namespace AutomatedEventProposalManagement.Approver
             {
                 MessageBox.Show("No Internet or Connection Problem");
             }
+
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -117,7 +95,7 @@ namespace AutomatedEventProposalManagement.Approver
             }
             else if (approvers.Equals("Organization President"))
             {
-                if (org_type.Equals("Campus-Wide"))
+                if (orgtype.Equals("Campus-Wide"))
                 {
                     FirebaseResponse response = client.Get("Venue/VenueReservation/" + ID);
 
@@ -172,6 +150,11 @@ namespace AutomatedEventProposalManagement.Approver
 
 
             
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -355,3 +355,8 @@ C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\D
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.ProView.resources
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.FormVen.resources
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.VenuePen.resources
+C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.OAccept.resources
+C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.OPend.resources
+C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.ORej.resources
+C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.SaoPen.resources
+C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.SaoRej.resources
