@@ -36,7 +36,7 @@ namespace AutomatedEventProposalManagement
             vrn.ShowDialog();
             this.Close();
         }
-
+        public static string full1;
         private void venAppen_Load(object sender, EventArgs e)
         {
             try
@@ -57,9 +57,12 @@ namespace AutomatedEventProposalManagement
                 MessageBox.Show("No Internet or Connection Problem");
             }
 
+
+
             string ids = "Pending";
             
             FirebaseResponse response = client.Get("Venue/VenueReservation/");
+
             Dictionary<string, VenueReservation> Dick = response.ResultAs<Dictionary<string, VenueReservation>>();
             foreach (var find in Dick)
             {
@@ -67,19 +70,53 @@ namespace AutomatedEventProposalManagement
                 if (ids.Equals(ids1))
                 {
 
-                    dataGridView1.Rows.Add(find.Value.name_of_project, find.Value.beneficiaries,
+                    dataGridView1.Rows.Add(find.Key,find.Value.name_of_project,
+                        find.Value.beneficiaries,
                         find.Value.nature_of_project,
-                        find.Value.venue, find.Value.date,
-                        find.Value.time_from, find.Value.time_to,
+                        find.Value.venue,
+                        find.Value.date,
+                        find.Value.time_from,
+                        find.Value.time_to,
                         find.Value.approver,
                         find.Value.committee_in_charge, 
                         find.Value.org_adviser_status,
                         find.Value.org_dean_status,
-                        find.Value.org_president_status);
+                        find.Value.org_president_status,
+                        find.Value.status);
+
+
+                   
 
                 }
             }
 
+
+        }
+        public static string i0;
+        public static string i1;
+        public static string i2;
+        public static string i3;
+        public static string i4;
+        public static string i5;
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            Formtrans ft = new Formtrans();
+            this.Hide();
+            full1 = VenueApp.full;
+            i0 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            i1 = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            i2 = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            i3 = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            i4 = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            i5 = dataGridView1.CurrentRow.Cells[12].Value.ToString();
+            ft.ShowDialog();
+            this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

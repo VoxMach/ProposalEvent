@@ -199,6 +199,7 @@ namespace AutomatedEventProposalManagement
             if (sel1.Equals("Approver"))
             {
                 bunifuMaterialTextbox1.Enabled = true;
+                
                 FirebaseResponse resp1 = client.Get("User/Approver/" + bunifuMaterialTextbox1.Text);
 
                 Class1 cl1 = resp1.ResultAs<Class1>();

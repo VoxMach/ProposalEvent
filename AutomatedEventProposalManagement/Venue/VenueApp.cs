@@ -41,10 +41,11 @@ namespace AutomatedEventProposalManagement
                 this.Close();
             }
         }
-
+        public static string full;
         private void button2_Click(object sender, EventArgs e)
         {
             venAppen vrn = new venAppen();
+            full = nameu.Text;
             this.Hide();
             vrn.ShowDialog();
             this.Close();
