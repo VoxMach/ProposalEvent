@@ -150,6 +150,7 @@ namespace AutomatedEventProposalManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
             string pending = "Pending";
             string today = DateTime.Now.ToString("yyyy-MM-dd");

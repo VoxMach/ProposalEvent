@@ -42,10 +42,13 @@ namespace AutomatedEventProposalManagement
             }
         }
         public static string full;
+        public static string ortype;
+
         private void button2_Click(object sender, EventArgs e)
         {
             venAppen vrn = new venAppen();
             full = nameu.Text;
+            ortype = label5.Text;
             this.Hide();
             vrn.ShowDialog();
             this.Close();

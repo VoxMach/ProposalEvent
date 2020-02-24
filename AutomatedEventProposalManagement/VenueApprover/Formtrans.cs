@@ -64,24 +64,62 @@ namespace AutomatedEventProposalManagement
         }
         public static string key;
         public static string id;
+        public static string type;
         private void button1_Click(object sender, EventArgs e)
         {
             fullname0 = venAppen.full1;
             key = venAppen.i0;
-            
+            type = venAppen.otype;
+            string app = "Accepted";
             FirebaseResponse resp2 = client.Get("Venue/VenueReservation/" + key);
 
             VenueReservation vr0 = new VenueReservation();
-            
-            
 
+            string bene = vr0.beneficiaries;
+            string commit = vr0.committee_in_charge;
+            string dater = vr0.date;
+            string dateve = vr0.date_of_event;
+            string Des = vr0.description;
+            string oid = vr0.id;
+            string namep = vr0.name_of_project;
+            string natp = vr0.nature_of_project;
+            string orname = vr0.org_name;
+            string time1 = vr0.time_from;
+            string time2 = vr0.time_to;
+            string venus = vr0.venue;
             VenueReservation vr = new VenueReservation() {
 
-                
+                approver = app,
+                approver_name = type,
+                beneficiaries = bene,
+                committee_in_charge = commit,
+                date = dater,
+                date_of_event = dateve,
+                description = Des,
+                id = oid,
+                incharge = "Pending",
+                name_approver = fullname0,
+                name_incharge = "",
+                name_of_project = namep,
+                nature_of_project = natp,
+                org_adviser = "",
+                org_adviser_status = "Pending",
+                org_dean = "",
+                org_dean_status = "Pending",
+                org_name = orname,
+                org_president = "",
+                org_president_status = "Pending",
+                org_type = orname,
+                status = "Pending",
+                time_from = time1,
+                time_to = time2,
+                venue = venus
+
             };
 
 
-
+            FirebaseResponse resp = client.Set("Venue/VenueReservation/" + key, vr);
+            MessageBox.Show("Update Successfully");
 
 
 

@@ -58,7 +58,7 @@ namespace AutomatedEventProposalManagement
             }
 
 
-
+            
             string ids = "Pending";
             
             FirebaseResponse response = client.Get("Venue/VenueReservation/");
@@ -70,11 +70,14 @@ namespace AutomatedEventProposalManagement
                 if (ids.Equals(ids1))
                 {
 
+                    dataGridView1.Update();
+                    dataGridView1.Refresh();
+
                     dataGridView1.Rows.Add(find.Key,find.Value.name_of_project,
                         find.Value.beneficiaries,
                         find.Value.nature_of_project,
                         find.Value.venue,
-                        find.Value.date,
+                        find.Value.date_of_event,
                         find.Value.time_from,
                         find.Value.time_to,
                         find.Value.approver,
@@ -98,6 +101,7 @@ namespace AutomatedEventProposalManagement
         public static string i3;
         public static string i4;
         public static string i5;
+        public static string otype;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -105,6 +109,7 @@ namespace AutomatedEventProposalManagement
             Formtrans ft = new Formtrans();
             this.Hide();
             full1 = VenueApp.full;
+            otype = VenueApp.ortype;
             i0 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             i1 = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             i2 = dataGridView1.CurrentRow.Cells[2].Value.ToString();

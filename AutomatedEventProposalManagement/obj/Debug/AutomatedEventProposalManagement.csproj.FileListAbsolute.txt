@@ -341,3 +341,4 @@ C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\D
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.csproj.CopyComplete
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.exe
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.pdb
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.Formtrans.resources
