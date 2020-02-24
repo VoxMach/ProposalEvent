@@ -102,6 +102,7 @@ namespace AutomatedEventProposalManagement
             string stats = vr0.status;
             VenueReservation vr = new VenueReservation() {
 
+                
                 approver = app,
                 approver_name = appna,
                 beneficiaries = bene,
