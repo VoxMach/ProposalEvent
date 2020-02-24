@@ -95,6 +95,12 @@
     <Compile Include="admin\registeredOrgForm.Designer.cs">
       <DependentUpon>registeredOrgForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Approver\acceptform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Approver\acceptform.Designer.cs">
+      <DependentUpon>acceptform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Approver\apphome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin\registeredOrgForm.resx">
       <DependentUpon>registeredOrgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Approver\acceptform.resx">
+      <DependentUpon>acceptform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Approver\apphome.resx">
       <DependentUpon>apphome.cs</DependentUpon>
