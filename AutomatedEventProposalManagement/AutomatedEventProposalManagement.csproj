@@ -125,6 +125,12 @@
     <Compile Include="class\Class1.cs" />
     <Compile Include="class\saoregis.cs" />
     <Compile Include="class\VenAppro.cs" />
+    <Compile Include="FormVen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVen.Designer.cs">
+      <DependentUpon>FormVen.cs</DependentUpon>
+    </Compile>
     <Compile Include="VenueApprover\Formtrans.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,12 @@
     </Compile>
     <Compile Include="VenueApprover\venAppen.Designer.cs">
       <DependentUpon>venAppen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VenuePen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VenuePen.Designer.cs">
+      <DependentUpon>VenuePen.cs</DependentUpon>
     </Compile>
     <Compile Include="Venue\venhome.cs">
       <SubType>Form</SubType>
@@ -386,6 +398,9 @@
     <EmbeddedResource Include="Approver\pendingApprover.resx">
       <DependentUpon>pendingApprover.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVen.resx">
+      <DependentUpon>FormVen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VenueApprover\Formtrans.resx">
       <DependentUpon>Formtrans.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VenueApprover\venAppen.resx">
       <DependentUpon>venAppen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VenuePen.resx">
+      <DependentUpon>VenuePen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venue\venhome.resx">
       <DependentUpon>venhome.cs</DependentUpon>

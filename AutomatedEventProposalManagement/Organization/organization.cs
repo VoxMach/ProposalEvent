@@ -161,7 +161,7 @@ namespace AutomatedEventProposalManagement
         {
 
             string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
-
+            
             if (sel1.Equals("College of Arts Science"))
             {
                 string cas = "CAS";
@@ -182,7 +182,7 @@ namespace AutomatedEventProposalManagement
                         id = bunifuMaterialTextbox1.Text,
                         lastname = bunifuMaterialTextbox5.Text,
                         middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel1,
+                        org_name = sel2,
                         org_type = cas,
                         password = bunifuMaterialTextbox2.Text
                     };
@@ -229,7 +229,7 @@ namespace AutomatedEventProposalManagement
                         id = bunifuMaterialTextbox1.Text,
                         lastname = bunifuMaterialTextbox5.Text,
                         middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel1,
+                        org_name = sel2,
                         org_type = cba,
                         password = bunifuMaterialTextbox2.Text
                     };
@@ -277,7 +277,7 @@ namespace AutomatedEventProposalManagement
                         id = bunifuMaterialTextbox1.Text,
                         lastname = bunifuMaterialTextbox5.Text,
                         middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel1,
+                        org_name = sel2,
                         org_type = cfad,
                         password = bunifuMaterialTextbox2.Text
                     };
@@ -323,7 +323,7 @@ namespace AutomatedEventProposalManagement
                         id = bunifuMaterialTextbox1.Text,
                         lastname = bunifuMaterialTextbox5.Text,
                         middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel1,
+                        org_name = sel2,
                         org_type = coe,
                         password = bunifuMaterialTextbox2.Text
                     };
@@ -369,7 +369,7 @@ namespace AutomatedEventProposalManagement
                         id = bunifuMaterialTextbox1.Text,
                         lastname = bunifuMaterialTextbox5.Text,
                         middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel1,
+                        org_name = sel2,
                         org_type = Campus,
                         password = bunifuMaterialTextbox2.Text
                     };
@@ -416,7 +416,7 @@ namespace AutomatedEventProposalManagement
                         id = bunifuMaterialTextbox1.Text,
                         lastname = bunifuMaterialTextbox5.Text,
                         middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel1,
+                        org_name = sel2,
                         org_type = sc,
                         password = bunifuMaterialTextbox2.Text
                     };

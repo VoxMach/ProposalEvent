@@ -107,17 +107,17 @@ namespace AutomatedEventProposalManagement
             }
             else if (sel1.Equals("MMR 3A"))
             {
-                bunifuMaterialTextbox3.Text = "IT";
+                bunifuMaterialTextbox3.Text = "Information Technology";
                 bunifuMaterialTextbox4.Text = "Chancellor";
             }
             else if (sel1.Equals("MMR 3B"))
             {
-                bunifuMaterialTextbox3.Text = "IT";
+                bunifuMaterialTextbox3.Text = "Information Technology";
                 bunifuMaterialTextbox4.Text = "Chancellor";
             }
             else if (sel1.Equals("Computer Laboratories"))
             {
-                bunifuMaterialTextbox3.Text = "IT";
+                bunifuMaterialTextbox3.Text = "Information Technology";
                 bunifuMaterialTextbox4.Text = "Chancellor";
             }
             else if (sel1.Equals("MPH1"))
@@ -161,7 +161,7 @@ namespace AutomatedEventProposalManagement
             VenueReservation vr = new VenueReservation() {
 
                 approver = pending,
-                approver_name = "",
+                approver_name = bunifuMaterialTextbox4.Text,
                 beneficiaries = bunifuMaterialTextbox7.Text,
                 committee_in_charge = bunifuMaterialTextbox3.Text,
                 date = today,
@@ -169,18 +169,18 @@ namespace AutomatedEventProposalManagement
                 description = bunifuMaterialTextbox5.Text,
                 id = id,
                 incharge = pending,
-                name_approver = "",
-                name_incharge = "",
+                name_approver = "Nothing Yet",
+                name_incharge = "Nothing Yet",
                 name_of_project = bunifuMaterialTextbox1.Text,
                 nature_of_project = bunifuMaterialTextbox2.Text,
-                org_adviser = "",
+                org_adviser = "Nothing Yet",
                 org_adviser_status = pending,
-                org_dean = "",
+                org_dean = "Nothing Yet",
                 org_dean_status = pending,
                 org_name = oname,
-                org_president = "",
+                org_president = "Nothing Yet",
                 org_president_status = pending,
-                org_type = oname,
+                org_type = home.orgtype,
                 status = pending,
                 time_from = timef,    
                 time_to = timeU,

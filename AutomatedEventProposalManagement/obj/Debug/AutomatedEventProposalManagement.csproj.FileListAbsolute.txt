@@ -342,3 +342,6 @@ C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\D
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.exe
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.pdb
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.Formtrans.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.Approver.acceptform.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.VenuePen.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.FormVen.resources

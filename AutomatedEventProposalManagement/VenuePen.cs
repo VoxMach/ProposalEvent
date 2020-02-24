@@ -13,36 +13,25 @@ using FireSharp.Response;
 
 namespace AutomatedEventProposalManagement
 {
-    public partial class venAppen : Form
+    public partial class VenuePen : Form
     {
-
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "20O72YtkHWmSZDIZ2kF01hmg2T3iSetxJO58CuIu",
             BasePath = "https://event-proposal.firebaseio.com/"
         };
         IFirebaseClient client;
-
-        public venAppen()
-        {
-            InitializeComponent();
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-            VenueApp vrn = new VenueApp();
-            this.Hide();
-            vrn.ShowDialog();
-            this.Close();
-        }
         public static string full1;
         public static string otype;
 
-
-
-        private void venAppen_Load(object sender, EventArgs e)
+        public VenuePen()
         {
+            InitializeComponent();
+        }
+        
+        private void VenuePen_Load(object sender, EventArgs e)
+        {
+
             try
             {
                 client = new FireSharp.FirebaseClient(config);
@@ -61,29 +50,26 @@ namespace AutomatedEventProposalManagement
                 MessageBox.Show("No Internet or Connection Problem");
             }
 
-
-            
             string ids = "Pending";
-            
+
             FirebaseResponse response = client.Get("Venue/VenueReservation/");
 
             Dictionary<string, VenueReservation> Dick = response.ResultAs<Dictionary<string, VenueReservation>>();
             foreach (var find in Dick)
             {
-              string ids1 = find.Value.approver;
+        
+                string coomit = find.Value.committee_in_charge;
+                string inc = find.Value.incharge;
 
-                string typo = find.Value.approver_name;
-
-
-                if (typo.Equals(VenueApp.ortype))
+                if (venhome.otap.Equals(coomit))
                 {
-                    if (ids.Equals(ids1))
+                    if (inc.Equals(ids))
                     {
-
                         dataGridView1.Update();
                         dataGridView1.Refresh();
-
-                        dataGridView1.Rows.Add(find.Key, find.Value.name_of_project,
+                        dataGridView1.Rows.Add(
+                            find.Key,
+                            find.Value.name_of_project,
                             find.Value.beneficiaries,
                             find.Value.nature_of_project,
                             find.Value.venue,
@@ -96,18 +82,11 @@ namespace AutomatedEventProposalManagement
                             find.Value.org_dean_status,
                             find.Value.org_president_status,
                             find.Value.status);
-
-
-
-
                     }
                 }
-               
-
-
-
-               
+                
             }
+
 
 
         }
@@ -117,40 +96,31 @@ namespace AutomatedEventProposalManagement
         public static string i3;
         public static string i4;
         public static string i5;
+        public static string i6;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-
-           
-
-                
-
-
-                Formtrans ft = new Formtrans();
-                this.Hide();
-                full1 = VenueApp.full;
-                otype = VenueApp.ortype;
-                i0 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                i1 = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                i2 = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                i3 = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                i4 = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                i5 = dataGridView1.CurrentRow.Cells[13].Value.ToString();
-                ft.ShowDialog();
-                this.Close();
-
-
-
-
-
-
-               
+            FormVen ft = new FormVen();
+            this.Hide();
+            full1 = venhome.full1;
+            otype = venhome.otap;
+            i0 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            i1 = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            i2 = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            i3 = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            i4 = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            i5 = dataGridView1.CurrentRow.Cells[13].Value.ToString();
+            i6 = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            ft.ShowDialog();
+            this.Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-
+            venhome ven = new venhome();
+            this.Hide();
+            ven.ShowDialog();
+            this.Close();
         }
     }
 }

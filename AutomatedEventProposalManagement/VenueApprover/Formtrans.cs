@@ -65,6 +65,9 @@ namespace AutomatedEventProposalManagement
         public static string key;
         public static string id;
         public static string type;
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             fullname0 = venAppen.full1;
@@ -73,7 +76,7 @@ namespace AutomatedEventProposalManagement
             string app = "Accepted";
             FirebaseResponse resp2 = client.Get("Venue/VenueReservation/" + key);
 
-            VenueReservation vr0 = new VenueReservation();
+            VenueReservation vr0 = resp2.ResultAs<VenueReservation>();
 
             string bene = vr0.beneficiaries;
             string commit = vr0.committee_in_charge;
@@ -87,30 +90,40 @@ namespace AutomatedEventProposalManagement
             string time1 = vr0.time_from;
             string time2 = vr0.time_to;
             string venus = vr0.venue;
+            string appna = vr0.approver_name;
+            string ins = vr0.incharge;
+            string namins = vr0.name_incharge;
+            string orga = vr0.org_adviser;
+            string orgas = vr0.org_adviser_status;
+            string odean = vr0.org_dean;
+            string odens = vr0.org_dean_status;
+            string orgp = vr0.org_president;
+            string orgps = vr0.org_president_status;
+            string stats = vr0.status;
             VenueReservation vr = new VenueReservation() {
 
                 approver = app,
-                approver_name = type,
+                approver_name = appna,
                 beneficiaries = bene,
                 committee_in_charge = commit,
                 date = dater,
                 date_of_event = dateve,
                 description = Des,
                 id = oid,
-                incharge = "Pending",
+                incharge = ins,
                 name_approver = fullname0,
-                name_incharge = "",
+                name_incharge = namins,
                 name_of_project = namep,
                 nature_of_project = natp,
-                org_adviser = "",
-                org_adviser_status = "Pending",
-                org_dean = "",
-                org_dean_status = "Pending",
+                org_adviser = orga,
+                org_adviser_status = orgas,
+                org_dean = odean,
+                org_dean_status = odens,
                 org_name = orname,
-                org_president = "",
-                org_president_status = "Pending",
+                org_president = orgp,
+                org_president_status = orgps,
                 org_type = orname,
-                status = "Pending",
+                status = stats,
                 time_from = time1,
                 time_to = time2,
                 venue = venus
@@ -125,5 +138,74 @@ namespace AutomatedEventProposalManagement
 
 
         }
-    }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fullname0 = venAppen.full1;
+            key = venAppen.i0;
+            type = venAppen.otype;
+            string app = "Rejected";
+            FirebaseResponse resp2 = client.Get("Venue/VenueReservation/" + key);
+
+            VenueReservation vr0 = resp2.ResultAs<VenueReservation>();
+
+            string bene = vr0.beneficiaries;
+            string commit = vr0.committee_in_charge;
+            string dater = vr0.date;
+            string dateve = vr0.date_of_event;
+            string Des = vr0.description;
+            string oid = vr0.id;
+            string namep = vr0.name_of_project;
+            string natp = vr0.nature_of_project;
+            string orname = vr0.org_name;
+            string time1 = vr0.time_from;
+            string time2 = vr0.time_to;
+            string venus = vr0.venue;
+            string appna = vr0.approver_name;
+            string ins = vr0.incharge;
+            string namins = vr0.name_incharge;
+            string orga = vr0.org_adviser;
+            string orgas = vr0.org_adviser_status;
+            string odean = vr0.org_dean;
+            string odens = vr0.org_dean_status;
+            string orgp = vr0.org_president;
+            string orgps = vr0.org_president_status;
+            string stats = vr0.status;
+            VenueReservation vr = new VenueReservation()
+            {
+
+                approver = app,
+                approver_name = appna,
+                beneficiaries = bene,
+                committee_in_charge = commit,
+                date = dater,
+                date_of_event = dateve,
+                description = Des,
+                id = oid,
+                incharge = ins,
+                name_approver = fullname0,
+                name_incharge = namins,
+                name_of_project = namep,
+                nature_of_project = natp,
+                org_adviser = orga,
+                org_adviser_status = orgas,
+                org_dean = odean,
+                org_dean_status = odens,
+                org_name = orname,
+                org_president = orgp,
+                org_president_status = orgps,
+                org_type = orname,
+                status = stats,
+                time_from = time1,
+                time_to = time2,
+                venue = venus
+
+            };
+
+
+            FirebaseResponse resp = client.Set("Venue/VenueReservation/" + key, vr);
+            MessageBox.Show("The Event is  Rejected Successfully.");
+
+        }
+        }
 }

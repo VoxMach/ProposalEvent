@@ -12,10 +12,13 @@ namespace AutomatedEventProposalManagement
 {
     public partial class venhome : Form
     {
+
         public venhome()
         {
             InitializeComponent();
         }
+        public static string full1;
+        public static string otap;
 
         private void venhome_Load(object sender, EventArgs e)
         {
@@ -44,7 +47,12 @@ namespace AutomatedEventProposalManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            VenuePen vrn = new VenuePen();
+            full1 = nameu.Text;
+            otap = label5.Text;
+            this.Hide();
+            vrn.ShowDialog();
+            this.Close();
         }
     }
 }
