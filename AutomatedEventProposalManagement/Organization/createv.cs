@@ -179,7 +179,7 @@ namespace AutomatedEventProposalManagement
                 org_name = oname,
                 org_president = "",
                 org_president_status = pending,
-                org_type = otype,
+                org_type = oname,
                 status = pending,
                 time_from = timef,    
                 time_to = timeU,
