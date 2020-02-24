@@ -34,6 +34,7 @@ namespace AutomatedEventProposalManagement
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             var select = MessageBox.Show("Are you Sure Want to Log-out?", "", MessageBoxButtons.OKCancel);
 
             if (select == DialogResult.OK)
@@ -62,6 +63,12 @@ namespace AutomatedEventProposalManagement
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void calendar_Click(object sender, EventArgs e)
+        {
+            Calendar c = new Calendar();
+            c.ShowDialog();
         }
     }
 }
