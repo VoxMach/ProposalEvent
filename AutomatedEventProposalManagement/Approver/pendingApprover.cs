@@ -130,6 +130,11 @@ namespace AutomatedEventProposalManagement.Approver
 
         private void pendinggrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           String id= pendinggrid.CurrentRow.Cells[0].Value.ToString();
+           String name_of_project = pendinggrid.CurrentRow.Cells[1].Value.ToString();
+           String nature_of_project = pendinggrid.CurrentRow.Cells[3].Value.ToString();
+           String venue = pendinggrid.CurrentRow.Cells[4].Value.ToString();
+           String date_of_event = pendinggrid.CurrentRow.Cells[5].Value.ToString();
 
         }
     }
