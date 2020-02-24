@@ -101,6 +101,7 @@
     <Compile Include="Approver\acceptform.Designer.cs">
       <DependentUpon>acceptform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Approver\accept_delete.cs" />
     <Compile Include="Approver\apphome.cs">
       <SubType>Form</SubType>
     </Compile>

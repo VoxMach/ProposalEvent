@@ -89,6 +89,7 @@ namespace AutomatedEventProposalManagement
             string venus = vr0.venue;
             VenueReservation vr = new VenueReservation() {
 
+                
                 approver = app,
                 approver_name = type,
                 beneficiaries = bene,

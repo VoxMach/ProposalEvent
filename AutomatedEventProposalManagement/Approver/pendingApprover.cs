@@ -74,29 +74,29 @@ namespace AutomatedEventProposalManagement.Approver
                     {
                         if (isCompare.Equals(org_type) && isApprover.Equals("Accepted") && isAdviser.Equals("Pending"))
                         {
-                            pendinggrid.Rows.Add(find.Key,find.Value.name_of_project, find.Value.beneficiaries, find.Value.nature_of_project, find.Value.venue
-                                ,find.Value.date_of_event, find.Value.time_from, find.Value.time_to, find.Value.approver, find.Value.committee_in_charge,
-                                find.Value.org_adviser_status, find.Value.org_dean_status, find.Value.org_president_status
-                                );
+                            pendinggrid.Rows.Add(find.Key,find.Value.approver, find.Value.approver_name, find.Value.beneficiaries, find.Value.committee_in_charge, find.Value.date, 
+                                find.Value.date_of_event, find.Value.description, find.Value.id, find.Value.incharge, find.Value.name_approver, find.Value.name_incharge, find.Value.name_of_project,
+                                find.Value.nature_of_project, find.Value.org_adviser, find.Value.org_adviser_status, find.Value.org_dean, find.Value.org_dean_status, find.Value.org_name, find.Value.org_president,
+                                find.Value.org_president_status, find.Value.org_type, find.Value.status, find.Value.time_from, find.Value.time_to, find.Value.venue);
                         }
                     }else if (approver_type.Equals("Organization President"))
                     {
                         if (isCompare.Equals(org_type) && isApprover.Equals("Accepted") && isAdviser.Equals("Pending") && isPresident.Equals("Pending"))
                         {
-                            pendinggrid.Rows.Add(find.Key,find.Value.name_of_project, find.Value.beneficiaries, find.Value.nature_of_project, find.Value.venue
-                                 , find.Value.date_of_event, find.Value.time_from, find.Value.time_to, find.Value.approver, find.Value.committee_in_charge,
-                                 find.Value.org_adviser_status, find.Value.org_dean_status, find.Value.org_president_status
-                                 );
+                            pendinggrid.Rows.Add(find.Key, find.Value.approver, find.Value.approver_name, find.Value.beneficiaries, find.Value.committee_in_charge, find.Value.date,
+                               find.Value.date_of_event, find.Value.description, find.Value.id, find.Value.incharge, find.Value.name_approver, find.Value.name_incharge, find.Value.name_of_project,
+                               find.Value.nature_of_project, find.Value.org_adviser, find.Value.org_adviser_status, find.Value.org_dean, find.Value.org_dean_status, find.Value.org_name, find.Value.org_president,
+                               find.Value.org_president_status, find.Value.org_type, find.Value.status, find.Value.time_from, find.Value.time_to, find.Value.venue);
                         }
                     }
                     else if (approver_type.Equals("Dean's Office"))
                     {
                         if (isCompare.Equals(org_type) && isApprover.Equals("Accepted") && isAdviser.Equals("Pending") && isDean.Equals("Pending"))
                         {
-                            pendinggrid.Rows.Add(find.Key, find.Value.name_of_project, find.Value.beneficiaries, find.Value.nature_of_project, find.Value.venue
-                                , find.Value.date_of_event, find.Value.time_from, find.Value.time_to, find.Value.approver, find.Value.committee_in_charge,
-                                find.Value.org_adviser_status, find.Value.org_dean_status, find.Value.org_president_status
-                                );
+                            pendinggrid.Rows.Add(find.Key, find.Value.approver, find.Value.approver_name, find.Value.beneficiaries, find.Value.committee_in_charge, find.Value.date,
+                                find.Value.date_of_event, find.Value.description, find.Value.id, find.Value.incharge, find.Value.name_approver, find.Value.name_incharge, find.Value.name_of_project,
+                                find.Value.nature_of_project, find.Value.org_adviser, find.Value.org_adviser_status, find.Value.org_dean, find.Value.org_dean_status, find.Value.org_name, find.Value.org_president,
+                                find.Value.org_president_status, find.Value.org_type, find.Value.status, find.Value.time_from, find.Value.time_to, find.Value.venue);
                         }
                     }
 
@@ -136,6 +136,8 @@ namespace AutomatedEventProposalManagement.Approver
            String venue = pendinggrid.CurrentRow.Cells[4].Value.ToString();
            String date_of_event = pendinggrid.CurrentRow.Cells[5].Value.ToString();
 
+           acceptform form = new acceptform(id,name_of_project,nature_of_project, venue, date_of_event, approver_type, fullname);
+           form.ShowDialog();
         }
     }
 }
