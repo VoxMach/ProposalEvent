@@ -13,8 +13,10 @@ using System.Windows.Forms;
 
 namespace AutomatedEventProposalManagement.Approver
 {
+
     public partial class acceptform : Form
     {
+        
         IFirebaseClient client;
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -22,18 +24,48 @@ namespace AutomatedEventProposalManagement.Approver
             BasePath = "https://event-proposal.firebaseio.com/"
         };
         String ID;
-        String approver;
+
+
+        String org_type;
+        String approvers;
         String fullname;
-        public acceptform(string id, string name_of_project, string nature_of_project, string venue, string date_of_event, string approver_type, string name)
+        public acceptform(string key,
+        string approver,
+        string approver_name,
+        string beneficiaries,
+        string committee_in_charge,
+        string date,
+        string date_of_event,
+        string description,
+        string id,
+        string incharge,
+        string name_approver,
+        string name_incharge,
+        string name_of_project,
+        string nature_of_project,
+        string org_adviser,
+        string org_adviser_status,
+        string org_dean,
+        string org_dean_status,
+        string org_name,
+        string org_president,
+        string org_president_status,
+        string org_type,
+        string status,
+        string time_from,
+        string time_to,
+        string venue,
+        string approver_type, string name, string organization_type)
         {
             InitializeComponent();
-            ID = id;
+            ID = key;
             nameofproject.Text = name_of_project;
             natureofproject.Text = nature_of_project;
             venuepending.Text = venue;
-            date.Text = date_of_event;
-            approver = approver_type;
+            pendingdate.Text = date_of_event;
+            approvers = approver_type;
             fullname = name;
+            org_type = organization_type;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -43,6 +75,7 @@ namespace AutomatedEventProposalManagement.Approver
 
         private void acceptform_Load(object sender, EventArgs e)
         {
+
             try
             {
                 client = new FireSharp.FirebaseClient(config);
@@ -64,20 +97,81 @@ namespace AutomatedEventProposalManagement.Approver
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (approver.Equals("Adviser"))
+            if (approvers.Equals("Adviser"))
             {
-                accept_delete accept = new accept_delete();
-                accept.org_adviser = fullname;
-                accept.org_adviser_status = "Accepted";
-                FirebaseResponse response = client.Update("Venue/VenueReservation/"+ID,accept);
+                
+                FirebaseResponse response = client.Get("Venue/VenueReservation/"+ ID);
 
-            }else if (approver.Equals("Organization President"))
-            {
+                pending pending = response.ResultAs<pending>();
 
-            }else if (approver.Equals(" Dean's Office"))
-            {
+
+                
+                pending.org_adviser = fullname;
+                pending.org_adviser_status = "Accepted";
+                
+
+
+                FirebaseResponse res = client.Set("Venue/VenueReservation/"+ID,pending);
+              MessageBox.Show("Accept Success");
 
             }
+            else if (approvers.Equals("Organization President"))
+            {
+                if (org_type.Equals("Campus-Wide"))
+                {
+                    FirebaseResponse response = client.Get("Venue/VenueReservation/" + ID);
+
+                    pending pending = response.ResultAs<pending>();
+
+
+                    pending.org_president = fullname;
+                    pending.org_president_status = "Accepted";
+                    pending.status = "Accepted";
+
+
+                    FirebaseResponse res = client.Set("Venue/VenueReservation/" + ID, pending);
+                    MessageBox.Show("Accept Success");
+                }
+                else
+                {
+                    FirebaseResponse response = client.Get("Venue/VenueReservation/" + ID);
+
+                    pending pending = response.ResultAs<pending>();
+
+
+
+                    pending.org_president = fullname;
+                    pending.org_president_status = "Accepted";
+
+
+
+                    FirebaseResponse res = client.Set("Venue/VenueReservation/" + ID, pending);
+                    MessageBox.Show("Accept Success");
+                }
+                
+
+            }
+            else if (approvers.Equals("Dean's Office"))
+            {
+                FirebaseResponse response = client.Get("Venue/VenueReservation/" + ID);
+
+                pending pending = response.ResultAs<pending>();
+
+
+
+                pending.org_dean = fullname;
+                pending.status = "Accepted";
+                pending.org_dean_status = "Accepted";
+
+
+
+                FirebaseResponse res = client.Set("Venue/VenueReservation/" + ID, pending);
+                MessageBox.Show("Accept Success");
+            }
+
+
+
+            
         }
     }
 }
