@@ -33,7 +33,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.date = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.pendingdate = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.venuepending = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.natureofproject = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.nameofproject = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -109,29 +109,29 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // date
+            // pendingdate
             // 
-            this.date.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.date.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.date.CausesValidation = false;
-            this.date.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.date.Cursor = System.Windows.Forms.Cursors.Default;
-            this.date.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.date.ForeColor = System.Drawing.Color.Black;
-            this.date.HintForeColor = System.Drawing.Color.Empty;
-            this.date.HintText = "Date of Event";
-            this.date.isPassword = false;
-            this.date.LineFocusedColor = System.Drawing.Color.Firebrick;
-            this.date.LineIdleColor = System.Drawing.Color.Firebrick;
-            this.date.LineMouseHoverColor = System.Drawing.Color.Firebrick;
-            this.date.LineThickness = 3;
-            this.date.Location = new System.Drawing.Point(74, 454);
-            this.date.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.date.MaxLength = 32767;
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(449, 40);
-            this.date.TabIndex = 14;
-            this.date.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.pendingdate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.pendingdate.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.pendingdate.CausesValidation = false;
+            this.pendingdate.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.pendingdate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pendingdate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.pendingdate.ForeColor = System.Drawing.Color.Black;
+            this.pendingdate.HintForeColor = System.Drawing.Color.Empty;
+            this.pendingdate.HintText = "Date of Event";
+            this.pendingdate.isPassword = false;
+            this.pendingdate.LineFocusedColor = System.Drawing.Color.Firebrick;
+            this.pendingdate.LineIdleColor = System.Drawing.Color.Firebrick;
+            this.pendingdate.LineMouseHoverColor = System.Drawing.Color.Firebrick;
+            this.pendingdate.LineThickness = 3;
+            this.pendingdate.Location = new System.Drawing.Point(74, 454);
+            this.pendingdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pendingdate.MaxLength = 32767;
+            this.pendingdate.Name = "pendingdate";
+            this.pendingdate.Size = new System.Drawing.Size(449, 40);
+            this.pendingdate.TabIndex = 14;
+            this.pendingdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // venuepending
             // 
@@ -250,7 +250,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.date);
+            this.Controls.Add(this.pendingdate);
             this.Controls.Add(this.venuepending);
             this.Controls.Add(this.natureofproject);
             this.Controls.Add(this.nameofproject);
@@ -275,7 +275,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox date;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox pendingdate;
         private Bunifu.Framework.UI.BunifuMaterialTextbox venuepending;
         private Bunifu.Framework.UI.BunifuMaterialTextbox natureofproject;
         private Bunifu.Framework.UI.BunifuMaterialTextbox nameofproject;

@@ -108,6 +108,12 @@
     <Compile Include="Approver\apphome.Designer.cs">
       <DependentUpon>apphome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Approver\Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Approver\Calendar.Designer.cs">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Approver\pending.cs" />
     <Compile Include="Approver\pendingApprover.cs">
       <SubType>Form</SubType>
@@ -383,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Approver\approver.resx">
       <DependentUpon>approver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Approver\Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Approver\pendingApprover.resx">
       <DependentUpon>pendingApprover.cs</DependentUpon>

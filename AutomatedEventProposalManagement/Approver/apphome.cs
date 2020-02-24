@@ -29,6 +29,7 @@ namespace AutomatedEventProposalManagement
             label3.Text = loginForm.s3;
             label4.Text = loginForm.s4;
             label5.Text = loginForm.s5;
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -54,6 +55,11 @@ namespace AutomatedEventProposalManagement
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
