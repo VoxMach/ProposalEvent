@@ -78,5 +78,32 @@ namespace AutomatedEventProposalManagement
             this.Close();
 
         }
+        public static string idor;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OAccept oa = new OAccept();
+             idor = label2.Text;
+            this.Hide();
+            oa.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OPend oa = new OPend();
+            idor = label2.Text;
+            this.Hide();
+            oa.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ORej oa = new ORej();
+            idor = label2.Text;
+            this.Hide();
+            oa.ShowDialog();
+            this.Close();
+        }
     }
 }

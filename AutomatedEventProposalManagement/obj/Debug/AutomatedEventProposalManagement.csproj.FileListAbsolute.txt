@@ -349,3 +349,8 @@ C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalMana
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.VenuePen.resources
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.myevents.resources
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.ProView.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.Accept.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.Approver.Calendar.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.SaoRej.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.SaoPen.resources
+C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.OAccept.resources

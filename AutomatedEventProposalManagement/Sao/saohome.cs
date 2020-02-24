@@ -90,5 +90,29 @@ namespace AutomatedEventProposalManagement
             si.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Accept acc = new Accept();
+            this.Hide();
+            acc.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaoPen acc = new SaoPen();
+            this.Hide();
+            acc.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SaoRej acc = new SaoRej();
+            this.Hide();
+            acc.ShowDialog();
+            this.Close();
+        }
     }
 }
