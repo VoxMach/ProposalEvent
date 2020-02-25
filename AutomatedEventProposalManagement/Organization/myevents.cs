@@ -58,13 +58,15 @@ namespace AutomatedEventProposalManagement
             fullan = home.names;
             idu = home.id;
 
-            FirebaseResponse response = client.Get("Venue/VenueReservation/");
-
-            Dictionary<string, VenueReservation> Dick = response.ResultAs<Dictionary<string, VenueReservation>>();
-            foreach (var find in Dick)
+            try
             {
-                string inc = find.Value.id;
-  
+                FirebaseResponse response = client.Get("Venue/VenueReservation/");
+
+                Dictionary<string, VenueReservation> Dick = response.ResultAs<Dictionary<string, VenueReservation>>();
+                foreach (var find in Dick)
+                {
+                    string inc = find.Value.id;
+
                     if (idu.Equals(inc))
                     {
                         dataGridView1.Update();
@@ -96,8 +98,13 @@ namespace AutomatedEventProposalManagement
                             find.Value.status
                             );
                     }
-                
 
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No Data to Show.");
             }
 
 
