@@ -224,12 +224,6 @@
       <DependentUpon>organization.cs</DependentUpon>
     </Compile>
     <Compile Include="class\orgregis.cs" />
-    <Compile Include="Organization\pending.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Organization\pending.Designer.cs">
-      <DependentUpon>pending.cs</DependentUpon>
-    </Compile>
     <Compile Include="org\homeOrgForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -501,9 +495,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Organization\organization.resx">
       <DependentUpon>organization.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Organization\pending.resx">
-      <DependentUpon>pending.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="org\homeOrgForm.resx">
       <DependentUpon>homeOrgForm.cs</DependentUpon>

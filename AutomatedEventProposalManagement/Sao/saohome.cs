@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutomatedEventProposalManagement.Approver;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -222,6 +223,12 @@ namespace AutomatedEventProposalManagement
             this.Hide();
             acc.ShowDialog();
             this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Calendar cal = new Calendar();
+            cal.Show();
         }
     }
 }

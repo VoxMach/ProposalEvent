@@ -79,6 +79,7 @@
             this.label2.Size = new System.Drawing.Size(173, 40);
             this.label2.TabIndex = 11;
             this.label2.Text = "Calendar";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -277,6 +278,7 @@
             this.label1.Size = new System.Drawing.Size(221, 40);
             this.label1.TabIndex = 22;
             this.label1.Text = "List of Events";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Calendar
             // 

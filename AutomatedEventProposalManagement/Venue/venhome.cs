@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutomatedEventProposalManagement.Approver;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -142,7 +143,7 @@ namespace AutomatedEventProposalManagement
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var select = MessageBox.Show("Are you Sure Want to LagOut?", "", MessageBoxButtons.OKCancel);
+            var select = MessageBox.Show("Are you Sure Want to Log-out?", "", MessageBoxButtons.OKCancel);
 
             if (select == DialogResult.OK)
             {
@@ -161,6 +162,12 @@ namespace AutomatedEventProposalManagement
             this.Hide();
             vrn.ShowDialog();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Calendar cal = new Calendar();
+            cal.Show();
         }
     }
 }

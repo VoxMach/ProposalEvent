@@ -326,7 +326,6 @@ C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\D
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.home.resources
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.orgalist.resources
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.organization.resources
-C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.Organization.pending.resources
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.homeOrg.resources
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.loginForm.resources
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.Properties.Resources.resources
