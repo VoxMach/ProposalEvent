@@ -8,6 +8,44 @@ namespace AutomatedEventProposalManagement.Approver
 {
     class pending
     {
+
+        public string noted_by_adviser
+        {
+            get;
+            set;
+        }
+
+        public string org_name
+        {
+            get;
+            set;
+        }
+
+        public string org_type
+        {
+            get;
+            set;
+        }
+
+        public string prepared_by
+        {
+            get;
+            set;
+        }
+
+        public string recommending_approval
+        {
+            get;
+            set;
+        }
+
+
+
+        public string noted_by_org_president
+        {
+            get;
+            set;
+        }
         public string approver
         {
             get;
@@ -109,12 +147,7 @@ namespace AutomatedEventProposalManagement.Approver
             set;
         }
 
-        public string org_name
-        {
-            get;
-            set;
-        }
-
+      
         public string org_president
         {
             get;
@@ -128,11 +161,6 @@ namespace AutomatedEventProposalManagement.Approver
 
         }
 
-        public string org_type
-        {
-            get;
-            set;
-        }
 
         public string status
         {

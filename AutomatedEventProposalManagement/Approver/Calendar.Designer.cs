@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.calendarDataGrid = new System.Windows.Forms.DataGridView();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,15 +50,7 @@
             this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendarDataGrid)).BeginInit();
             this.SuspendLayout();
@@ -67,12 +58,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.monthCalendar1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1350, 86);
+            this.panel2.Size = new System.Drawing.Size(1350, 207);
             this.panel2.TabIndex = 19;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -81,7 +74,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(12, 20);
+            this.label2.Location = new System.Drawing.Point(1039, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 40);
             this.label2.TabIndex = 11;
@@ -93,7 +86,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1290, 15);
+            this.label3.Location = new System.Drawing.Point(1303, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 47);
             this.label3.TabIndex = 10;
@@ -108,7 +101,6 @@
             this.calendarDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.calendarDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.calendarDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column13,
             this.Column1,
             this.Column2,
             this.Column3,
@@ -125,39 +117,33 @@
             this.Column15,
             this.a,
             this.Column24,
-            this.Column25,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
-            this.Column23});
+            this.Column25});
             this.calendarDataGrid.GridColor = System.Drawing.Color.White;
-            this.calendarDataGrid.Location = new System.Drawing.Point(307, 86);
+            this.calendarDataGrid.Location = new System.Drawing.Point(0, 199);
             this.calendarDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.calendarDataGrid.Name = "calendarDataGrid";
             this.calendarDataGrid.ReadOnly = true;
             this.calendarDataGrid.RowHeadersWidth = 62;
             this.calendarDataGrid.RowTemplate.Height = 28;
-            this.calendarDataGrid.Size = new System.Drawing.Size(1042, 587);
+            this.calendarDataGrid.Size = new System.Drawing.Size(1349, 481);
             this.calendarDataGrid.TabIndex = 20;
             this.calendarDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.calendarGrid_CellContentClick);
             // 
-            // Column13
+            // monthCalendar1
             // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column13.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Column13.HeaderText = "ID";
-            this.Column13.MinimumWidth = 8;
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 150;
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(4, 1);
+            this.monthCalendar1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 0);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.monthCalendar1.RightToLeftLayout = true;
+            this.monthCalendar1.TabIndex = 21;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Approver";
+            this.Column1.HeaderText = "Beneficiaries";
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -165,7 +151,7 @@
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Approver Name";
+            this.Column2.HeaderText = "Comitte Incharge";
             this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -173,7 +159,7 @@
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Beneficiaries";
+            this.Column3.HeaderText = "Date of Request";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -181,7 +167,7 @@
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Committee In Charge";
+            this.Column4.HeaderText = "Date of Event";
             this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -189,7 +175,7 @@
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Date of Request";
+            this.Column5.HeaderText = "Description";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -197,7 +183,7 @@
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Date of Event";
+            this.Column6.HeaderText = "ID";
             this.Column6.MinimumWidth = 8;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -205,7 +191,7 @@
             // 
             // Column7
             // 
-            this.Column7.HeaderText = "Description";
+            this.Column7.HeaderText = "Name of Project";
             this.Column7.MinimumWidth = 8;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -213,7 +199,7 @@
             // 
             // Column8
             // 
-            this.Column8.HeaderText = "Student ID";
+            this.Column8.HeaderText = "Nature of Project";
             this.Column8.MinimumWidth = 8;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -221,7 +207,7 @@
             // 
             // Column9
             // 
-            this.Column9.HeaderText = "Incharge";
+            this.Column9.HeaderText = "Noted By Adviser";
             this.Column9.MinimumWidth = 8;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
@@ -229,7 +215,7 @@
             // 
             // Column10
             // 
-            this.Column10.HeaderText = "Name of Approver";
+            this.Column10.HeaderText = "Organization Name";
             this.Column10.MinimumWidth = 8;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
@@ -237,7 +223,7 @@
             // 
             // Column11
             // 
-            this.Column11.HeaderText = "Name of Incharge";
+            this.Column11.HeaderText = "Organization Type";
             this.Column11.MinimumWidth = 8;
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
@@ -245,7 +231,7 @@
             // 
             // Column12
             // 
-            this.Column12.HeaderText = "Name of Project";
+            this.Column12.HeaderText = "Prepared By";
             this.Column12.MinimumWidth = 8;
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
@@ -253,92 +239,44 @@
             // 
             // Column14
             // 
-            this.Column14.HeaderText = "Nature of Project";
+            this.Column14.HeaderText = "Recommending Approval";
             this.Column14.Name = "Column14";
             this.Column14.ReadOnly = true;
             // 
             // Column15
             // 
-            this.Column15.HeaderText = "Organization Adviser";
+            this.Column15.HeaderText = "Status";
             this.Column15.Name = "Column15";
             this.Column15.ReadOnly = true;
             // 
             // a
             // 
-            this.a.HeaderText = "Adviser Status";
+            this.a.HeaderText = "Time From";
             this.a.Name = "a";
             this.a.ReadOnly = true;
             // 
             // Column24
             // 
-            this.Column24.HeaderText = "Organization Dean";
+            this.Column24.HeaderText = "Time to";
             this.Column24.Name = "Column24";
             this.Column24.ReadOnly = true;
             // 
             // Column25
             // 
-            this.Column25.HeaderText = "Dean Status";
+            this.Column25.HeaderText = "Venue";
             this.Column25.Name = "Column25";
             this.Column25.ReadOnly = true;
             // 
-            // Column16
+            // label1
             // 
-            this.Column16.HeaderText = "Organization Name";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Organization President";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "President Status";
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "Organization Type";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "Proposal Status";
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Time From";
-            this.Column21.Name = "Column21";
-            this.Column21.ReadOnly = true;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "Time To";
-            this.Column22.Name = "Column22";
-            this.Column22.ReadOnly = true;
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "Venue";
-            this.Column23.Name = "Column23";
-            this.Column23.ReadOnly = true;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 3);
-            this.monthCalendar1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 86);
-            this.monthCalendar1.MaximumSize = new System.Drawing.Size(528, 587);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 21;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(1017, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 40);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "List of Events";
             // 
             // Calendar
             // 
@@ -347,7 +285,6 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1350, 676);
             this.ControlBox = false;
-            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.calendarDataGrid);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -369,7 +306,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView calendarDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -387,14 +324,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn a;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label1;
     }
 }

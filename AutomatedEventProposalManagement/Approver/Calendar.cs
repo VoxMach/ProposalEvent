@@ -39,9 +39,25 @@ namespace AutomatedEventProposalManagement.Approver
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            MessageBox.Show(monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd"));
-            string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
            
+            string date = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
+            FirebaseResponse pen = client.Get("SAO/Proposal/");
+            Dictionary<string, pending> pending = pen.ResultAs<Dictionary<string, pending>>();
+            foreach (var find in pending)
+            {
+                string isDate = find.Value.date_of_event;
+                if (isDate.Equals(monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd")))
+                {
+
+                    calendarDataGrid.Rows.Add( find.Value.beneficiaries, find.Value.committee_in_charge, find.Value.date,
+                                find.Value.date_of_event, find.Value.description, find.Value.id,  find.Value.name_of_project,
+                                find.Value.nature_of_project, find.Value.noted_by_adviser, find.Value.noted_by_org_president,  find.Value.org_name, find.Value.org_type,
+                                find.Value.prepared_by,find.Value.status, find.Value.time_from, find.Value.time_to, find.Value.venue);
+
+                }
+               
+
+            }
         }
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
@@ -69,17 +85,7 @@ namespace AutomatedEventProposalManagement.Approver
             {
                 MessageBox.Show("No Internet or Connection Problem");
             }
-            FirebaseResponse pen = client.Get("SAO/Proposal/");
-            Dictionary<string, pending> pending = pen.ResultAs<Dictionary<string, pending>>();
-            foreach (var find in pending)
-            {
-                string isDate = find.Value.date_of_event;
-                if (isDate.Equals("2020-02-24"))
-                {
-                    calendarDataGrid.Rows.Add(find.Value.date_of_event);
-                }
-
-            }
+            
         }
 
         private void calendarGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
