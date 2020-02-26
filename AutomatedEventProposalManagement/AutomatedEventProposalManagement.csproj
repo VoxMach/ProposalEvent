@@ -58,6 +58,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acclist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acclist.Designer.cs">
+      <DependentUpon>acclist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Organization\OAccept.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +421,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="acclist.resx">
+      <DependentUpon>acclist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Organization\OAccept.resx">
       <DependentUpon>OAccept.cs</DependentUpon>
     </EmbeddedResource>

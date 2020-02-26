@@ -230,5 +230,13 @@ namespace AutomatedEventProposalManagement
             Calendar cal = new Calendar();
             cal.Show();
         }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            acclist acc = new acclist();
+            this.Hide();
+            acc.ShowDialog();
+            this.Close();
+        }
     }
 }
