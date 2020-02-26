@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FireSharp.Config;
@@ -159,275 +160,282 @@ namespace AutomatedEventProposalManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
+          
+                string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
 
-            string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
-            
-            if (sel1.Equals("College of Arts Science"))
-            {
-                string cas = "CAS";
-                if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
+                if (sel1.Equals("College of Arts Science"))
                 {
-                    MessageBox.Show("Please Specify all blank.");
+                    string cas = "CAS";
+                    if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
+                    {
+                        MessageBox.Show("Please Specify all blank.");
+                    }
+
+                    else
+                    {
+                        string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
+                        orgregis c1 = new orgregis()
+                        {
+
+                            firstname = bunifuMaterialTextbox3.Text,
+                            id = bunifuMaterialTextbox1.Text,
+                            lastname = bunifuMaterialTextbox5.Text,
+                            middlename = bunifuMaterialTextbox4.Text,
+                            org_name = sel2,
+                            org_type = cas,
+                            password = bunifuMaterialTextbox2.Text
+                        };
+
+                        var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+
+                        MessageBox.Show("Register Success.");
+                        bunifuMaterialTextbox1.Text = string.Empty;
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                        bunifuMaterialTextbox3.Text = string.Empty;
+                        bunifuMaterialTextbox4.Text = string.Empty;
+                        bunifuMaterialTextbox5.Text = string.Empty;
+                        comboBox2.Text = string.Empty;
+                        comboBox1.Text = string.Empty;
+                    }
+
                 }
-
-                else
+                else if (sel1.Equals("College of Business Administration"))
                 {
-                    string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
-                    orgregis c1 = new orgregis()
+                    string cba = "CBA";
+                    if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
                     {
 
-                        firstname = bunifuMaterialTextbox3.Text,
-                        id = bunifuMaterialTextbox1.Text,
-                        lastname = bunifuMaterialTextbox5.Text,
-                        middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel2,
-                        org_type = cas,
-                        password = bunifuMaterialTextbox2.Text
-                    };
+                        MessageBox.Show("Please Specify all blank.");
 
-                    var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+                    }
 
-                    MessageBox.Show("Register Success.");
-                    bunifuMaterialTextbox1.Text = string.Empty;
-                    bunifuMaterialTextbox2.Text = string.Empty;
-                    bunifuMaterialTextbox3.Text = string.Empty;
-                    bunifuMaterialTextbox4.Text = string.Empty;
-                    bunifuMaterialTextbox5.Text = string.Empty;
-                    comboBox2.Text = string.Empty;
-                    comboBox1.Text = string.Empty;
-                }
-
-            }
-            else if (sel1.Equals("College of Business Administration"))
-            {
-                string cba = "CBA";
-                if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
-                {
-
-                    MessageBox.Show("Please Specify all blank.");
-
-                }
-
-                else
-                {
-
-
-                    string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
-
-
-
-
-
-                    orgregis c1 = new orgregis()
+                    else
                     {
 
-                        firstname = bunifuMaterialTextbox3.Text,
-                        id = bunifuMaterialTextbox1.Text,
-                        lastname = bunifuMaterialTextbox5.Text,
-                        middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel2,
-                        org_type = cba,
-                        password = bunifuMaterialTextbox2.Text
-                    };
 
-                    var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+                        string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
 
-                    MessageBox.Show("Register Success.");
-                    bunifuMaterialTextbox1.Text = string.Empty;
-                    bunifuMaterialTextbox2.Text = string.Empty;
-                    bunifuMaterialTextbox3.Text = string.Empty;
-                    bunifuMaterialTextbox4.Text = string.Empty;
-                    bunifuMaterialTextbox5.Text = string.Empty;
-                    comboBox2.Text = string.Empty;
-                    comboBox1.Text = string.Empty;
-                }
 
-            }
-            else if (sel1.Equals("College of Fine Arts, Architecture and Design"))
-            {
-                string cfad = "CFAD";
 
-                if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
-                {
 
-                    MessageBox.Show("Please Specify all blank.");
+
+                        orgregis c1 = new orgregis()
+                        {
+
+                            firstname = bunifuMaterialTextbox3.Text,
+                            id = bunifuMaterialTextbox1.Text,
+                            lastname = bunifuMaterialTextbox5.Text,
+                            middlename = bunifuMaterialTextbox4.Text,
+                            org_name = sel2,
+                            org_type = cba,
+                            password = bunifuMaterialTextbox2.Text
+                        };
+
+                        var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+
+                        MessageBox.Show("Register Success.");
+                        bunifuMaterialTextbox1.Text = string.Empty;
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                        bunifuMaterialTextbox3.Text = string.Empty;
+                        bunifuMaterialTextbox4.Text = string.Empty;
+                        bunifuMaterialTextbox5.Text = string.Empty;
+                        comboBox2.Text = string.Empty;
+                        comboBox1.Text = string.Empty;
+                    }
 
                 }
-
-                else
+                else if (sel1.Equals("College of Fine Arts, Architecture and Design"))
                 {
+                    string cfad = "CFAD";
 
-
-                    string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
-
-
-
-
-
-                    orgregis c1 = new orgregis()
+                    if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
                     {
 
-                        firstname = bunifuMaterialTextbox3.Text,
-                        id = bunifuMaterialTextbox1.Text,
-                        lastname = bunifuMaterialTextbox5.Text,
-                        middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel2,
-                        org_type = cfad,
-                        password = bunifuMaterialTextbox2.Text
-                    };
+                        MessageBox.Show("Please Specify all blank.");
 
-                    var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+                    }
 
-                    MessageBox.Show("Register Success.");
-                    bunifuMaterialTextbox1.Text = string.Empty;
-                    bunifuMaterialTextbox2.Text = string.Empty;
-                    bunifuMaterialTextbox3.Text = string.Empty;
-                    bunifuMaterialTextbox4.Text = string.Empty;
-                    bunifuMaterialTextbox5.Text = string.Empty;
-                    comboBox2.Text = string.Empty;
-                    comboBox1.Text = string.Empty;
-                }
-            }
-            else if (sel1.Equals("College of Engeneering"))
-            {
-                string coe = "COE";
-                if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
-                {
-
-                    MessageBox.Show("Please Specify all blank.");
-
-                }
-
-                else
-                {
-
-
-                    string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
-                    orgregis c1 = new orgregis()
+                    else
                     {
 
-                        firstname = bunifuMaterialTextbox3.Text,
-                        id = bunifuMaterialTextbox1.Text,
-                        lastname = bunifuMaterialTextbox5.Text,
-                        middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel2,
-                        org_type = coe,
-                        password = bunifuMaterialTextbox2.Text
-                    };
 
-                    var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+                        string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
 
-                    MessageBox.Show("Register Success.");
-                    bunifuMaterialTextbox1.Text = string.Empty;
-                    bunifuMaterialTextbox2.Text = string.Empty;
-                    bunifuMaterialTextbox3.Text = string.Empty;
-                    bunifuMaterialTextbox4.Text = string.Empty;
-                    bunifuMaterialTextbox5.Text = string.Empty;
-                    comboBox2.Text = string.Empty;
-                    comboBox1.Text = string.Empty;
+
+
+
+
+                        orgregis c1 = new orgregis()
+                        {
+
+                            firstname = bunifuMaterialTextbox3.Text,
+                            id = bunifuMaterialTextbox1.Text,
+                            lastname = bunifuMaterialTextbox5.Text,
+                            middlename = bunifuMaterialTextbox4.Text,
+                            org_name = sel2,
+                            org_type = cfad,
+                            password = bunifuMaterialTextbox2.Text
+                        };
+
+                        var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+
+                        MessageBox.Show("Register Success.");
+                        bunifuMaterialTextbox1.Text = string.Empty;
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                        bunifuMaterialTextbox3.Text = string.Empty;
+                        bunifuMaterialTextbox4.Text = string.Empty;
+                        bunifuMaterialTextbox5.Text = string.Empty;
+                        comboBox2.Text = string.Empty;
+                        comboBox1.Text = string.Empty;
+                    }
                 }
-            }
-            else if (sel1.Equals("Campus-Wide"))
-            {
-                string Campus = "Campus-Wide";
-                if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
+                else if (sel1.Equals("College of Engeneering"))
                 {
-
-                    MessageBox.Show("Please Specify all blank.");
-
-                }
-
-                else
-                {
-
-
-                    string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
-
-
-
-
-
-                    orgregis c1 = new orgregis()
+                    string coe = "COE";
+                    if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
                     {
 
-                        firstname = bunifuMaterialTextbox3.Text,
-                        id = bunifuMaterialTextbox1.Text,
-                        lastname = bunifuMaterialTextbox5.Text,
-                        middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel2,
-                        org_type = Campus,
-                        password = bunifuMaterialTextbox2.Text
-                    };
+                        MessageBox.Show("Please Specify all blank.");
 
-                    var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+                    }
 
-                    MessageBox.Show("Register Success.");
-                    bunifuMaterialTextbox1.Text = string.Empty;
-                    bunifuMaterialTextbox2.Text = string.Empty;
-                    bunifuMaterialTextbox3.Text = string.Empty;
-                    bunifuMaterialTextbox4.Text = string.Empty;
-                    bunifuMaterialTextbox5.Text = string.Empty;
-                    comboBox2.Text = string.Empty;
-                    comboBox1.Text = string.Empty;
-                }
-
-            }
-            else if (sel1.Equals("Student Council"))
-            {
-                string sc = "Student Council";
-                if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
-             || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
-                {
-
-                    MessageBox.Show("Please Specify all blank.");
-
-                }
-
-                else
-                {
-
-
-                    string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
-
-
-
-
-
-                    orgregis c1 = new orgregis()
+                    else
                     {
 
-                        firstname = bunifuMaterialTextbox3.Text,
-                        id = bunifuMaterialTextbox1.Text,
-                        lastname = bunifuMaterialTextbox5.Text,
-                        middlename = bunifuMaterialTextbox4.Text,
-                        org_name = sel2,
-                        org_type = sc,
-                        password = bunifuMaterialTextbox2.Text
-                    };
 
-                    var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+                        string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
 
-                    MessageBox.Show("Register Success.");
-                    bunifuMaterialTextbox1.Text = string.Empty;
-                    bunifuMaterialTextbox2.Text = string.Empty;
-                    bunifuMaterialTextbox3.Text = string.Empty;
-                    bunifuMaterialTextbox4.Text = string.Empty;
-                    bunifuMaterialTextbox5.Text = string.Empty;
-                    comboBox2.Text = string.Empty;
-                    comboBox1.Text = string.Empty;
+
+
+
+
+                        orgregis c1 = new orgregis()
+                        {
+
+                            firstname = bunifuMaterialTextbox3.Text,
+                            id = bunifuMaterialTextbox1.Text,
+                            lastname = bunifuMaterialTextbox5.Text,
+                            middlename = bunifuMaterialTextbox4.Text,
+                            org_name = sel2,
+                            org_type = coe,
+                            password = bunifuMaterialTextbox2.Text
+                        };
+
+                        var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+
+                        MessageBox.Show("Register Success.");
+                        bunifuMaterialTextbox1.Text = string.Empty;
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                        bunifuMaterialTextbox3.Text = string.Empty;
+                        bunifuMaterialTextbox4.Text = string.Empty;
+                        bunifuMaterialTextbox5.Text = string.Empty;
+                        comboBox2.Text = string.Empty;
+                        comboBox1.Text = string.Empty;
+                    }
                 }
+                else if (sel1.Equals("Campus-Wide"))
+                {
+                    string Campus = "Campus-Wide";
+                    if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
+                    {
+
+                        MessageBox.Show("Please Specify all blank.");
+
+                    }
+
+                    else
+                    {
+
+
+                        string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
+
+
+
+
+
+                        orgregis c1 = new orgregis()
+                        {
+
+                            firstname = bunifuMaterialTextbox3.Text,
+                            id = bunifuMaterialTextbox1.Text,
+                            lastname = bunifuMaterialTextbox5.Text,
+                            middlename = bunifuMaterialTextbox4.Text,
+                            org_name = sel2,
+                            org_type = Campus,
+                            password = bunifuMaterialTextbox2.Text
+                        };
+
+                        var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+
+                        MessageBox.Show("Register Success.");
+                        bunifuMaterialTextbox1.Text = string.Empty;
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                        bunifuMaterialTextbox3.Text = string.Empty;
+                        bunifuMaterialTextbox4.Text = string.Empty;
+                        bunifuMaterialTextbox5.Text = string.Empty;
+                        comboBox2.Text = string.Empty;
+                        comboBox1.Text = string.Empty;
+                    }
+
+                }
+                else if (sel1.Equals("Student Council"))
+                {
+                    string sc = "Student Council";
+                    if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
+                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
+                    {
+
+                        MessageBox.Show("Please Specify all blank.");
+
+                    }
+
+                    else
+                    {
+
+
+                        string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
+
+
+
+
+
+                        orgregis c1 = new orgregis()
+                        {
+
+                            firstname = bunifuMaterialTextbox3.Text,
+                            id = bunifuMaterialTextbox1.Text,
+                            lastname = bunifuMaterialTextbox5.Text,
+                            middlename = bunifuMaterialTextbox4.Text,
+                            org_name = sel2,
+                            org_type = sc,
+                            password = bunifuMaterialTextbox2.Text
+                        };
+
+                        var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+
+                        MessageBox.Show("Register Success.");
+                        bunifuMaterialTextbox1.Text = string.Empty;
+                        bunifuMaterialTextbox2.Text = string.Empty;
+                        bunifuMaterialTextbox3.Text = string.Empty;
+                        bunifuMaterialTextbox4.Text = string.Empty;
+                        bunifuMaterialTextbox5.Text = string.Empty;
+                        comboBox2.Text = string.Empty;
+                        comboBox1.Text = string.Empty;
+                    }
+                
             }
+           
         
 
         }
@@ -479,6 +487,11 @@ namespace AutomatedEventProposalManagement
                 }
 
             }
+        }
+
+        private void bunifuMaterialTextbox5_OnValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
