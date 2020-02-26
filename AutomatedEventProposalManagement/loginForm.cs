@@ -45,6 +45,9 @@ namespace AutomatedEventProposalManagement
 
         private void loginForm_Load(object sender, System.EventArgs e)
         {
+
+            
+
             try
             {
                 client = new FireSharp.FirebaseClient(config);
@@ -71,13 +74,8 @@ namespace AutomatedEventProposalManagement
 
             textBox1.Enabled = false;
             textBox2.Enabled = false;
-
-
-           
-
-            
-
         }
+      
 
         private void bunifuCustomLabel1_Click(object sender, System.EventArgs e)
         {
@@ -403,6 +401,11 @@ namespace AutomatedEventProposalManagement
             {
                 textBox2.UseSystemPasswordChar = true;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

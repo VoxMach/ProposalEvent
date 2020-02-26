@@ -195,6 +195,7 @@
             this.textBox1.Size = new System.Drawing.Size(505, 57);
             this.textBox1.TabIndex = 10;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 

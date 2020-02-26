@@ -311,11 +311,6 @@ namespace AutomatedEventProposalManagement
 
 
                     string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
-
-
-
-
-
                     orgregis c1 = new orgregis()
                     {
 
