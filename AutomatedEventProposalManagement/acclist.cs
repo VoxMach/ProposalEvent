@@ -69,7 +69,15 @@ namespace AutomatedEventProposalManagement
             {
                 dataGridView1.DataSource = null;
                 dataGridView1.Rows.Clear();
-                approver();
+                dataGridView1.ColumnCount = 7;
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Firstname";
+                dataGridView1.Columns[2].HeaderText = "Middlename";
+                dataGridView1.Columns[3].HeaderText = "Lastname";
+                dataGridView1.Columns[4].HeaderText = "Organization Name";
+                dataGridView1.Columns[5].HeaderText = "Organization Type";
+                dataGridView1.Columns[6].HeaderText = "Organization";
+               
             }else if (sel1 == "Organization")
             {
 
@@ -82,21 +90,14 @@ namespace AutomatedEventProposalManagement
 
         public void approver()
         {
-            FirebaseResponse response = client.Get("Users/Approver");
+            FirebaseResponse response = client.Get("Users/Approver/");
             Dictionary<string, Appregis> dic = response.ResultAs<Dictionary<string,Appregis>>();
             foreach (var get in dic)
             {
 
-                dataGridView1.ColumnCount = 7;
-                dataGridView1.Columns[0].Name = "ID";
-                dataGridView1.Columns[1].Name = "Firstname";
-                dataGridView1.Columns[2].Name = "Middlename";
-                dataGridView1.Columns[3].Name = "Lastname";
-                dataGridView1.Columns[4].Name = "Organization Name";
-                dataGridView1.Columns[5].Name = "Organization Type";
-                dataGridView1.Columns[6].Name = "Organization";
+                
+
                 dataGridView1.Rows.Add(
-                    
                     get.Value.id,
                     get.Value.firstname,
                     get.Value.middlename,
@@ -104,15 +105,8 @@ namespace AutomatedEventProposalManagement
                     get.Value.org_name,
                     get.Value.org_type,
                     get.Value.organization_type
-
-
                     );
             }
-
-
-
-
-
         }
 
     }
