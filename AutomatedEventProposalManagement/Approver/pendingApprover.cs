@@ -134,16 +134,23 @@ namespace AutomatedEventProposalManagement.Approver
 
         private void pendinggrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string key = pendinggrid.CurrentRow.Cells[0].Value.ToString();
- 
-            string date_of_event = pendinggrid.CurrentRow.Cells[6].Value.ToString();
-            string name_of_project = pendinggrid.CurrentRow.Cells[12].Value.ToString();
-            string nature_of_project = pendinggrid.CurrentRow.Cells[13].Value.ToString();
-        
-            string venue = pendinggrid.CurrentRow.Cells[25].Value.ToString();
+           if(pendinggrid.Rows.Count == 0)
+            {
+                MessageBox.Show("No Pending");
+            }
+            else
+            {
+                string key = pendinggrid.CurrentRow.Cells[0].Value.ToString();
 
-            acceptform form = new acceptform(key, date_of_event,name_of_project,nature_of_project,venue, org_type, approver_type, fullname);
-            form.ShowDialog();
+                string date_of_event = pendinggrid.CurrentRow.Cells[6].Value.ToString();
+                string name_of_project = pendinggrid.CurrentRow.Cells[12].Value.ToString();
+                string nature_of_project = pendinggrid.CurrentRow.Cells[13].Value.ToString();
+
+                string venue = pendinggrid.CurrentRow.Cells[25].Value.ToString();
+
+                acceptform form = new acceptform(key, date_of_event, name_of_project, nature_of_project, venue, org_type, approver_type, fullname);
+                form.ShowDialog();
+            }
         }
     }
 }
