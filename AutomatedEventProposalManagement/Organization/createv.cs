@@ -157,8 +157,13 @@ namespace AutomatedEventProposalManagement
             string timef = dateTimePicker1.Text;
             string timeU = dateTimePicker2.Text;
             string dateev = dateTimePicker3.Text;
+            if (string.IsNullOrEmpty(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(bunifuMaterialTextbox7.Text) ) {
 
-            if (home.orgtype.Equals("Campus-Wide"))
+                MessageBox.Show("Please Specify All Data.");
+            
+          
+            }
+            else if (home.orgtype.Equals("Campus-Wide"))
             {
                 VenueReservation vr = new VenueReservation()
                 {
