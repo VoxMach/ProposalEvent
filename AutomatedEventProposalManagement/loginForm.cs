@@ -69,9 +69,13 @@ namespace AutomatedEventProposalManagement
             comboBox1.Items.Add("Venue");
             comboBox1.Items.Add("Venue Approvers");
 
-            bunifuMaterialTextbox1.Enabled = false;
-            bunifuMaterialTextbox2.Enabled = false;
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
 
+
+           
+
+            
 
         }
 
@@ -83,15 +87,19 @@ namespace AutomatedEventProposalManagement
         private void button1_Click_1(object sender, System.EventArgs e)
         {
             string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
-            if (sel1.Equals("Approver"))
+            if(string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)){
+
+                MessageBox.Show("Please Put Username or Password");
+
+            }else if (sel1.Equals("Approver"))
             {
                 try
                 {
-                    FirebaseResponse resp = client.Get("User/Approver/" + bunifuMaterialTextbox1.Text);
+                    FirebaseResponse resp = client.Get("User/Approver/" + textBox1.Text);
 
                     Class1 cl = resp.ResultAs<Class1>();
 
-                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    if (textBox2.Text == resp.ResultAs<apu>().password)
                     {
                         s1 = cl.firstname;
                         s2 = cl.id;
@@ -112,7 +120,7 @@ namespace AutomatedEventProposalManagement
                     else
                     {
                         MessageBox.Show("Wrong Credentials");
-                        bunifuMaterialTextbox2.Text = string.Empty;
+                        textBox2.Text = string.Empty;
                     }
                 }
                 catch (Exception ex)
@@ -126,10 +134,10 @@ namespace AutomatedEventProposalManagement
 
                 try
                 {
-                    FirebaseResponse resp = client.Get("User/Organization/" + bunifuMaterialTextbox1.Text);
+                    FirebaseResponse resp = client.Get("User/Organization/" + textBox1.Text);
                     orgregis cl = resp.ResultAs<orgregis>();
 
-                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    if (textBox2.Text == resp.ResultAs<apu>().password)
                     {
 
                         s1 = cl.firstname;
@@ -147,7 +155,7 @@ namespace AutomatedEventProposalManagement
                     else
                     {
                         MessageBox.Show("Wrong Credentials");
-                        bunifuMaterialTextbox2.Text = string.Empty;
+                        textBox2.Text = string.Empty;
                     }
                 }
                 catch (Exception ex)
@@ -162,9 +170,9 @@ namespace AutomatedEventProposalManagement
                 try
                 {
 
-                    FirebaseResponse resp = client.Get("User/Sao/" + bunifuMaterialTextbox1.Text);
+                    FirebaseResponse resp = client.Get("User/Sao/" + textBox1.Text);
                     saoregis cl = resp.ResultAs<saoregis>();
-                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    if (textBox2.Text == resp.ResultAs<apu>().password)
                     {
 
                         s1 = cl.firstname;
@@ -191,9 +199,9 @@ namespace AutomatedEventProposalManagement
             {
                 try
                 {
-                    FirebaseResponse resp = client.Get("User/Venue/" + bunifuMaterialTextbox1.Text);
+                    FirebaseResponse resp = client.Get("User/Venue/" + textBox1.Text);
                     venregis cl = resp.ResultAs<venregis>();
-                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    if (textBox1.Text == resp.ResultAs<apu>().password)
                     {
 
                         s1 = cl.firstname;
@@ -210,7 +218,7 @@ namespace AutomatedEventProposalManagement
                     else
                     {
                         MessageBox.Show("Wrong Credentials");
-                        bunifuMaterialTextbox2.Text = string.Empty;
+                        textBox2.Text = string.Empty;
                     }
                 }
                 catch (Exception ex)
@@ -230,7 +238,7 @@ namespace AutomatedEventProposalManagement
                     VenAppro cl = resp.ResultAs<VenAppro>();
                     VenAppro cl1 = resp1.ResultAs<VenAppro>();
                     VenAppro cl2 = resp2.ResultAs<VenAppro>();
-                    if (bunifuMaterialTextbox2.Text == resp.ResultAs<apu>().password)
+                    if (textBox2.Text == resp.ResultAs<apu>().password)
                     {
 
                         s1 = cl.firstname;
@@ -242,7 +250,7 @@ namespace AutomatedEventProposalManagement
                         this.Hide();
                         h.ShowDialog();
                         this.Close();
-                    } else if (bunifuMaterialTextbox2.Text == resp1.ResultAs<apu>().password)
+                    } else if (textBox2.Text == resp1.ResultAs<apu>().password)
                     {
                         s1 = cl1.firstname;
                         s2 = cl1.id;
@@ -253,7 +261,7 @@ namespace AutomatedEventProposalManagement
                         this.Hide();
                         h.ShowDialog();
                         this.Close();
-                    } else if (bunifuMaterialTextbox2.Text == resp2.ResultAs<apu>().password)
+                    } else if (textBox2.Text == resp2.ResultAs<apu>().password)
                     {
                         s1 = cl2.firstname;
                         s2 = cl2.id;
@@ -268,7 +276,7 @@ namespace AutomatedEventProposalManagement
                     else
                     {
                         MessageBox.Show("Wrong Credentials");
-                        bunifuMaterialTextbox2.Text = string.Empty;
+                        textBox2.Text = string.Empty;
                     }
 
 
@@ -338,30 +346,29 @@ namespace AutomatedEventProposalManagement
             string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
             if (sel1.Equals("Approver"))
             {
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
 
             }
             else if (sel1.Equals("Organization"))
             {
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
-
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
             }
             else if (sel1.Equals("Student Affairs Office"))
             {
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
             }
             else if (sel1.Equals("Venue"))
             {
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
             }
             else if (sel1.Equals("Venue Approvers"))
             {
-                bunifuMaterialTextbox1.Enabled = true;
-                bunifuMaterialTextbox2.Enabled = true;
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
 
             }
         }
@@ -369,6 +376,33 @@ namespace AutomatedEventProposalManagement
         private void label4_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuMaterialTextbox2_OnValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuMaterialTextbox1_OnValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                textBox2.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBox2.UseSystemPasswordChar = true;
+            }
         }
     }
 }
