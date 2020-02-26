@@ -78,12 +78,12 @@ namespace AutomatedEventProposalManagement
         {
             
 
-            if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
-               || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
-               || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text) || string.IsNullOrEmpty(comboBox3.Text))
+            if (string.IsNullOrEmpty(bunifuMaterialTextbox1.Text) || string.IsNullOrEmpty(bunifuMaterialTextbox2.Text)
+               || string.IsNullOrEmpty(bunifuMaterialTextbox3.Text) || string.IsNullOrEmpty(bunifuMaterialTextbox4.Text)
+               || string.IsNullOrEmpty(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text) || string.IsNullOrEmpty(comboBox3.Text))
             {
 
-                MessageBox.Show("Please Specify all blank or selected Items.");
+                MessageBox.Show("Please Specify all Blanks.");
 
             }
             else
