@@ -167,7 +167,7 @@ namespace AutomatedEventProposalManagement
                  || string.IsNullOrEmpty(bunifuMaterialTextbox3.Text) || string.IsNullOrEmpty(bunifuMaterialTextbox4.Text)
                  || string.IsNullOrEmpty(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text)) {
 
-                MessageBox.Show("Please Specify all Blanks.");
+                MessageBox.Show("Please Specify all Blanks Please Refrain Leaving Blanks.");
             }
            
             else if (sel1.Equals("College of Arts Science"))
