@@ -58,6 +58,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomNotif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomNotif.Designer.cs">
+      <DependentUpon>CustomNotif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaoAcccs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaoAcccs.Designer.cs">
+      <DependentUpon>SaoAcccs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sao\acclist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -422,6 +434,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CustomNotif.resx">
+      <DependentUpon>CustomNotif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaoAcccs.resx">
+      <DependentUpon>SaoAcccs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sao\acclist.resx">
       <DependentUpon>acclist.cs</DependentUpon>
     </EmbeddedResource>

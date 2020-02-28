@@ -75,7 +75,7 @@ namespace AutomatedEventProposalManagement
                 "certifying that all information provided is true and correct " +
                 "and likewise authorizing this office to process of your information." +
                 " Your accomplished form will be kept in a secured database management " +
-                "and will be disposed after one year.", "Reminder",  MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                "and will be disposed after one year.", "Reminder", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
 
         }
 

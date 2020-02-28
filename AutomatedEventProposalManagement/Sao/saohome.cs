@@ -25,10 +25,13 @@ namespace AutomatedEventProposalManagement
         public saohome()
         {
             InitializeComponent();
+
+            
         }
 
         private void saohome_Load(object sender, EventArgs e)
         {
+            
             try
             {
                 client = new FireSharp.FirebaseClient(config);
@@ -38,7 +41,7 @@ namespace AutomatedEventProposalManagement
                     this.CenterToScreen();
                     this.Size = Screen.PrimaryScreen.WorkingArea.Size;
                     this.WindowState = FormWindowState.Normal;
-
+                    customnotif();
 
                 }
             }
@@ -51,6 +54,7 @@ namespace AutomatedEventProposalManagement
             label2.Text = loginForm.s2;
             label3.Text = loginForm.s3;
             label4.Text = loginForm.s4;
+
 
             string today = DateTime.Now.ToString("yyyy-MM-dd");
             var today1 = DateTime.Now;
@@ -149,8 +153,38 @@ namespace AutomatedEventProposalManagement
                 }
             }
 
+           
+
 
         }
+        public void customnotif()
+        {
+            FirebaseResponse response1 = client.Get("SAO/Proposal/");
+
+            Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
+            foreach (var pussy in Dick1)
+            {
+
+                string pens = pussy.Value.status;
+                string namepro = pussy.Value.name_of_project;
+                string prp = pussy.Value.prepared_by;
+                string venue = pussy.Value.venue;
+                string stat = pussy.Value.status;
+                if (pens == "Pending")
+                {
+                    this.Alert(namepro,prp,venue,stat);
+                }
+
+            }
+            
+        }
+
+        public void Alert(string namep, string prepby, string venue, string status)
+        {
+            CustomNotif cus = new CustomNotif();
+            cus.shoWAlert(namep,prepby,venue,status);
+        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -178,7 +212,7 @@ namespace AutomatedEventProposalManagement
 
         private void button8_Click_1(object sender, EventArgs e)
         {
-            var select = MessageBox.Show("Are you Sure Want to LagOut?", "", MessageBoxButtons.OKCancel);
+            var select = MessageBox.Show("Are you Sure Want to Log-out?", "", MessageBoxButtons.OKCancel);
 
             if (select == DialogResult.OK)
             {
@@ -245,10 +279,20 @@ namespace AutomatedEventProposalManagement
 
         private void button10_Click_1(object sender, EventArgs e)
         {
+
+
+
             acclist acc = new acclist();
             this.Hide();
             acc.ShowDialog();
             this.Close();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }

@@ -122,6 +122,12 @@ namespace AutomatedEventProposalManagement.Approver
             get;
             set;
         }
+        public string general_objective { get; set; }
+        public string specific_objective { get; set; }
+        public string planning_statge { get; set; }
+        public string implementation { get; set; }
+        public string resource_req { get; set; }
+        public string evaluation { get; set; }
 
         public string org_adviser
         {

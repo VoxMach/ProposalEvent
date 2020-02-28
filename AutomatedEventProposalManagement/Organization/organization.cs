@@ -449,7 +449,11 @@ namespace AutomatedEventProposalManagement
 
         private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
         {
-           
+            if (bunifuMaterialTextbox1.Text.Length == 11)
+            {
+                MessageBox.Show("You've Reach Max Character.");
+                bunifuMaterialTextbox1.Text = string.Empty;
+            }
 
 
         }
@@ -474,7 +478,7 @@ namespace AutomatedEventProposalManagement
 
         private void bunifuMaterialTextbox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)))
+            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -499,6 +503,23 @@ namespace AutomatedEventProposalManagement
         private void bunifuMaterialTextbox5_OnValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuMaterialTextbox2_OnValueChanged(object sender, EventArgs e)
+        {
+            if (bunifuMaterialTextbox2.Text.Length == 11)
+            {
+                MessageBox.Show("You've Reach Max Character.");
+                bunifuMaterialTextbox2.Text = string.Empty;
+            }
+        }
+
+        private void bunifuMaterialTextbox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

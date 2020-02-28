@@ -107,46 +107,57 @@ namespace AutomatedEventProposalManagement
             string imp = vr0.implementation;
             string req = vr0.resource_req;
             string eva = vr0.evaluation;
-            VenueReservation vr = new VenueReservation() {
 
-                
-                approver = app,
-                approver_name = appna,
-                beneficiaries = bene,
-                committee_in_charge = commit,
-                date = dater,
-                date_of_event = dateve,
-                description = Des,
-                id = oid,
-                incharge = ins,
-                name_approver = fullname0,
-                name_incharge = namins,
-                name_of_project = namep,
-                nature_of_project = natp,
-                general_objective = gen,
-                specific_objective = spec,
-                planning_statge = plan,
-                implementation = imp,
-                resource_req = req,
-                evaluation = eva,
-                org_adviser = orga,
-                org_adviser_status = orgas,
-                org_dean = odean,
-                org_dean_status = odens,
-                org_name = orname,
-                org_president = orgp,
-                org_president_status = orgps,
-                org_type = orgtype,
-                status = stats,
-                time_from = time1,
-                time_to = time2,
-                venue = venus
-
-            };
+            if (ins == "Pending")
+            {
+                MessageBox.Show("Wait for the In Charge to in futher.");
+            }
+            else
+            {
+                VenueReservation vr = new VenueReservation()
+                {
 
 
-            FirebaseResponse resp = client.Set("Venue/VenueReservation/" + key, vr);
-            MessageBox.Show("Update Successfully");
+                    approver = app,
+                    approver_name = appna,
+                    beneficiaries = bene,
+                    committee_in_charge = commit,
+                    date = dater,
+                    date_of_event = dateve,
+                    description = Des,
+                    id = oid,
+                    incharge = ins,
+                    name_approver = fullname0,
+                    name_incharge = namins,
+                    name_of_project = namep,
+                    nature_of_project = natp,
+                    general_objective = gen,
+                    specific_objective = spec,
+                    planning_statge = plan,
+                    implementation = imp,
+                    resource_req = req,
+                    evaluation = eva,
+                    org_adviser = orga,
+                    org_adviser_status = orgas,
+                    org_dean = odean,
+                    org_dean_status = odens,
+                    org_name = orname,
+                    org_president = orgp,
+                    org_president_status = orgps,
+                    org_type = orgtype,
+                    status = stats,
+                    time_from = time1,
+                    time_to = time2,
+                    venue = venus
+
+                };
+
+
+                FirebaseResponse resp = client.Set("Venue/VenueReservation/" + key, vr);
+                MessageBox.Show("Update Successfully");
+
+            }
+
 
 
 
@@ -221,5 +232,10 @@ namespace AutomatedEventProposalManagement
             MessageBox.Show("The Event is  Rejected Successfully.");
 
         }
+
+        private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
+        {
+
         }
+    }
 }

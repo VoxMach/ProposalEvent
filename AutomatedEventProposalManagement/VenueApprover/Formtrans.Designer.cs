@@ -130,6 +130,7 @@
             this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(505, 50);
             this.bunifuMaterialTextbox1.TabIndex = 3;
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMaterialTextbox1.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox1_OnValueChanged);
             // 
             // bunifuMaterialTextbox2
             // 

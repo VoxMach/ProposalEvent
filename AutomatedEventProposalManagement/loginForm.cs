@@ -42,10 +42,15 @@ namespace AutomatedEventProposalManagement
         }
 
         IFirebaseClient client;
-
+        
         private void loginForm_Load(object sender, System.EventArgs e)
         {
 
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                
+            }
+            
             
 
             try
@@ -199,7 +204,8 @@ namespace AutomatedEventProposalManagement
                 {
                     FirebaseResponse resp = client.Get("User/Venue/" + textBox1.Text);
                     venregis cl = resp.ResultAs<venregis>();
-                    if (textBox1.Text == resp.ResultAs<apu>().password)
+
+                    if (textBox2.Text == resp.ResultAs<apu>().password)
                     {
 
                         s1 = cl.firstname;
@@ -378,7 +384,11 @@ namespace AutomatedEventProposalManagement
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox2.Text.Length == 11)
+            {
+                MessageBox.Show("You've Reach Max Character.");
+                textBox2.Text = string.Empty;
+            }
         }
 
         private void bunifuMaterialTextbox2_OnValueChanged_1(object sender, EventArgs e)
@@ -405,7 +415,29 @@ namespace AutomatedEventProposalManagement
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            if (textBox1.Text.Length == 11)
+            {
+                MessageBox.Show("You've Reach Max Character.");
+                textBox2.Text = string.Empty;
+            }
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+       
     }
 }

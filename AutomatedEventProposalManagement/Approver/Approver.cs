@@ -83,7 +83,7 @@ namespace AutomatedEventProposalManagement
                || string.IsNullOrEmpty(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text) || string.IsNullOrEmpty(comboBox3.Text))
             {
 
-                MessageBox.Show("Please Specify all Blanks.");
+                MessageBox.Show("Specify All blanks");
 
             }
             else
@@ -207,12 +207,16 @@ namespace AutomatedEventProposalManagement
 
         private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
         {
-
+            if (bunifuMaterialTextbox1.Text.Length == 11)
+            {
+                MessageBox.Show("You've Reach Max Character.");
+                bunifuMaterialTextbox1.Text = string.Empty;
+            }
         }
 
         private void bunifuMaterialTextbox1_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)))
+            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -235,6 +239,24 @@ namespace AutomatedEventProposalManagement
                     MessageBox.Show("ID is Already Use");
                     bunifuMaterialTextbox1.Text = string.Empty;
                 }
+
+            }
+        }
+
+        private void bunifuMaterialTextbox2_OnValueChanged(object sender, EventArgs e)
+        {
+            if (bunifuMaterialTextbox2.Text.Length == 11)
+            {
+                MessageBox.Show("You've Reach Max Character.");
+                bunifuMaterialTextbox2.Text = string.Empty;
+            }
+        }
+
+        private void bunifuMaterialTextbox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (!char.IsControl(e.KeyChar)) && !char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
 
             }
         }
