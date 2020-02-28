@@ -205,20 +205,42 @@ namespace AutomatedEventProposalManagement
                     if (proname == "Accepted")
                     {
                         this.Alert(namepro, provstat, venue, proname);
+                    }else if (proname == "Rejected")
+                    {
+                        this.Alert(namepro, provstat, venue, proname);
                     }
+
+
                     if (pens == "Accepted")
                     {
                         this.Alert(namepro, adname, venue, pens);
+                    }else if (pens == "Rejected")
+                    {
+                        this.Alert(namepro, adname, venue, pens);
                     }
+                    
                     if (den2 == "Accepted")
                     {
                         this.Alert(namepro, den1, venue, den2);
+                    }else if (den2 == "Rejected")
+                    {
+                        this.Alert(namepro, den1, venue, den2);
                     }
+
+
                     if (orp1 == "Accepted")
                     {
                         this.Alert(namepro, orp, venue, orp1);
+                    }else if (orp1 == "Rejected")
+                    {
+                        this.Alert(namepro, orp, venue, orp1);
                     }
+
+
                     if(vstats == "Accepted")
+                    {
+                        this.Alert(namepro, vname, venue, vstats);
+                    }else if (vstats == "Rejected")
                     {
                         this.Alert(namepro, vname, venue, vstats);
                     }

@@ -41,7 +41,7 @@ namespace AutomatedEventProposalManagement
                     this.CenterToScreen();
                     this.Size = Screen.PrimaryScreen.WorkingArea.Size;
                     this.WindowState = FormWindowState.Normal;
-                    customnotif();
+                    
 
                 }
             }
@@ -153,7 +153,7 @@ namespace AutomatedEventProposalManagement
                 }
             }
 
-           
+            customnotif();
 
 
         }

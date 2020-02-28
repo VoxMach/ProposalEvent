@@ -59,7 +59,9 @@ namespace AutomatedEventProposalManagement
 
                 if (home.idor.Equals(ids))
                 {
-                    if (find.Value.status.Equals("Rejected"))
+                    if (find.Value.status.Equals("Rejected") || find.Value.approver == "Rejected"
+                        || find.Value.incharge == "Rejected" || find.Value.org_adviser_status == "Rejected" ||
+                         find.Value.org_dean_status == "Rejected" || find.Value.org_president_status == "Rejected")
                     {
 
                         dataGridView1.Update();

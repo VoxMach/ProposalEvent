@@ -38,6 +38,7 @@ namespace AutomatedEventProposalManagement
             {
                 fname = "alert" + i.ToString();
                 CustomNotif cus = (CustomNotif)Application.OpenForms[fname];
+                
                 if (cus == null)
                 {
                     this.Name = fname;
@@ -48,10 +49,14 @@ namespace AutomatedEventProposalManagement
                 }
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
+
+            
+
             this.label1.Text = namep;
             this.label2.Text = prepby;
             this.label3.Text = venue;
             this.label5.Text = status;
+            
             this.Show();
             this.action = enAc.start;
             this.timer1.Interval = 1;
@@ -78,6 +83,9 @@ namespace AutomatedEventProposalManagement
                     if (this.x < this.Location.X)
                     {
                         this.Left--;
+                        this.BringToFront();
+                        this.Activate();
+                        this.Focus();
                     }
                     else
                     {
@@ -109,6 +117,11 @@ namespace AutomatedEventProposalManagement
         {
             timer1.Interval = 1;
             action = enAc.close;
+        }
+
+        private void CustomNotif_Load(object sender, EventArgs e)
+        {
+       
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
