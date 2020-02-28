@@ -144,6 +144,13 @@ namespace AutomatedEventProposalManagement
             string orgps = vr0.org_president_status;
             string stats = vr0.status;
             string haha = vr0.name_approver;
+            string gen = vr0.general_objective;
+            string spec = vr0.specific_objective;
+            string plan = vr0.planning_statge;
+            string imp = vr0.implementation;
+            string req = vr0.resource_req;
+            string eva = vr0.evaluation;
+
             VenueReservation vr = new VenueReservation()
             {
                 approver = appno,
@@ -159,6 +166,12 @@ namespace AutomatedEventProposalManagement
                 name_incharge = VenuePen.full1,
                 name_of_project = namep,
                 nature_of_project = natp,
+                general_objective = gen,
+                specific_objective = spec,
+                planning_statge = plan,
+                implementation = imp,
+                resource_req = req,
+                evaluation = eva,
                 org_adviser =orga,
                 org_adviser_status =orgas,
                 org_dean = odean,

@@ -70,24 +70,30 @@ namespace AutomatedEventProposalManagement
                     dataGridView1.Update();
                     dataGridView1.Refresh();
                     dataGridView1.Rows.Add(
-                find.Value.beneficiaries,
-                find.Value.committee_in_charge,
-                find.Value.date,
-                find.Value.date_of_event,
-                find.Value.description,
-               find.Value.id,
-                find.Value.name_of_project,
-                find.Value.nature_of_project,
-                find.Value.noted_by_adviser,
-                find.Value.noted_by_org_president,
-                find.Value.org_name,
-                find.Value.org_type,
-                find.Value.prepared_by,
-                find.Value.recommending_approval,
-                find.Value.status,
-                find.Value.time_from,
-                find.Value.time_to,
-                find.Value.venue
+                 find.Value.beneficiaries,
+                    find.Value.committee_in_charge,
+                    find.Value.date,
+                    find.Value.date_of_event,
+                    find.Value.description,
+                    find.Value.id,
+                    find.Value.name_of_project,
+                    find.Value.nature_of_project,
+                    find.Value.noted_by_org_president,
+                    find.Value.noted_by_adviser,
+                    find.Value.org_name,
+                    find.Value.org_type,
+                    find.Value.prepared_by,
+                    find.Value.recommending_approval,
+                    find.Value.status,
+                    find.Value.general_objective,
+                    find.Value.specific_objective,
+                    find.Value.planning_stage,
+                    find.Value.implementation,
+                    find.Value.resource_req,
+                    find.Value.evaluation,
+                    find.Value.time_from,
+                    find.Value.time_to,
+                    find.Value.venue
                         );
 
                 }

@@ -65,7 +65,7 @@ namespace AutomatedEventProposalManagement
                         dataGridView1.Update();
                         dataGridView1.Refresh();
                         dataGridView1.Rows.Add(
-                         find.Value.approver,
+                        find.Value.approver,
                          find.Value.approver_name,
                          find.Value.beneficiaries,
                          find.Value.committee_in_charge,
@@ -77,6 +77,12 @@ namespace AutomatedEventProposalManagement
                          find.Value.name_approver,
                          find.Value.name_incharge,
                          find.Value.name_of_project,
+                         find.Value.general_objective,
+                         find.Value.specific_objective,
+                         find.Value.planning_statge,
+                         find.Value.implementation,
+                         find.Value.resource_req,
+                         find.Value.evaluation,
                          find.Value.nature_of_project,
                          find.Value.org_adviser,
                          find.Value.org_adviser_status,
@@ -107,6 +113,11 @@ namespace AutomatedEventProposalManagement
             this.Hide();
             h.ShowDialog();
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

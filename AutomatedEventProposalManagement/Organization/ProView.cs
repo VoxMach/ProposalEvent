@@ -79,7 +79,6 @@ namespace AutomatedEventProposalManagement
         {
             string typ22 = myevents.i24;
             id00 = myevents.i23;
-
             if (bunifuMaterialTextbox5.Text.Equals("Accepted"))
             {
                 propose na = new propose() {
@@ -93,6 +92,12 @@ namespace AutomatedEventProposalManagement
                     nature_of_project = myevents.i1,
                     noted_by_adviser = myevents.i18,
                     noted_by_org_president = myevents.i16,
+                    general_objective = myevents.i27,
+                    specific_objective = myevents.i28,
+                    planning_stage = myevents.i29,
+                    implementation = myevents.i30,
+                    resource_req = myevents.i31,
+                    evaluation = myevents.i32,
                     org_name = myevents.i9,
                     org_type = myevents.i10,
                     prepared_by = myevents.i22,

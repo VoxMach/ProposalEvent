@@ -57,6 +57,7 @@ namespace AutomatedEventProposalManagement
             comboBox1.Items.Add("Approver");
             comboBox1.Items.Add("Organization");
             comboBox1.Items.Add("Venue");
+            comboBox1.Items.Add("Venue Approver");
 
 
         }
@@ -93,6 +94,20 @@ namespace AutomatedEventProposalManagement
                 dataGridView1.Columns[5].HeaderText = "Organization Type";
                 org();
             }
+            else if (sel1 == "Venue Approver")
+            {
+
+                dataGridView1.DataSource = null;
+                dataGridView1.Rows.Clear();
+                dataGridView1.ColumnCount = 5;
+                dataGridView1.Columns[0].HeaderText = "Approver Name";
+                dataGridView1.Columns[2].HeaderText = "ID";
+                dataGridView1.Columns[2].HeaderText = "Firstname";
+                dataGridView1.Columns[3].HeaderText = "Middlename";
+                dataGridView1.Columns[4].HeaderText = "Lastname";
+                
+                VenApp();
+            }
             else
             {
                 dataGridView1.DataSource = null;
@@ -120,6 +135,25 @@ namespace AutomatedEventProposalManagement
                     get.Value.middlename,
                     get.Value.lastname,
                     get.Value.org_type
+                    );
+            }
+        }
+
+        public void VenApp()
+        {
+            FirebaseResponse response = client.Get("User/VenueApprovers/");
+            Dictionary<string, Venappro> dic = response.ResultAs<Dictionary<string, Venappro>>();
+            foreach (var get in dic)
+            {
+
+                dataGridView1.Rows.Add(
+                     get.Value.approver_name,
+                    get.Value.id,
+                    get.Value.firstname,
+                    get.Value.middlename,
+                    get.Value.lastname
+                   
+
                     );
             }
         }
@@ -177,9 +211,159 @@ namespace AutomatedEventProposalManagement
         private void button1_Click(object sender, EventArgs e)
         {
 
+
+            string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
+
+            if(string.IsNullOrEmpty(search.Text)){
+                MessageBox.Show("Please Enter a Word.");
+            }else if (sel1 == "Approver")
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("ID");
+                dt.Columns.Add("Firstname"); dt.Columns.Add("Middlename");
+                dt.Columns.Add("Lastname"); dt.Columns.Add("Organization Name");
+                dt.Columns.Add("Organization Type"); dt.Columns.Add("Organization");
+
+                FirebaseResponse response = client.Get("User/Approver/");
+                Dictionary<string, Appregis> dic = response.ResultAs<Dictionary<string, Appregis>>();
+                foreach (var get in dic)
+                {
+                    string ID = get.Value.id;
+                    string NAME = get.Value.firstname;
+                    string MIDDLE = get.Value.middlename;
+                    string LAST = get.Value.lastname;
+                    if (search.Text == ID || search.Text == NAME || search.Text == MIDDLE
+                        || search.Text == LAST)
+                    {
+                        dt.Rows.Add(
+                        get.Value.id, get.Value.firstname,
+                        get.Value.middlename, get.Value.lastname,
+                        get.Value.org_name, get.Value.org_type,
+                        get.Value.organization_type
+                        );
+                    }
+
+                    DataView dv = new DataView(dt);
+                    dataGridView1.DataSource = null;
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Columns.Clear();
+                    dataGridView1.DataSource = dv;
+
+                }
+            }
+            else if (sel1 == "Organization")
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("ID");
+                dt.Columns.Add("Firstname"); dt.Columns.Add("Middlename");
+                dt.Columns.Add("Lastname"); dt.Columns.Add("Organization Name");
+                dt.Columns.Add("Organization Type"); 
+
+                FirebaseResponse response = client.Get("User/Organization/");
+                Dictionary<string, Appregis> dic = response.ResultAs<Dictionary<string, Appregis>>();
+                foreach (var get in dic)
+                {
+                    string ID = get.Value.id;
+                    string NAME = get.Value.firstname;
+                    string MIDDLE = get.Value.middlename;
+                    string LAST = get.Value.lastname;
+                    if (search.Text == ID || search.Text == NAME || search.Text == MIDDLE
+                        || search.Text == LAST)
+                    {
+                        dt.Rows.Add(
+                        get.Value.id, get.Value.firstname,
+                        get.Value.middlename, get.Value.lastname,
+                        get.Value.org_name, get.Value.org_type
+                        
+                        );
+                    }
+
+                    DataView dv = new DataView(dt);
+                    dataGridView1.DataSource = null;
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Columns.Clear();
+                    dataGridView1.DataSource = dv;
+
+                }
+            }else if (sel1 == "Venue Approver")
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Approver Name");
+                dt.Columns.Add("ID");
+                dt.Columns.Add("Firstname"); 
+                dt.Columns.Add("Lastname");
+                dt.Columns.Add("Middlename");
+                
+
+                FirebaseResponse response = client.Get("User/VenueApprovers/");
+                Dictionary<string, Venappro> dic = response.ResultAs<Dictionary<string, Venappro>>();
+                foreach (var get in dic)
+                {
+                    string ID = get.Value.id;
+                    string NAME = get.Value.firstname;
+                    string MIDDLE = get.Value.middlename;
+                    string LAST = get.Value.lastname;
+                    if (search.Text == ID || search.Text == NAME || search.Text == MIDDLE
+                        || search.Text == LAST)
+                    {
+                        dt.Rows.Add(
+                            get.Value.approver_name,
+                        get.Value.id, get.Value.firstname,
+                        get.Value.middlename, get.Value.lastname
+                        );
+                    }
+
+                    DataView dv = new DataView(dt);
+                    dataGridView1.DataSource = null;
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Columns.Clear();
+                    dataGridView1.DataSource = dv;
+
+                }
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("ID");
+                dt.Columns.Add("Firstname"); dt.Columns.Add("Middlename");
+                dt.Columns.Add("Lastname");
+                dt.Columns.Add("Organization Type");
+
+                FirebaseResponse response = client.Get("User/Venue/");
+                Dictionary<string, Appregis> dic = response.ResultAs<Dictionary<string, Appregis>>();
+                foreach (var get in dic)
+                {
+                    string ID = get.Value.id;
+                    string NAME = get.Value.firstname;
+                    string MIDDLE = get.Value.middlename;
+                    string LAST = get.Value.lastname;
+                    if (search.Text == ID || search.Text == NAME || search.Text == MIDDLE
+                        || search.Text == LAST)
+                    {
+                        dt.Rows.Add(
+                        get.Value.id, get.Value.firstname,
+                        get.Value.middlename, get.Value.lastname,
+                        get.Value.org_type
+
+                        );
+                    }
+
+                    DataView dv = new DataView(dt);
+                    dataGridView1.DataSource = null;
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Columns.Clear();
+                    dataGridView1.DataSource = dv;
+
+                }
+            }
+
+
+               
+
+
         }
 
-     
+
 
         //public void searchven()
         //{
@@ -210,7 +394,7 @@ namespace AutomatedEventProposalManagement
 
         //          );
 
-                    
+
         //        }
         //        else
         //        {
@@ -234,7 +418,7 @@ namespace AutomatedEventProposalManagement
         //    dataGridView1.Columns[3].HeaderText = "Lastname";
         //    dataGridView1.Columns[4].HeaderText = "Organization Name";
         //    dataGridView1.Columns[5].HeaderText = "Organization Type";
-           
+
 
         //    FirebaseResponse response = client.Get("User/Organization/");
         //    Dictionary<string, Appregis> dic = response.ResultAs<Dictionary<string, Appregis>>();
@@ -252,9 +436,9 @@ namespace AutomatedEventProposalManagement
         //          get.Value.lastname,
         //          get.Value.org_name,
         //          get.Value.org_type
-                  
+
         //          );
-                   
+
 
         //        }
         //        else
@@ -298,7 +482,7 @@ namespace AutomatedEventProposalManagement
         //          get.Value.organization_type
         //          );
 
-                   
+
         //        }
         //        else
         //        {

@@ -21,6 +21,12 @@ namespace AutomatedEventProposalManagement
         public string name_incharge { get; set; }
         public string name_of_project { get; set; }
         public string nature_of_project { get; set; }
+        public string general_objective { get; set; }
+        public string specific_objective {get; set;}
+        public string planning_statge { get; set; }
+        public string implementation {get; set;}
+        public string resource_req { get; set; }
+        public string evaluation {get; set;}
         public string org_adviser { get; set; }
         public string org_adviser_status { get; set; }
         public string org_dean { get; set; }

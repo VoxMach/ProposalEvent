@@ -74,6 +74,12 @@ namespace AutomatedEventProposalManagement
                         dataGridView1.Rows.Add(
                             find.Value.name_of_project,
                             find.Value.nature_of_project,
+                            find.Value.general_objective,
+                            find.Value.specific_objective,
+                            find.Value.planning_statge,
+                            find.Value.implementation,
+                            find.Value.resource_req,
+                            find.Value.evaluation,
                             find.Value.committee_in_charge,
                             find.Value.venue,
                             find.Value.date,
@@ -137,6 +143,12 @@ namespace AutomatedEventProposalManagement
         public static string i24;
         public static string i25;
         public static string i26;
+        public static string i27;
+        public static string i28;
+        public static string i29;
+        public static string i30;
+        public static string i31;
+        public static string i32;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -147,28 +159,34 @@ namespace AutomatedEventProposalManagement
             i24 = home.typ2;
             i0 = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             i1 = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            i2 = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            i3 = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            i4 = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            i5 = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            i6 = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            i7 = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            i8 = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            i9 = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-            i10 = dataGridView1.CurrentRow.Cells[10].Value.ToString();
-            i11 = dataGridView1.CurrentRow.Cells[11].Value.ToString();
-            i12 = dataGridView1.CurrentRow.Cells[12].Value.ToString();
-            i13 = dataGridView1.CurrentRow.Cells[13].Value.ToString();
-            i14 = dataGridView1.CurrentRow.Cells[14].Value.ToString();
-            i15 = dataGridView1.CurrentRow.Cells[15].Value.ToString();
-            i16 = dataGridView1.CurrentRow.Cells[16].Value.ToString();
-            i17 = dataGridView1.CurrentRow.Cells[17].Value.ToString();
-            i18 = dataGridView1.CurrentRow.Cells[18].Value.ToString();
-            i19 = dataGridView1.CurrentRow.Cells[19].Value.ToString();
-            i20 = dataGridView1.CurrentRow.Cells[20].Value.ToString();
-            i21 = dataGridView1.CurrentRow.Cells[21].Value.ToString();
-            i25 = dataGridView1.CurrentRow.Cells[22].Value.ToString();
-            i26 = dataGridView1.CurrentRow.Cells[23].Value.ToString();
+            i27 = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            i28 = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            i29 = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            i30 = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            i31 = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            i32 = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            i2 = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            i3 = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+            i4 = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+            i5 = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+            i6 = dataGridView1.CurrentRow.Cells[12].Value.ToString();
+            i7 = dataGridView1.CurrentRow.Cells[13].Value.ToString();
+            i8 = dataGridView1.CurrentRow.Cells[14].Value.ToString();
+            i9 = dataGridView1.CurrentRow.Cells[15].Value.ToString();
+            i10 = dataGridView1.CurrentRow.Cells[16].Value.ToString();
+            i11 = dataGridView1.CurrentRow.Cells[17].Value.ToString();
+            i12 = dataGridView1.CurrentRow.Cells[18].Value.ToString();
+            i13 = dataGridView1.CurrentRow.Cells[19].Value.ToString();
+            i14 = dataGridView1.CurrentRow.Cells[20].Value.ToString();
+            i15 = dataGridView1.CurrentRow.Cells[21].Value.ToString();
+            i16 = dataGridView1.CurrentRow.Cells[21].Value.ToString();
+            i17 = dataGridView1.CurrentRow.Cells[23].Value.ToString();
+            i18 = dataGridView1.CurrentRow.Cells[24].Value.ToString();
+            i19 = dataGridView1.CurrentRow.Cells[25].Value.ToString();
+            i20 = dataGridView1.CurrentRow.Cells[26].Value.ToString();
+            i21 = dataGridView1.CurrentRow.Cells[27].Value.ToString();
+            i25 = dataGridView1.CurrentRow.Cells[28].Value.ToString();
+            i26 = dataGridView1.CurrentRow.Cells[29].Value.ToString();
             pv.ShowDialog();
             this.Close();
         }

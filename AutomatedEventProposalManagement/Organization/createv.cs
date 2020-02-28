@@ -70,10 +70,16 @@ namespace AutomatedEventProposalManagement
             bunifuMaterialTextbox3.Enabled = false;
             bunifuMaterialTextbox4.Enabled = false;
 
-
+            MessageBox.Show("The collection of data is for the" +
+                " purpose of creating event. By signing this form, you are " +
+                "certifying that all information provided is true and correct " +
+                "and likewise authorizing this office to process of your information." +
+                " Your accomplished form will be kept in a secured database management " +
+                "and will be disposed after one year.", "Reminder",  MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
 
         }
 
+       
         private void label4_Click(object sender, EventArgs e)
         {
             home h = new home();
@@ -157,7 +163,16 @@ namespace AutomatedEventProposalManagement
             string timef = dateTimePicker1.Text;
             string timeU = dateTimePicker2.Text;
             string dateev = dateTimePicker3.Text;
-            if (string.IsNullOrEmpty(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(bunifuMaterialTextbox7.Text) ) {
+            if (string.IsNullOrEmpty(bunifuMaterialTextbox11.Text) ||
+                string.IsNullOrEmpty(bunifuMaterialTextbox12.Text) || 
+                string.IsNullOrEmpty(bunifuMaterialTextbox9.Text)  ||
+                string.IsNullOrEmpty(bunifuMaterialTextbox10.Text) ||
+                string.IsNullOrEmpty(bunifuMaterialTextbox8.Text)  || 
+                string.IsNullOrEmpty(bunifuMaterialTextbox6.Text)  || 
+                string.IsNullOrEmpty(bunifuMaterialTextbox1.Text)  || 
+                string.IsNullOrEmpty(bunifuMaterialTextbox2.Text)  || 
+                string.IsNullOrEmpty(bunifuMaterialTextbox5.Text)  || 
+                string.IsNullOrEmpty(bunifuMaterialTextbox7.Text)) {
 
                 MessageBox.Show("Please Specify All Data.");
             
@@ -181,6 +196,12 @@ namespace AutomatedEventProposalManagement
                     name_incharge = "Nothing Yet",
                     name_of_project = bunifuMaterialTextbox1.Text,
                     nature_of_project = bunifuMaterialTextbox2.Text,
+                    general_objective = bunifuMaterialTextbox6.Text,
+                    specific_objective = bunifuMaterialTextbox8.Text,
+                    planning_statge = bunifuMaterialTextbox10.Text,
+                    implementation = bunifuMaterialTextbox9.Text,
+                    resource_req = bunifuMaterialTextbox12.Text,
+                    evaluation = bunifuMaterialTextbox11.Text,
                     org_adviser = "Nothing Yet",
                     org_adviser_status = pending,
                     org_name = oname,
@@ -203,6 +224,13 @@ namespace AutomatedEventProposalManagement
                 bunifuMaterialTextbox4.Text = string.Empty;
                 bunifuMaterialTextbox5.Text = string.Empty;
                 bunifuMaterialTextbox7.Text = string.Empty;
+                bunifuMaterialTextbox6.Text = string.Empty;
+                bunifuMaterialTextbox8.Text = string.Empty;
+                bunifuMaterialTextbox9.Text = string.Empty;
+                bunifuMaterialTextbox10.Text = string.Empty;
+                bunifuMaterialTextbox11.Text = string.Empty;
+                bunifuMaterialTextbox12.Text = string.Empty;
+
                 comboBox1.Text = string.Empty;
             }
             else
@@ -223,6 +251,12 @@ namespace AutomatedEventProposalManagement
                     name_incharge = "Nothing Yet",
                     name_of_project = bunifuMaterialTextbox1.Text,
                     nature_of_project = bunifuMaterialTextbox2.Text,
+                    general_objective = bunifuMaterialTextbox6.Text,
+                    specific_objective = bunifuMaterialTextbox8.Text,
+                    planning_statge =  bunifuMaterialTextbox10.Text,
+                    implementation = bunifuMaterialTextbox9.Text,
+                    resource_req = bunifuMaterialTextbox12.Text,
+                    evaluation = bunifuMaterialTextbox11.Text,
                     org_adviser = "Nothing Yet",
                     org_adviser_status = pending,
                     org_dean = "Nothing Yet",
@@ -247,6 +281,13 @@ namespace AutomatedEventProposalManagement
                 bunifuMaterialTextbox4.Text = string.Empty;
                 bunifuMaterialTextbox5.Text = string.Empty;
                 bunifuMaterialTextbox7.Text = string.Empty;
+                bunifuMaterialTextbox6.Text = string.Empty;
+                bunifuMaterialTextbox8.Text = string.Empty;
+                bunifuMaterialTextbox9.Text = string.Empty;
+                bunifuMaterialTextbox10.Text = string.Empty;
+                bunifuMaterialTextbox11.Text = string.Empty;
+                bunifuMaterialTextbox12.Text = string.Empty;
+
                 comboBox1.Text = string.Empty;
 
 

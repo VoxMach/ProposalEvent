@@ -53,6 +53,13 @@ namespace AutomatedEventProposalManagement
             label3.Text = loginForm.s3;
             label4.Text = loginForm.s4;
 
+            grids();
+
+
+
+        }
+        public void grids()
+        {
             string today = DateTime.Now.ToString("yyyy-MM-dd");
             var today1 = DateTime.Now;
             var tomorrow = today1.AddDays(1);
@@ -78,16 +85,22 @@ namespace AutomatedEventProposalManagement
                     find.Value.date,
                     find.Value.date_of_event,
                     find.Value.description,
-                   find.Value.id,
+                    find.Value.id,
                     find.Value.name_of_project,
                     find.Value.nature_of_project,
-                    find.Value.noted_by_adviser,
                     find.Value.noted_by_org_president,
+                    find.Value.noted_by_adviser,
                     find.Value.org_name,
                     find.Value.org_type,
                     find.Value.prepared_by,
                     find.Value.recommending_approval,
                     find.Value.status,
+                    find.Value.general_objective,
+                    find.Value.specific_objective,
+                    find.Value.planning_stage,
+                    find.Value.implementation,
+                    find.Value.resource_req,
+                    find.Value.evaluation,
                     find.Value.time_from,
                     find.Value.time_to,
                     find.Value.venue
@@ -114,34 +127,36 @@ namespace AutomatedEventProposalManagement
                     dataGridView2.Update();
                     dataGridView2.Refresh();
                     dataGridView2.Rows.Add(
-                find.Value.beneficiaries,
-                find.Value.committee_in_charge,
-                find.Value.date,
-                find.Value.date_of_event,
-                find.Value.description,
-               find.Value.id,
-                find.Value.name_of_project,
-                find.Value.nature_of_project,
-                find.Value.noted_by_adviser,
-                find.Value.noted_by_org_president,
-                find.Value.org_name,
-                find.Value.org_type,
-                find.Value.prepared_by,
-                find.Value.recommending_approval,
-                find.Value.status,
-                find.Value.time_from,
-                find.Value.time_to,
-                find.Value.venue
+               find.Value.beneficiaries,
+                    find.Value.committee_in_charge,
+                    find.Value.date,
+                    find.Value.date_of_event,
+                    find.Value.description,
+                    find.Value.id,
+                    find.Value.name_of_project,
+                    find.Value.nature_of_project,
+                    find.Value.noted_by_org_president,
+                    find.Value.noted_by_adviser,
+                    find.Value.org_name,
+                    find.Value.org_type,
+                    find.Value.prepared_by,
+                    find.Value.recommending_approval,
+                    find.Value.status,
+                    find.Value.general_objective,
+                    find.Value.specific_objective,
+                    find.Value.planning_stage,
+                    find.Value.implementation,
+                    find.Value.resource_req,
+                    find.Value.evaluation,
+                    find.Value.time_from,
+                    find.Value.time_to,
+                    find.Value.venue
                         );
 
                     break;
                 }
             }
-
-
-
         }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 

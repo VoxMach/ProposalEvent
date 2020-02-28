@@ -187,6 +187,7 @@
     <Compile Include="Sao\SaoRej.Designer.cs">
       <DependentUpon>SaoRej.cs</DependentUpon>
     </Compile>
+    <Compile Include="Venappro.cs" />
     <Compile Include="Venue\FormVen.cs">
       <SubType>Form</SubType>
     </Compile>
