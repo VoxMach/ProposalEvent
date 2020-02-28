@@ -88,7 +88,7 @@ namespace AutomatedEventProposalManagement
             string notorg = get.noted_by_org_president;
             string org = get.org_name;
             string orgt = get.org_type;
-            string plan = get.planning_stage;
+            string plan = get.planning_statge;
             string prep = get.prepared_by;
             string remp = get.recommending_approval;
             string remreq = get.resource_req;
@@ -115,7 +115,7 @@ namespace AutomatedEventProposalManagement
                 noted_by_org_president = notorg,
                 org_name = org,
                 org_type = orgt,
-                planning_stage = plan,
+                planning_statge = plan,
                 prepared_by = prep,
                 recommending_approval = remp,
                 resource_req = remreq,
@@ -151,7 +151,7 @@ namespace AutomatedEventProposalManagement
             string notorg = get.noted_by_org_president;
             string org = get.org_name;
             string orgt = get.org_type;
-            string plan = get.planning_stage;
+            string plan = get.planning_statge;
             string prep = get.prepared_by;
             string remp = get.recommending_approval;
             string remreq = get.resource_req;
@@ -179,7 +179,7 @@ namespace AutomatedEventProposalManagement
                 noted_by_org_president = notorg,
                 org_name = org,
                 org_type = orgt,
-                planning_stage = plan,
+                planning_statge = plan,
                 prepared_by = prep,
                 recommending_approval = remp,
                 resource_req = remreq,

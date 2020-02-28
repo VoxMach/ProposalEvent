@@ -94,7 +94,7 @@ namespace AutomatedEventProposalManagement
                     noted_by_org_president = myevents.i16,
                     general_objective = myevents.i27,
                     specific_objective = myevents.i28,
-                    planning_stage = myevents.i29,
+                    planning_statge = myevents.i29,
                     implementation = myevents.i30,
                     resource_req = myevents.i31,
                     evaluation = myevents.i32,

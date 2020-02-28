@@ -87,7 +87,7 @@ namespace AutomatedEventProposalManagement
                     find.Value.status,
                     find.Value.general_objective,
                     find.Value.specific_objective,
-                    find.Value.planning_stage,
+                    find.Value.planning_statge,
                     find.Value.implementation,
                     find.Value.resource_req,
                     find.Value.evaluation,

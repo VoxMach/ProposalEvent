@@ -29,7 +29,7 @@ namespace AutomatedEventProposalManagement
         public string venue { get; set;}
         public string general_objective { get; set; }
         public string specific_objective { get; set; }
-        public string planning_stage { get; set; }
+        public string planning_statge { get; set; }
         public string implementation { get; set; }
         public string resource_req { get; set; }
         public string evaluation { get; set; }
