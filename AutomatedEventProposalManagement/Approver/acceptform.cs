@@ -159,7 +159,77 @@ namespace AutomatedEventProposalManagement.Approver
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (approvers.Equals("Adviser"))
+            {
 
+                FirebaseResponse response = client.Get("Venue/VenueReservation/" + ID);
+
+                pending pending = response.ResultAs<pending>();
+
+
+
+                pending.org_adviser = fullname;
+                pending.org_adviser_status = "Rejected";
+
+
+
+                FirebaseResponse res = client.Set("Venue/VenueReservation/" + ID, pending);
+                MessageBox.Show("Rejected Success");
+
+            }
+            else if (approvers.Equals("Organization President"))
+            {
+                if (orgtype.Equals("Campus-Wide"))
+                {
+                    FirebaseResponse response = client.Get("Venue/VenueReservation/" + ID);
+
+                    pending pending = response.ResultAs<pending>();
+
+
+                    pending.org_president = fullname;
+                    pending.org_president_status = "Rejected";
+                    pending.status = "Rejected";
+
+
+                    FirebaseResponse res = client.Set("Venue/VenueReservation/" + ID, pending);
+                    MessageBox.Show("Rejected Success");
+                }
+                else
+                {
+                    FirebaseResponse response = client.Get("Venue/VenueReservation/" + ID);
+
+                    pending pending = response.ResultAs<pending>();
+
+
+
+                    pending.org_president = fullname;
+                    pending.org_president_status = "Rejected";
+
+
+
+                    FirebaseResponse res = client.Set("Venue/VenueReservation/" + ID, pending);
+                    MessageBox.Show("Rejected Success");
+                }
+
+
+            }
+            else if (approvers.Equals("Dean's Office"))
+            {
+                FirebaseResponse response = client.Get("Venue/VenueReservation/" + ID);
+
+                pending pending = response.ResultAs<pending>();
+
+
+
+                pending.org_dean = fullname;
+                pending.status = "Rejected";
+                pending.org_dean_status = "Rejected";
+
+
+
+                FirebaseResponse res = client.Set("Venue/VenueReservation/" + ID, pending);
+                MessageBox.Show("Rejected Success");
+            }
         }
     }
 }

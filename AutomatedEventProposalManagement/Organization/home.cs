@@ -127,11 +127,10 @@ namespace AutomatedEventProposalManagement
                 {
 
                     string datnow = find.Value.date_of_event;
+                    string pass = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
 
-                    if (tomorrow.Equals(datnow))
+                    if (pass.Equals(datnow))
                     {
-
-
                         dataGridView2.Update();
                         dataGridView2.Refresh();
                         dataGridView2.Rows.Add(

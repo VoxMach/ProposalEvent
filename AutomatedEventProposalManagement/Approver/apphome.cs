@@ -115,8 +115,8 @@ namespace AutomatedEventProposalManagement
                 {
 
                     string datnow = find.Value.date_of_event;
-
-                    if (tomorrow.Equals(tomorrow))
+                    string pass = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
+                    if (pass.Equals(datnow))
                     {
 
 
