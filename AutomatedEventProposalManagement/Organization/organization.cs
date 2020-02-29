@@ -85,55 +85,77 @@ namespace AutomatedEventProposalManagement
             {
                 string orgsname = getthem.Value.org_name;
                 
-                if (orgsname.Equals("Association of Civil Engineering Students(ACES)") ||
-                    orgsname.Equals("Association of Electrical Engineering Students(AEES)") ||
-                    orgsname.Equals("Association of Computer Studies and System Students") ||
-                    orgsname.Equals("Association of Computer Studies and System Students") ||
-                    orgsname.Equals("Computer Engineering Students Society(COESS)") ||
-                    orgsname.Equals("Electonics Engineering Society-Institute of Electronics") ||
-                    orgsname.Equals("Institute of Electrical and Electronics Engineers - UE ") ||
-                    orgsname.Equals("League of Information Technology Students(LITS)") ||
-                    orgsname.Equals("Philipphine Society of Mechanical Engineers(PSME)"))
+                if (orgsname.Equals("Association of Civil Engineering Students(ACES)"))
                 {
-                    MessageBox.Show("This Type of Organization Name is taken.");
-                    button1.Enabled = false;
+                    MessageBox.Show("This Type of Organization Name is taken." +orgsname);
+                    
+                }else if (orgsname.Equals("Association of Electrical Engineering Students(AEES)"))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
                 }
+                else if  (orgsname.Equals("Association of Computer Studies and System Students"))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
+                }else if (orgsname.Equals("Association of Computer Studies and System Students"))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
+                }
+                else if (orgsname.Equals("Computer Engineering Students Society(COESS)"))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
+                }
+                else if (orgsname.Equals("Electonics Engineering Society-Institute of Electronics"))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
+                }
+                else if (orgsname.Equals("League of Information Technology Students(LITS)"))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
+                }
+                else if (orgsname.Equals("Philipphine Society of Mechanical Engineers(PSME)"))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
+                }
+                else if (orgsname.Equals("Institute of Electrical and Electronics Engineers - UE "))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
+                }
+               
             }
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
 
-            if (sel2.Equals("Association of Civil Engineering Students(ACES)"))
+            if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Association of Civil Engineering Students(ACES)"))
             {
                 exists();
             }
-            else if (sel2.Equals("Association of Electrical Engineering Students(AEES)"))
+            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Association of Electrical Engineering Students(AEES)"))
             {
                 exists();
             }
-            else if (sel2.Equals("Association of Computer Studies and System Students"))
+            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Association of Computer Studies and System Students"))
             {
                 exists();
             }
-            else if (sel2.Equals("Computer Engineering Students Society(COESS)"))
+            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Computer Engineering Students Society(COESS)"))
             {
                 exists();
             }
-            else if (sel2.Equals("Electonics Engineering Society-Institute of Electronics"))
+            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Electonics Engineering Society-Institute of Electronics"))
             {
                 exists();
             }
-            else if (sel2.Equals("Institute of Electrical and Electronics Engineers - UE "))
+            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Institute of Electrical and Electronics Engineers - UE "))
             {
                 exists();
             }
-            else if (sel2.Equals("League of Information Technology Students(LITS)"))
+            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("League of Information Technology Students(LITS)"))
             {
                 exists();
             }
-            else if (sel2.Equals("Philipphine Society of Mechanical Engineers(PSME)"))
+            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Philipphine Society of Mechanical Engineers(PSME)"))
             {
                 exists();
             }
