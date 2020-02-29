@@ -30,7 +30,7 @@ namespace AutomatedEventProposalManagement
 
         private void home_Load(object sender, EventArgs e)
         {
-            try
+                try
             {
                 client = new FireSharp.FirebaseClient(config);
                 if (client != null)
@@ -206,6 +206,11 @@ namespace AutomatedEventProposalManagement
 
                     if (idyous == id)
                     {
+
+
+
+
+
                         if (proname == "Accepted")
                         {
                             this.Alert(namepro, provstat, venue, proname);
@@ -214,8 +219,6 @@ namespace AutomatedEventProposalManagement
                         {
                             this.Alert(namepro, provstat, venue, proname);
                         }
-
-
                         if (pens == "Accepted")
                         {
                             this.Alert(namepro, adname, venue, pens);
@@ -233,8 +236,6 @@ namespace AutomatedEventProposalManagement
                         {
                             this.Alert(namepro, den1, venue, den2);
                         }
-
-
                         if (orp1 == "Accepted")
                         {
                             this.Alert(namepro, orp, venue, orp1);
@@ -243,8 +244,6 @@ namespace AutomatedEventProposalManagement
                         {
                             this.Alert(namepro, orp, venue, orp1);
                         }
-
-
                         if (vstats == "Accepted")
                         {
                             this.Alert(namepro, vname, venue, vstats);
@@ -253,17 +252,14 @@ namespace AutomatedEventProposalManagement
                         {
                             this.Alert(namepro, vname, venue, vstats);
                         }
-
                     }
                 }
             }
             catch
-            {
-
+            { 
             }
-            
-
         }
+
         public void Alert(string namep, string prepby, string venue, string status)
         {
             CustomNotif cus = new CustomNotif();

@@ -108,9 +108,13 @@ namespace AutomatedEventProposalManagement
             string req = vr0.resource_req;
             string eva = vr0.evaluation;
 
-            if (ins == "Pending")
+            if (ins == "Pending" )
             {
                 MessageBox.Show("Wait for the In Charge to in futher.");
+
+            }else if (ins == "Denied" )
+            {
+                MessageBox.Show("The Following Event is Denied or Rejected Proceed to reject the event.");
             }
             else
             {

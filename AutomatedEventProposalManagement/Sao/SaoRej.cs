@@ -70,7 +70,7 @@ namespace AutomatedEventProposalManagement
                     dataGridView1.Update();
                     dataGridView1.Refresh();
                     dataGridView1.Rows.Add(
-                 find.Value.beneficiaries,
+                    find.Value.beneficiaries,
                     find.Value.committee_in_charge,
                     find.Value.date,
                     find.Value.date_of_event,

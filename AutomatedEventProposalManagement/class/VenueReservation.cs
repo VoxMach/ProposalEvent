@@ -39,7 +39,7 @@ namespace AutomatedEventProposalManagement
         public string time_from { get; set; }
         public string time_to { get; set; }
         public string venue { get; set; }
-
+        public string readap { get; set; }
 
     }
 }

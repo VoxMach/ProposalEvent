@@ -49,10 +49,10 @@
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(-10, -90);
+            this.panel1.Location = new System.Drawing.Point(-11, -112);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(623, 85);
+            this.panel1.Size = new System.Drawing.Size(701, 106);
             this.panel1.TabIndex = 10;
             // 
             // label1
@@ -60,9 +60,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(32, 22);
+            this.label1.Location = new System.Drawing.Point(36, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 40);
+            this.label1.Size = new System.Drawing.Size(179, 49);
             this.label1.TabIndex = 11;
             this.label1.Text = "Request";
             // 
@@ -72,9 +72,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(572, 0);
+            this.label4.Location = new System.Drawing.Point(644, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 47);
+            this.label4.Size = new System.Drawing.Size(57, 56);
             this.label4.TabIndex = 10;
             this.label4.Text = "X";
             // 
@@ -85,13 +85,14 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(323, 547);
+            this.button2.Location = new System.Drawing.Point(363, 684);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(255, 54);
+            this.button2.Size = new System.Drawing.Size(287, 68);
             this.button2.TabIndex = 17;
             this.button2.Text = "Reject";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -100,10 +101,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(41, 547);
+            this.button1.Location = new System.Drawing.Point(46, 684);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 54);
+            this.button1.Size = new System.Drawing.Size(287, 68);
             this.button1.TabIndex = 16;
             this.button1.Text = "Accept";
             this.button1.UseVisualStyleBackColor = false;
@@ -125,11 +126,11 @@
             this.pendingdate.LineIdleColor = System.Drawing.Color.Firebrick;
             this.pendingdate.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.pendingdate.LineThickness = 3;
-            this.pendingdate.Location = new System.Drawing.Point(74, 454);
-            this.pendingdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pendingdate.Location = new System.Drawing.Point(83, 568);
+            this.pendingdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pendingdate.MaxLength = 32767;
             this.pendingdate.Name = "pendingdate";
-            this.pendingdate.Size = new System.Drawing.Size(449, 40);
+            this.pendingdate.Size = new System.Drawing.Size(505, 50);
             this.pendingdate.TabIndex = 14;
             this.pendingdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -149,11 +150,11 @@
             this.venuepending.LineIdleColor = System.Drawing.Color.Firebrick;
             this.venuepending.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.venuepending.LineThickness = 3;
-            this.venuepending.Location = new System.Drawing.Point(74, 350);
-            this.venuepending.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.venuepending.Location = new System.Drawing.Point(83, 438);
+            this.venuepending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.venuepending.MaxLength = 32767;
             this.venuepending.Name = "venuepending";
-            this.venuepending.Size = new System.Drawing.Size(449, 40);
+            this.venuepending.Size = new System.Drawing.Size(505, 50);
             this.venuepending.TabIndex = 13;
             this.venuepending.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -173,11 +174,11 @@
             this.natureofproject.LineIdleColor = System.Drawing.Color.Firebrick;
             this.natureofproject.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.natureofproject.LineThickness = 3;
-            this.natureofproject.Location = new System.Drawing.Point(74, 246);
-            this.natureofproject.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.natureofproject.Location = new System.Drawing.Point(83, 308);
+            this.natureofproject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.natureofproject.MaxLength = 32767;
             this.natureofproject.Name = "natureofproject";
-            this.natureofproject.Size = new System.Drawing.Size(449, 40);
+            this.natureofproject.Size = new System.Drawing.Size(505, 50);
             this.natureofproject.TabIndex = 12;
             this.natureofproject.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -197,11 +198,11 @@
             this.nameofproject.LineIdleColor = System.Drawing.Color.Firebrick;
             this.nameofproject.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.nameofproject.LineThickness = 3;
-            this.nameofproject.Location = new System.Drawing.Point(74, 141);
-            this.nameofproject.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.nameofproject.Location = new System.Drawing.Point(83, 176);
+            this.nameofproject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameofproject.MaxLength = 32767;
             this.nameofproject.Name = "nameofproject";
-            this.nameofproject.Size = new System.Drawing.Size(449, 40);
+            this.nameofproject.Size = new System.Drawing.Size(505, 50);
             this.nameofproject.TabIndex = 11;
             this.nameofproject.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -213,7 +214,7 @@
             this.panel2.Location = new System.Drawing.Point(-2, -1);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(623, 86);
+            this.panel2.Size = new System.Drawing.Size(701, 108);
             this.panel2.TabIndex = 18;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -222,9 +223,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(32, 22);
+            this.label2.Location = new System.Drawing.Point(36, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 40);
+            this.label2.Size = new System.Drawing.Size(179, 49);
             this.label2.TabIndex = 11;
             this.label2.Text = "Request";
             // 
@@ -234,18 +235,18 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(573, 16);
+            this.label3.Location = new System.Drawing.Point(645, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 47);
+            this.label3.Size = new System.Drawing.Size(57, 56);
             this.label3.TabIndex = 10;
             this.label3.Text = "X";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // acceptform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 658);
+            this.ClientSize = new System.Drawing.Size(699, 822);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -256,7 +257,8 @@
             this.Controls.Add(this.natureofproject);
             this.Controls.Add(this.nameofproject);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(621, 670);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(699, 838);
             this.Name = "acceptform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "acceptform";
