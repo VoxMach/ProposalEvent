@@ -593,6 +593,7 @@
             this.dataGridViewTextBoxColumn22,
             this.dataGridViewTextBoxColumn23,
             this.dataGridViewTextBoxColumn24});
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView2.Location = new System.Drawing.Point(224, 527);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;

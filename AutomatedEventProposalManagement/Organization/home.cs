@@ -30,7 +30,7 @@ namespace AutomatedEventProposalManagement
 
         private void home_Load(object sender, EventArgs e)
         {
-                try
+            try
             {
                 client = new FireSharp.FirebaseClient(config);
                 if (client != null)
@@ -54,6 +54,7 @@ namespace AutomatedEventProposalManagement
             label4.Text = loginForm.s4;
 
             grids();
+            grids1();
             customnotif();
 
 
@@ -79,8 +80,8 @@ namespace AutomatedEventProposalManagement
                 {
 
                     string datnow = find.Value.date_of_event;
-
-                    if (today.Equals(today1))
+                    string pass = DateTime.Now.ToString("yyyy-MM-dd");
+                    if (pass.Equals(datnow))
                     {
                         if (find.Value.status.Equals("Accepted"))
                         {
@@ -120,6 +121,19 @@ namespace AutomatedEventProposalManagement
 
 
                 }
+               
+            }
+            catch
+            {
+
+            }
+
+            
+        }
+        public void grids1()
+        {
+            try
+            {
                 FirebaseResponse response1 = client.Get("SAO/Proposal/");
 
                 Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
@@ -129,7 +143,7 @@ namespace AutomatedEventProposalManagement
                     string datnow = find.Value.date_of_event;
                     string pass = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
 
-                    if (pass.Equals(datnow))
+                    if (datnow.Equals(pass))
                     {
                         dataGridView2.Update();
                         dataGridView2.Refresh();
@@ -160,16 +174,15 @@ namespace AutomatedEventProposalManagement
                         find.Value.venue
                             );
 
-             
+
                     }
+
                 }
             }
             catch
             {
 
             }
-
-            
         }
         public void customnotif()
         {
@@ -207,11 +220,6 @@ namespace AutomatedEventProposalManagement
 
                     if (idyous == id)
                     {
-
-
-
-
-
                         if (proname == "Accepted")
                         {
                             this.Alert(namepro, provstat, venue, proname);

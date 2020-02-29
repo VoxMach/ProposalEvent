@@ -64,8 +64,8 @@ namespace AutomatedEventProposalManagement
                 {
 
                     string datnow = find.Value.date_of_event;
-
-                    if (today.Equals(today1))
+                    string pass = DateTime.Now.ToString("yyyy-MM-dd");
+                    if (pass.Equals(datnow))
                     {
                         if (find.Value.status.Equals("Accepted"))
                         {
