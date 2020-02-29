@@ -102,8 +102,8 @@ namespace AutomatedEventProposalManagement
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-      
-            string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedText);
+
+            string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
 
             if (sel2.Equals("Association of Civil Engineering Students(ACES)"))
             {
@@ -577,18 +577,13 @@ namespace AutomatedEventProposalManagement
                 var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
 
                 MessageBox.Show("Register Success.");
-                //bunifuMaterialTextbox1.Text = string.Empty;
-                //bunifuMaterialTextbox2.Text = string.Empty;
-                //bunifuMaterialTextbox3.Text = string.Empty;
-                //bunifuMaterialTextbox4.Text = string.Empty;
-                //bunifuMaterialTextbox5.Text = string.Empty;
-                //comboBox2.Text = string.Empty;
-                //comboBox1.Text = string.Empty;
-
-                saohome sao = new saohome();
-                this.Hide();
-                sao.ShowDialog();
-                this.Close();
+                bunifuMaterialTextbox1.Text = string.Empty;
+                bunifuMaterialTextbox2.Text = string.Empty;
+                bunifuMaterialTextbox3.Text = string.Empty;
+                bunifuMaterialTextbox4.Text = string.Empty;
+                bunifuMaterialTextbox5.Text = string.Empty;
+                comboBox2.Text = string.Empty;
+                comboBox1.Text = string.Empty;
 
             }
         }
