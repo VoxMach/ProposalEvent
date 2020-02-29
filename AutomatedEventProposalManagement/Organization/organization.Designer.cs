@@ -130,6 +130,9 @@
             this.comboBox2.Size = new System.Drawing.Size(542, 42);
             this.comboBox2.TabIndex = 15;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.Enter += new System.EventHandler(this.comboBox2_Enter);
+            this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
+            this.comboBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBox2_MouseClick);
             // 
             // comboBox1
             // 
@@ -161,7 +164,7 @@
             this.bunifuMaterialTextbox5.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox5.LineThickness = 3;
             this.bunifuMaterialTextbox5.Location = new System.Drawing.Point(20, 304);
-            this.bunifuMaterialTextbox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuMaterialTextbox5.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox5.MaxLength = 15;
             this.bunifuMaterialTextbox5.Name = "bunifuMaterialTextbox5";
             this.bunifuMaterialTextbox5.Size = new System.Drawing.Size(547, 58);
@@ -185,7 +188,7 @@
             this.bunifuMaterialTextbox4.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox4.LineThickness = 3;
             this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(20, 208);
-            this.bunifuMaterialTextbox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuMaterialTextbox4.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox4.MaxLength = 1;
             this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
             this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(547, 58);
@@ -208,7 +211,7 @@
             this.bunifuMaterialTextbox3.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox3.LineThickness = 3;
             this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(20, 118);
-            this.bunifuMaterialTextbox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuMaterialTextbox3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox3.MaxLength = 15;
             this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
             this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(547, 58);
@@ -232,7 +235,7 @@
             this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox2.LineThickness = 3;
             this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(20, 391);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox2.MaxLength = 20;
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
             this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(547, 58);
@@ -257,7 +260,7 @@
             this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox1.LineThickness = 3;
             this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(20, 28);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox1.MaxLength = 8;
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
             this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(547, 58);

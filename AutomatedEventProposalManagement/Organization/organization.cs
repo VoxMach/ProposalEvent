@@ -57,9 +57,9 @@ namespace AutomatedEventProposalManagement
             comboBox1.Items.Add("College of Fine Arts, Architecture and Design");
             comboBox1.Items.Add("College of Engeneering");
             comboBox1.Items.Add("Campus-Wide");
-            comboBox1.Items.Add("Student Council");
+            
+           comboBox1.Items.Add("Student Council");
            
-
 
 
         }
@@ -77,8 +77,70 @@ namespace AutomatedEventProposalManagement
 
         }
 
+        public void exists()
+        { 
+            FirebaseResponse resp = client.Get("User/Organization/");
+            Dictionary<string, orgregis> dicks = resp.ResultAs<Dictionary<string, orgregis>>();
+            foreach (var getthem in dicks)
+            {
+                string orgsname = getthem.Value.org_name;
+                
+                if (orgsname.Equals("Association of Civil Engineering Students(ACES)") ||
+                    orgsname.Equals("Association of Electrical Engineering Students(AEES)") ||
+                    orgsname.Equals("Association of Computer Studies and System Students") ||
+                    orgsname.Equals("Association of Computer Studies and System Students") ||
+                    orgsname.Equals("Computer Engineering Students Society(COESS)") ||
+                    orgsname.Equals("Electonics Engineering Society-Institute of Electronics") ||
+                    orgsname.Equals("Institute of Electrical and Electronics Engineers - UE ") ||
+                    orgsname.Equals("League of Information Technology Students(LITS)") ||
+                    orgsname.Equals("Philipphine Society of Mechanical Engineers(PSME)"))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken.");
+                    button1.Enabled = false;
+                }
+            }
+        }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+      
+            string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedText);
+
+            if (sel2.Equals("Association of Civil Engineering Students(ACES)"))
+            {
+                exists();
+            }
+            else if (sel2.Equals("Association of Electrical Engineering Students(AEES)"))
+            {
+                exists();
+            }
+            else if (sel2.Equals("Association of Computer Studies and System Students"))
+            {
+                exists();
+            }
+            else if (sel2.Equals("Computer Engineering Students Society(COESS)"))
+            {
+                exists();
+            }
+            else if (sel2.Equals("Electonics Engineering Society-Institute of Electronics"))
+            {
+                exists();
+            }
+            else if (sel2.Equals("Institute of Electrical and Electronics Engineers - UE "))
+            {
+                exists();
+            }
+            else if (sel2.Equals("League of Information Technology Students(LITS)"))
+            {
+                exists();
+            }
+            else if (sel2.Equals("Philipphine Society of Mechanical Engineers(PSME)"))
+            {
+                exists();
+            }
+            else
+            {
+                button1.Enabled = true;
+            }
 
         }
 
@@ -113,8 +175,10 @@ namespace AutomatedEventProposalManagement
                 comboBox2.Items.Add("Society of Interior Design Students(SIDS)");
                 comboBox2.Items.Add("Pintura(Probationary)");
                 comboBox2.Items.Add("ARK(Probationary)");
+
             }else if (sel1.Equals("College of Engeneering"))
             {
+                
                 comboBox2.Items.Clear();
                 comboBox2.Items.Add("Association of Civil Engineering Students(ACES)");
                 comboBox2.Items.Add("Association of Electrical Engineering Students(AEES)");
@@ -124,6 +188,7 @@ namespace AutomatedEventProposalManagement
                 comboBox2.Items.Add("Institute of Electrical and Electronics Engineers - UE ");
                 comboBox2.Items.Add("League of Information Technology Students(LITS)");
                 comboBox2.Items.Add("Philipphine Society of Mechanical Engineers(PSME)");
+                
             }else if (sel1.Equals("Campus-Wide"))
             {
                 comboBox2.Items.Clear();
@@ -162,6 +227,9 @@ namespace AutomatedEventProposalManagement
         {
           
                 string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
+
+
+
 
             if(string.IsNullOrEmpty(bunifuMaterialTextbox1.Text) || string.IsNullOrEmpty(bunifuMaterialTextbox2.Text)
                  || string.IsNullOrEmpty(bunifuMaterialTextbox3.Text) || string.IsNullOrEmpty(bunifuMaterialTextbox4.Text)
@@ -225,11 +293,6 @@ namespace AutomatedEventProposalManagement
 
 
                         string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
-
-
-
-
-
                         orgregis c1 = new orgregis()
                         {
 
@@ -304,50 +367,11 @@ namespace AutomatedEventProposalManagement
                 }
                 else if (sel1.Equals("College of Engeneering"))
                 {
-                    string coe = "COE";
-                    if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
-                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
-                 || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
-                    {
-
-                        MessageBox.Show("Please Specify all blank.");
-
-                    }
-
-                    else
-                    {
 
 
-                        string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
+                COE();
 
-
-
-
-
-                        orgregis c1 = new orgregis()
-                        {
-
-                            firstname = bunifuMaterialTextbox3.Text,
-                            id = bunifuMaterialTextbox1.Text,
-                            lastname = bunifuMaterialTextbox5.Text,
-                            middlename = bunifuMaterialTextbox4.Text,
-                            org_name = sel2,
-                            org_type = coe,
-                            password = bunifuMaterialTextbox2.Text
-                        };
-
-                        var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
-
-                        MessageBox.Show("Register Success.");
-                        bunifuMaterialTextbox1.Text = string.Empty;
-                        bunifuMaterialTextbox2.Text = string.Empty;
-                        bunifuMaterialTextbox3.Text = string.Empty;
-                        bunifuMaterialTextbox4.Text = string.Empty;
-                        bunifuMaterialTextbox5.Text = string.Empty;
-                        comboBox2.Text = string.Empty;
-                        comboBox1.Text = string.Empty;
-                    }
-                }
+            }
                 else if (sel1.Equals("Campus-Wide"))
                 {
                     string Campus = "Campus-Wide";
@@ -520,6 +544,68 @@ namespace AutomatedEventProposalManagement
             {
                 e.Handled = true;
             }
+        }
+
+        public void COE()
+        {
+            string coe = "COE";
+
+            if (string.IsNullOrWhiteSpace(bunifuMaterialTextbox1.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox2.Text)
+               || string.IsNullOrWhiteSpace(bunifuMaterialTextbox3.Text) || string.IsNullOrWhiteSpace(bunifuMaterialTextbox4.Text)
+               || string.IsNullOrWhiteSpace(bunifuMaterialTextbox5.Text) || string.IsNullOrEmpty(comboBox1.Text) || string.IsNullOrEmpty(comboBox2.Text))
+            {
+
+                MessageBox.Show("Please Specify all blank.");
+
+            }
+
+            else
+            {
+                string sel2 = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
+                orgregis c1 = new orgregis()
+                {
+
+                    firstname = bunifuMaterialTextbox3.Text,
+                    id = bunifuMaterialTextbox1.Text,
+                    lastname = bunifuMaterialTextbox5.Text,
+                    middlename = bunifuMaterialTextbox4.Text,
+                    org_name = sel2,
+                    org_type = coe,
+                    password = bunifuMaterialTextbox2.Text
+                };
+
+                var set = client.Set(@"User/Organization/" + bunifuMaterialTextbox1.Text, c1);
+
+                MessageBox.Show("Register Success.");
+                //bunifuMaterialTextbox1.Text = string.Empty;
+                //bunifuMaterialTextbox2.Text = string.Empty;
+                //bunifuMaterialTextbox3.Text = string.Empty;
+                //bunifuMaterialTextbox4.Text = string.Empty;
+                //bunifuMaterialTextbox5.Text = string.Empty;
+                //comboBox2.Text = string.Empty;
+                //comboBox1.Text = string.Empty;
+
+                saohome sao = new saohome();
+                this.Hide();
+                sao.ShowDialog();
+                this.Close();
+
+            }
+        }
+
+        private void comboBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_Leave(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void comboBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+          
         }
     }
 }
