@@ -66,6 +66,8 @@ namespace AutomatedEventProposalManagement
         {
             string today = DateTime.Now.ToString("yyyy-MM-dd");
             var today1 = DateTime.Now;
+            DateTime vo = Convert.ToDateTime(today);
+
             var tomorrow = today1.AddDays(1);
 
             try
@@ -78,7 +80,7 @@ namespace AutomatedEventProposalManagement
 
                     string datnow = find.Value.date_of_event;
 
-                    if (today.Equals(datnow))
+                    if (today.Equals(today1))
                     {
                         if (find.Value.status.Equals("Accepted"))
                         {
@@ -126,14 +128,14 @@ namespace AutomatedEventProposalManagement
 
                     string datnow = find.Value.date_of_event;
 
-                    if (tomorrow.Equals(tomorrow))
+                    if (tomorrow.Equals(datnow))
                     {
 
 
                         dataGridView2.Update();
                         dataGridView2.Refresh();
                         dataGridView2.Rows.Add(
-                   find.Value.beneficiaries,
+                        find.Value.beneficiaries,
                         find.Value.committee_in_charge,
                         find.Value.date,
                         find.Value.date_of_event,
@@ -159,7 +161,7 @@ namespace AutomatedEventProposalManagement
                         find.Value.venue
                             );
 
-                        break;
+             
                     }
                 }
             }

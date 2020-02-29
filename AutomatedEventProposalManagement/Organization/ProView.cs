@@ -84,8 +84,8 @@ namespace AutomatedEventProposalManagement
                 propose na = new propose() {
                     beneficiaries = myevents.i8,
                     committee_in_charge = myevents.i2,
-                    date = myevents.i25,
-                    date_of_event = myevents.i4,
+                    date = myevents.i4,
+                    date_of_event = myevents.i25,
                     description = myevents.i5,
                     id = id00,
                     name_of_project = myevents.i0,

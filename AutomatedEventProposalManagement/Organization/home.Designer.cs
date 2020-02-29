@@ -598,7 +598,7 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(1032, 283);
+            this.dataGridView2.Size = new System.Drawing.Size(1037, 283);
             this.dataGridView2.TabIndex = 19;
             // 
             // dataGridViewTextBoxColumn1

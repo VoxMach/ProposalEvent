@@ -69,7 +69,7 @@ namespace AutomatedEventProposalManagement
 
                     string datnow = find.Value.date_of_event;
 
-                    if (today.Equals(datnow))
+                    if (today.Equals(today1))
                     {
                         if (find.Value.status.Equals("Accepted"))
                         {
@@ -150,7 +150,6 @@ namespace AutomatedEventProposalManagement
                         find.Value.venue
                             );
 
-                        break;
                     }
                 }
             }

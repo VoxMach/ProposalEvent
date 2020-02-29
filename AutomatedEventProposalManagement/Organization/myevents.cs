@@ -198,15 +198,12 @@ namespace AutomatedEventProposalManagement
 
         public void customnotif()
         {
-
             try
             {
                 FirebaseResponse response1 = client.Get("SAO/Proposal/");
-
                 Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
                 foreach (var pussy in Dick1)
                 {
-
                     string pens = pussy.Value.status;
                     string namepro = pussy.Value.name_of_project;
                     string prp = pussy.Value.prepared_by;

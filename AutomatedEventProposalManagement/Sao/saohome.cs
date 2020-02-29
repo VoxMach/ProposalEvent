@@ -58,6 +58,9 @@ namespace AutomatedEventProposalManagement
 
             string today = DateTime.Now.ToString("yyyy-MM-dd");
             var today1 = DateTime.Now;
+            DateTime time = DateTime.Now;
+            string format = "yyyy-MM-dd";
+            var get = time.ToString(format);
             var tomorrow = today1.AddDays(1);
 
             try
@@ -70,7 +73,7 @@ namespace AutomatedEventProposalManagement
 
                     string datnow = find.Value.date_of_event;
 
-                    if (today.Equals(datnow))
+                    if (today.Equals(today1))
                     {
                         if (find.Value.status.Equals("Accepted"))
                         {
@@ -151,8 +154,8 @@ namespace AutomatedEventProposalManagement
                         find.Value.venue
                             );
 
-                        break;
-                    }
+
+                                            }
                 }
             }
             catch
@@ -312,6 +315,9 @@ namespace AutomatedEventProposalManagement
             
         }
 
-        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
