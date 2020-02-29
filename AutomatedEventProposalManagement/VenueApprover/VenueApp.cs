@@ -160,48 +160,58 @@ namespace AutomatedEventProposalManagement
         }
         public void customnotif()
         {
-            FirebaseResponse response1 = client.Get("Venue/VenueReservation/");
 
-            Dictionary<string, VenueReservation> Dick1 = response1.ResultAs<Dictionary<string, VenueReservation>>();
-            foreach (var pussy in Dick1)
+            try
+            {
+                FirebaseResponse response1 = client.Get("Venue/VenueReservation/");
+
+                Dictionary<string, VenueReservation> Dick1 = response1.ResultAs<Dictionary<string, VenueReservation>>();
+                foreach (var pussy in Dick1)
+                {
+
+                    string type = label5.Text;
+                    string pens = pussy.Value.approver;
+                    string namepro = pussy.Value.name_of_project;
+                    string prp = pussy.Value.approver_name;
+                    string venue = pussy.Value.venue;
+                    string stat = pussy.Value.status;
+
+                    if (type == "Assistant Director")
+                    {
+
+                        if (pens == "Pending" || pens == "Nothing Yet")
+                        {
+                            this.Alert(namepro, prp, venue, pens);
+                        }
+
+                    }
+                    else if (type == "Chancellor")
+                    {
+                        if (pens == "Pending" || pens == "Nothing Yet")
+                        {
+                            this.Alert(namepro, prp, venue, pens);
+                        }
+                    }
+                    else
+                    {
+                        if (pens == "Pending")
+                        {
+                            this.Alert(namepro, prp, venue, pens);
+                        }
+                    }
+
+
+
+
+
+                }
+            }
+            catch
             {
 
-                string type = label5.Text;
-                string pens = pussy.Value.approver;
-                string namepro = pussy.Value.name_of_project;
-                string prp = pussy.Value.approver_name;
-                string venue = pussy.Value.venue;
-                string stat = pussy.Value.status;
-
-                if (type == "Assistant Director")
-                {
-
-                    if (pens == "Pending" || pens == "Nothing Yet")
-                    {
-                        this.Alert(namepro, prp, venue, pens);
-                    }
-
-                }
-                else if (type == "Chancellor")
-                {
-                    if (pens == "Pending" || pens == "Nothing Yet")
-                    {
-                        this.Alert(namepro, prp, venue, pens);
-                    }
-                }
-                else
-                {
-                    if (pens == "Pending")
-                    {
-                        this.Alert(namepro, prp, venue, pens);
-                    }
-                }
-
-
-
-
-
             }
+
+            
 
         }
 

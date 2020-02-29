@@ -166,50 +166,60 @@ namespace AutomatedEventProposalManagement
         }
         public void customnotif()
         {
-            FirebaseResponse response1 = client.Get("Venue/VenueReservation/");
 
-            Dictionary<string, VenueReservation> Dick1 = response1.ResultAs<Dictionary<string, VenueReservation>>();
-            foreach (var pussy in Dick1)
+            try
+            {
+                FirebaseResponse response1 = client.Get("Venue/VenueReservation/");
+
+                Dictionary<string, VenueReservation> Dick1 = response1.ResultAs<Dictionary<string, VenueReservation>>();
+                foreach (var pussy in Dick1)
+                {
+
+                    string type = label4.Text;
+
+                    string namepro = pussy.Value.name_of_project;
+                    string prp = pussy.Value.approver_name;
+                    string venue = pussy.Value.venue;
+                    string stat = pussy.Value.status;
+                    string adname = pussy.Value.org_adviser;
+                    string pens = pussy.Value.org_adviser_status;
+                    string den1 = pussy.Value.org_dean;
+                    string den2 = pussy.Value.org_dean_status;
+                    string orp = pussy.Value.org_president;
+                    string orp1 = pussy.Value.org_president_status;
+                    if (type == "Adviser")
+                    {
+
+                        if (pens == "Pending" || pens == "Nothing Yet")
+                        {
+                            this.Alert(namepro, adname, venue, pens);
+                        }
+
+                    }
+                    else if (type == "Dean's Office")
+                    {
+                        if (den2 == "Pending" || den2 == "Nothing Yet")
+                        {
+                            this.Alert(namepro, den1, venue, den2);
+                        }
+                    }
+                    else
+                    {
+                        if (orp1 == "Pending" || orp1 == "Nothing Yet")
+                        {
+                            this.Alert(namepro, orp, venue, orp1);
+                        }
+                    }
+
+
+
+                }
+            }
+            catch
             {
 
-                string type = label4.Text;
-                
-                string namepro = pussy.Value.name_of_project;
-                string prp = pussy.Value.approver_name;
-                string venue = pussy.Value.venue;
-                string stat = pussy.Value.status;
-                string adname = pussy.Value.org_adviser;
-                string pens = pussy.Value.org_adviser_status;
-                string den1 = pussy.Value.org_dean;
-                string den2 = pussy.Value.org_dean_status;
-                string orp = pussy.Value.org_president;
-                string orp1 = pussy.Value.org_president_status;
-                if (type == "Adviser") {
-
-                    if (pens == "Pending" || pens == "Nothing Yet")
-                    {
-                        this.Alert(namepro, adname, venue, pens);
-                    }
-
-                }
-                else if (type == "Dean's Office")
-                {
-                    if (den2 == "Pending" || den2 == "Nothing Yet")
-                    {
-                        this.Alert(namepro, den1, venue, den2);
-                    }
-                }
-                else
-                {
-                    if (orp1 == "Pending" || orp1 == "Nothing Yet")
-                    {
-                        this.Alert(namepro, orp, venue, orp1);
-                    }
-                }
-
-
-           
             }
+           
 
         }
 

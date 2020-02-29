@@ -172,81 +172,96 @@ namespace AutomatedEventProposalManagement
         }
         public void customnotif()
         {
-            FirebaseResponse response1 = client.Get("Venue/VenueReservation/");
 
-            Dictionary<string, VenueReservation> Dick1 = response1.ResultAs<Dictionary<string, VenueReservation>>();
-            foreach (var pussy in Dick1)
+
+            try
             {
+                FirebaseResponse response1 = client.Get("Venue/VenueReservation/");
 
-                string type = label4.Text;
-
-                string namepro = pussy.Value.name_of_project;
-                string prp = pussy.Value.approver_name;
-                string venue = pussy.Value.venue;
-                string stat = pussy.Value.status;
-                string adname = pussy.Value.org_adviser;
-                string pens = pussy.Value.org_adviser_status;
-                string den1 = pussy.Value.org_dean;
-                string den2 = pussy.Value.org_dean_status;
-                string orp = pussy.Value.org_president;
-                string orp1 = pussy.Value.org_president_status;
-
-                string id = pussy.Value.id;
-                string idyous = label2.Text;
-
-                string proname = pussy.Value.approver;
-                string provstat = pussy.Value.approver_name;
-
-                string vname = pussy.Value.name_incharge;
-                string vstats = pussy.Value.incharge;
-
-                if (idyous == id)
+                Dictionary<string, VenueReservation> Dick1 = response1.ResultAs<Dictionary<string, VenueReservation>>();
+                foreach (var pussy in Dick1)
                 {
-                    if (proname == "Accepted")
+
+                    string type = label4.Text;
+
+                    string namepro = pussy.Value.name_of_project;
+                    string prp = pussy.Value.approver_name;
+                    string venue = pussy.Value.venue;
+                    string stat = pussy.Value.status;
+                    string adname = pussy.Value.org_adviser;
+                    string pens = pussy.Value.org_adviser_status;
+                    string den1 = pussy.Value.org_dean;
+                    string den2 = pussy.Value.org_dean_status;
+                    string orp = pussy.Value.org_president;
+                    string orp1 = pussy.Value.org_president_status;
+
+                    string id = pussy.Value.id;
+                    string idyous = label2.Text;
+
+                    string proname = pussy.Value.approver;
+                    string provstat = pussy.Value.approver_name;
+
+                    string vname = pussy.Value.name_incharge;
+                    string vstats = pussy.Value.incharge;
+
+                    if (idyous == id)
                     {
-                        this.Alert(namepro, provstat, venue, proname);
-                    }else if (proname == "Rejected")
-                    {
-                        this.Alert(namepro, provstat, venue, proname);
+                        if (proname == "Accepted")
+                        {
+                            this.Alert(namepro, provstat, venue, proname);
+                        }
+                        else if (proname == "Rejected")
+                        {
+                            this.Alert(namepro, provstat, venue, proname);
+                        }
+
+
+                        if (pens == "Accepted")
+                        {
+                            this.Alert(namepro, adname, venue, pens);
+                        }
+                        else if (pens == "Rejected")
+                        {
+                            this.Alert(namepro, adname, venue, pens);
+                        }
+
+                        if (den2 == "Accepted")
+                        {
+                            this.Alert(namepro, den1, venue, den2);
+                        }
+                        else if (den2 == "Rejected")
+                        {
+                            this.Alert(namepro, den1, venue, den2);
+                        }
+
+
+                        if (orp1 == "Accepted")
+                        {
+                            this.Alert(namepro, orp, venue, orp1);
+                        }
+                        else if (orp1 == "Rejected")
+                        {
+                            this.Alert(namepro, orp, venue, orp1);
+                        }
+
+
+                        if (vstats == "Accepted")
+                        {
+                            this.Alert(namepro, vname, venue, vstats);
+                        }
+                        else if (vstats == "Rejected")
+                        {
+                            this.Alert(namepro, vname, venue, vstats);
+                        }
+
                     }
-
-
-                    if (pens == "Accepted")
-                    {
-                        this.Alert(namepro, adname, venue, pens);
-                    }else if (pens == "Rejected")
-                    {
-                        this.Alert(namepro, adname, venue, pens);
-                    }
-                    
-                    if (den2 == "Accepted")
-                    {
-                        this.Alert(namepro, den1, venue, den2);
-                    }else if (den2 == "Rejected")
-                    {
-                        this.Alert(namepro, den1, venue, den2);
-                    }
-
-
-                    if (orp1 == "Accepted")
-                    {
-                        this.Alert(namepro, orp, venue, orp1);
-                    }else if (orp1 == "Rejected")
-                    {
-                        this.Alert(namepro, orp, venue, orp1);
-                    }
-
-
-                    if(vstats == "Accepted")
-                    {
-                        this.Alert(namepro, vname, venue, vstats);
-                    }else if (vstats == "Rejected")
-                    {
-                        this.Alert(namepro, vname, venue, vstats);
-                    }
-
                 }
             }
+            catch
+            {
+
+            }
+            
 
         }
         public void Alert(string namep, string prepby, string venue, string status)
