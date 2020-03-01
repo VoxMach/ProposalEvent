@@ -122,7 +122,7 @@
             this.bunifuMaterialTextbox5.LineIdleColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox5.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox5.LineThickness = 3;
-            this.bunifuMaterialTextbox5.Location = new System.Drawing.Point(105, 489);
+            this.bunifuMaterialTextbox5.Location = new System.Drawing.Point(104, 521);
             this.bunifuMaterialTextbox5.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox5.MaxLength = 32767;
             this.bunifuMaterialTextbox5.Name = "bunifuMaterialTextbox5";
@@ -146,7 +146,7 @@
             this.bunifuMaterialTextbox4.LineIdleColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox4.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox4.LineThickness = 3;
-            this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(105, 395);
+            this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(104, 427);
             this.bunifuMaterialTextbox4.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox4.MaxLength = 32767;
             this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
@@ -170,7 +170,7 @@
             this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(105, 281);
+            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(104, 313);
             this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox2.MaxLength = 32767;
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
@@ -194,7 +194,7 @@
             this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(105, 186);
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(104, 218);
             this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox1.MaxLength = 32767;
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";

@@ -29,23 +29,12 @@ namespace AutomatedEventProposalManagement
 
         private void apphome_Load(object sender, EventArgs e)
         {
-            try
-            {
-                client = new FireSharp.FirebaseClient(config);
-                if (client != null)
-                {
 
-                    this.CenterToScreen();
-                    this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                    this.WindowState = FormWindowState.Normal;
+            this.CenterToScreen();
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.WindowState = FormWindowState.Normal;
 
-
-                }
-            }
-            catch
-            {
-                MessageBox.Show("No Internet or Connection Problem");
-            }
+            Conne();
 
             nameu.Text = loginForm.s1 + "," + loginForm.s6 + " " + loginForm.s7;
             label2.Text = loginForm.s2;
@@ -53,29 +42,78 @@ namespace AutomatedEventProposalManagement
             label4.Text = loginForm.s4;
             label5.Text = loginForm.s5;
 
-            string today = DateTime.Now.ToString("yyyy-MM-dd");
-            var today1 = DateTime.Now;
-            var tomorrow = today1.AddDays(1);
+            this.Invoke((MethodInvoker)delegate {
 
-            
+                string today = DateTime.Now.ToString("yyyy-MM-dd");
+                var today1 = DateTime.Now;
+                var tomorrow = today1.AddDays(1);
 
-            try
-            {
-                FirebaseResponse response = client.Get("SAO/Proposal/");
-                Dictionary<string, propose> Dick = response.ResultAs<Dictionary<string, propose>>();
-                foreach (var find in Dick)
+
+
+                try
                 {
-
-                    string datnow = find.Value.date_of_event;
-                    string pass = DateTime.Now.ToString("yyyy-MM-dd");
-                    if (pass.Equals(datnow))
+                    FirebaseResponse response = client.Get("SAO/Proposal/");
+                    Dictionary<string, propose> Dick = response.ResultAs<Dictionary<string, propose>>();
+                    foreach (var find in Dick)
                     {
-                        if (find.Value.status.Equals("Accepted"))
+
+                        string datnow = find.Value.date_of_event;
+                        string pass = DateTime.Now.ToString("yyyy-MM-dd");
+                        if (pass.Equals(datnow))
+                        {
+                            if (find.Value.status.Equals("Accepted"))
+                            {
+
+                                dataGridView1.Update();
+                                dataGridView1.Refresh();
+                                dataGridView1.Rows.Add(
+                             find.Value.beneficiaries,
+                            find.Value.committee_in_charge,
+                            find.Value.date,
+                            find.Value.date_of_event,
+                            find.Value.description,
+                            find.Value.id,
+                            find.Value.name_of_project,
+                            find.Value.nature_of_project,
+                            find.Value.noted_by_org_president,
+                            find.Value.noted_by_adviser,
+                            find.Value.org_name,
+                            find.Value.org_type,
+                            find.Value.prepared_by,
+                            find.Value.recommending_approval,
+                            find.Value.status,
+                            find.Value.general_objective,
+                            find.Value.specific_objective,
+                            find.Value.planning_statge,
+                            find.Value.implementation,
+                            find.Value.resource_req,
+                            find.Value.evaluation,
+                            find.Value.time_from,
+                            find.Value.time_to,
+                            find.Value.venue
+                                    );
+
+                            }
+                        }
+
+
+
+                    }
+                    FirebaseResponse response1 = client.Get("SAO/Proposal/");
+
+                    Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
+                    foreach (var find in Dick1)
+                    {
+
+                        string datnow = find.Value.date_of_event;
+                        string pass = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
+                        if (pass.Equals(datnow))
                         {
 
-                            dataGridView1.Update();
-                            dataGridView1.Refresh();
-                            dataGridView1.Rows.Add(
+
+                            dataGridView2.Update();
+                            dataGridView2.Refresh();
+                            dataGridView2.Rows.Add(
                          find.Value.beneficiaries,
                         find.Value.committee_in_charge,
                         find.Value.date,
@@ -102,61 +140,16 @@ namespace AutomatedEventProposalManagement
                         find.Value.venue
                                 );
 
+
                         }
                     }
-
-
-
                 }
-                FirebaseResponse response1 = client.Get("SAO/Proposal/");
-
-                Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
-                foreach (var find in Dick1)
+                catch
                 {
 
-                    string datnow = find.Value.date_of_event;
-                    string pass = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
-                    if (pass.Equals(datnow))
-                    {
-
-
-                        dataGridView2.Update();
-                        dataGridView2.Refresh();
-                        dataGridView2.Rows.Add(
-                     find.Value.beneficiaries,
-                    find.Value.committee_in_charge,
-                    find.Value.date,
-                    find.Value.date_of_event,
-                    find.Value.description,
-                    find.Value.id,
-                    find.Value.name_of_project,
-                    find.Value.nature_of_project,
-                    find.Value.noted_by_org_president,
-                    find.Value.noted_by_adviser,
-                    find.Value.org_name,
-                    find.Value.org_type,
-                    find.Value.prepared_by,
-                    find.Value.recommending_approval,
-                    find.Value.status,
-                    find.Value.general_objective,
-                    find.Value.specific_objective,
-                    find.Value.planning_statge,
-                    find.Value.implementation,
-                    find.Value.resource_req,
-                    find.Value.evaluation,
-                    find.Value.time_from,
-                    find.Value.time_to,
-                    find.Value.venue
-                            );
-
-                
-                    }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("No Data Stored Yet.");
-            }
+
+            });
 
             customnotif();
 
@@ -164,52 +157,14 @@ namespace AutomatedEventProposalManagement
 
 
         }
-        public void customnotif()
+        public void Conne()
         {
-
             try
             {
-                FirebaseResponse response1 = client.Get("Venue/VenueReservation/");
-
-                Dictionary<string, VenueReservation> Dick1 = response1.ResultAs<Dictionary<string, VenueReservation>>();
-                foreach (var pussy in Dick1)
+                client = new FireSharp.FirebaseClient(config);
+                if (client != null)
                 {
 
-                    string type = label4.Text;
-
-                    string namepro = pussy.Value.name_of_project;
-                    string prp = pussy.Value.approver_name;
-                    string venue = pussy.Value.venue;
-                    string stat = pussy.Value.status;
-                    string adname = pussy.Value.org_adviser;
-                    string pens = pussy.Value.org_adviser_status;
-                    string den1 = pussy.Value.org_dean;
-                    string den2 = pussy.Value.org_dean_status;
-                    string orp = pussy.Value.org_president;
-                    string orp1 = pussy.Value.org_president_status;
-                    if (type == "Adviser")
-                    {
-
-                        if (pens == "Pending" || pens == "Nothing Yet")
-                        {
-                            this.Alert(namepro, adname, venue, pens);
-                        }
-
-                    }
-                    else if (type == "Dean's Office")
-                    {
-                        if (den2 == "Pending" || den2 == "Nothing Yet")
-                        {
-                            this.Alert(namepro, den1, venue, den2);
-                        }
-                    }
-                    else
-                    {
-                        if (orp1 == "Pending" || orp1 == "Nothing Yet")
-                        {
-                            this.Alert(namepro, orp, venue, orp1);
-                        }
-                    }
 
 
 
@@ -219,6 +174,69 @@ namespace AutomatedEventProposalManagement
             {
 
             }
+        }
+
+
+        public void customnotif()
+        {
+
+            this.Invoke((MethodInvoker)delegate {
+                try
+                {
+                    FirebaseResponse response1 = client.Get("Venue/VenueReservation/");
+
+                    Dictionary<string, VenueReservation> Dick1 = response1.ResultAs<Dictionary<string, VenueReservation>>();
+                    foreach (var pussy in Dick1)
+                    {
+
+                        string type = label4.Text;
+
+                        string namepro = pussy.Value.name_of_project;
+                        string prp = pussy.Value.approver_name;
+                        string venue = pussy.Value.venue;
+                        string stat = pussy.Value.status;
+                        string adname = pussy.Value.org_adviser;
+                        string pens = pussy.Value.org_adviser_status;
+                        string den1 = pussy.Value.org_dean;
+                        string den2 = pussy.Value.org_dean_status;
+                        string orp = pussy.Value.org_president;
+                        string orp1 = pussy.Value.org_president_status;
+                        if (type == "Adviser")
+                        {
+
+                            if (pens == "Pending" || pens == "Nothing Yet")
+                            {
+                                this.Alert(namepro, adname, venue, pens);
+                            }
+
+                        }
+                        else if (type == "Dean's Office")
+                        {
+                            if (den2 == "Pending" || den2 == "Nothing Yet")
+                            {
+                                this.Alert(namepro, den1, venue, den2);
+                            }
+                        }
+                        else
+                        {
+                            if (orp1 == "Pending" || orp1 == "Nothing Yet")
+                            {
+                                this.Alert(namepro, orp, venue, orp1);
+                            }
+                        }
+
+
+
+                    }
+                }
+                catch
+                {
+
+                }
+
+            });
+
+            
            
 
         }

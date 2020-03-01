@@ -29,172 +29,204 @@ namespace AutomatedEventProposalManagement
             
         }
 
+
+
         private void saohome_Load(object sender, EventArgs e)
         {
-            
-            try
-            {
-                client = new FireSharp.FirebaseClient(config);
-                if (client != null)
+                nameu.Text = loginForm.s1;
+                label2.Text = loginForm.s2;
+                label3.Text = loginForm.s3;
+                label4.Text = loginForm.s4;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.CenterToScreen();
+            this.WindowState = FormWindowState.Normal;
+
+
+
+
+
+            connect();
+            customnotif();
+            grids();
+
+        }
+        public void grids()
+        {
+
+
+            this.Invoke((MethodInvoker)delegate {
+
+                string today = DateTime.Now.ToString("yyyy-MM-dd");
+                var today1 = DateTime.Now;
+                DateTime time = DateTime.Now;
+                string format = "yyyy-MM-dd";
+                var get = time.ToString(format);
+                var tomorrow = today1.AddDays(1);
+
+                try
                 {
+                    FirebaseResponse response = client.Get("SAO/Proposal/");
 
-                    this.CenterToScreen();
-                    this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                    this.WindowState = FormWindowState.Normal;
-                    
-
-                }
-            }
-            catch
-            {
-                MessageBox.Show("No Internet or Connection Problem");
-            }
-
-            nameu.Text = loginForm.s1;
-            label2.Text = loginForm.s2;
-            label3.Text = loginForm.s3;
-            label4.Text = loginForm.s4;
-
-
-            string today = DateTime.Now.ToString("yyyy-MM-dd");
-            var today1 = DateTime.Now;
-            DateTime time = DateTime.Now;
-            string format = "yyyy-MM-dd";
-            var get = time.ToString(format);
-            var tomorrow = today1.AddDays(1);
-
-            try
-            {
-                FirebaseResponse response = client.Get("SAO/Proposal/");
-
-                Dictionary<string, propose> Dick = response.ResultAs<Dictionary<string, propose>>();
-                foreach (var find in Dick)
-                {
-
-                    string datnow = find.Value.date_of_event;
-                    string pass = DateTime.Now.ToString("yyyy-MM-dd");
-                    if (pass.Equals(datnow))
+                    Dictionary<string, propose> Dick = response.ResultAs<Dictionary<string, propose>>();
+                    foreach (var find in Dick)
                     {
-                        if (find.Value.status.Equals("Accepted"))
+
+                        string datnow = find.Value.date_of_event;
+                        string pass = DateTime.Now.ToString("yyyy-MM-dd");
+                        if (pass.Equals(datnow))
+                        {
+                            if (find.Value.status.Equals("Accepted"))
+                            {
+
+                                dataGridView1.Update();
+                                dataGridView1.Refresh();
+                                dataGridView1.Rows.Add(
+                            find.Value.beneficiaries,
+                            find.Value.committee_in_charge,
+                            find.Value.date,
+                            find.Value.date_of_event,
+                            find.Value.description,
+                            find.Value.id,
+                            find.Value.name_of_project,
+                            find.Value.nature_of_project,
+                            find.Value.noted_by_org_president,
+                            find.Value.noted_by_adviser,
+                            find.Value.org_name,
+                            find.Value.org_type,
+                            find.Value.prepared_by,
+                            find.Value.recommending_approval,
+                            find.Value.status,
+                            find.Value.general_objective,
+                            find.Value.specific_objective,
+                            find.Value.planning_statge,
+                            find.Value.implementation,
+                            find.Value.resource_req,
+                            find.Value.evaluation,
+                            find.Value.time_from,
+                            find.Value.time_to,
+                            find.Value.venue
+                                    );
+
+                            }
+                        }
+
+
+
+                    }
+                    FirebaseResponse response1 = client.Get("SAO/Proposal/");
+
+                    Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
+                    foreach (var find in Dick1)
+                    {
+
+                        string datnow = find.Value.date_of_event;
+                        string pass = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
+                        if (pass.Equals(datnow))
                         {
 
-                            dataGridView1.Update();
-                            dataGridView1.Refresh();
-                            dataGridView1.Rows.Add(
-                        find.Value.beneficiaries,
-                        find.Value.committee_in_charge,
-                        find.Value.date,
-                        find.Value.date_of_event,
-                        find.Value.description,
-                        find.Value.id,
-                        find.Value.name_of_project,
-                        find.Value.nature_of_project,
-                        find.Value.noted_by_org_president,
-                        find.Value.noted_by_adviser,
-                        find.Value.org_name,
-                        find.Value.org_type,
-                        find.Value.prepared_by,
-                        find.Value.recommending_approval,
-                        find.Value.status,
-                        find.Value.general_objective,
-                        find.Value.specific_objective,
-                        find.Value.planning_statge,
-                        find.Value.implementation,
-                        find.Value.resource_req,
-                        find.Value.evaluation,
-                        find.Value.time_from,
-                        find.Value.time_to,
-                        find.Value.venue
+
+                            dataGridView2.Update();
+                            dataGridView2.Refresh();
+                            dataGridView2.Rows.Add(
+                         find.Value.beneficiaries,
+                            find.Value.committee_in_charge,
+                            find.Value.date,
+                            find.Value.date_of_event,
+                            find.Value.description,
+                            find.Value.id,
+                            find.Value.name_of_project,
+                            find.Value.nature_of_project,
+                            find.Value.noted_by_org_president,
+                            find.Value.noted_by_adviser,
+                            find.Value.org_name,
+                            find.Value.org_type,
+                            find.Value.prepared_by,
+                            find.Value.recommending_approval,
+                            find.Value.status,
+                            find.Value.general_objective,
+                            find.Value.specific_objective,
+                            find.Value.planning_statge,
+                            find.Value.implementation,
+                            find.Value.resource_req,
+                            find.Value.evaluation,
+                            find.Value.time_from,
+                            find.Value.time_to,
+                            find.Value.venue
                                 );
 
                         }
                     }
-
-
-
                 }
-                FirebaseResponse response1 = client.Get("SAO/Proposal/");
-
-                Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
-                foreach (var find in Dick1)
+                catch
                 {
 
-                    string datnow = find.Value.date_of_event;
-                    string pass = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
-                    if (pass.Equals(datnow))
+                }
+
+
+            });
+
+
+
+
+
+        }
+        public void connect()
+        {
+
+            Task task = Task.Factory.StartNew(() => {
+
+
+                try
+                {
+                    client = new FireSharp.FirebaseClient(config);
+                    if (client != null)
                     {
 
-
-                        dataGridView2.Update();
-                        dataGridView2.Refresh();
-                        dataGridView2.Rows.Add(
-                     find.Value.beneficiaries,
-                        find.Value.committee_in_charge,
-                        find.Value.date,
-                        find.Value.date_of_event,
-                        find.Value.description,
-                        find.Value.id,
-                        find.Value.name_of_project,
-                        find.Value.nature_of_project,
-                        find.Value.noted_by_org_president,
-                        find.Value.noted_by_adviser,
-                        find.Value.org_name,
-                        find.Value.org_type,
-                        find.Value.prepared_by,
-                        find.Value.recommending_approval,
-                        find.Value.status,
-                        find.Value.general_objective,
-                        find.Value.specific_objective,
-                        find.Value.planning_statge,
-                        find.Value.implementation,
-                        find.Value.resource_req,
-                        find.Value.evaluation,
-                        find.Value.time_from,
-                        find.Value.time_to,
-                        find.Value.venue
-                            );
-
-                                            }
+                    }
                 }
-            }
-            catch
-            {
+                catch
+                {
+                }
 
-            }
 
-            
-
-            customnotif();
-
+            });
 
         }
         public void customnotif()
         {
 
-            try
-            {
-                FirebaseResponse response1 = client.Get("SAO/Proposal/");
+            this.Invoke((MethodInvoker)delegate {
 
-                Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
-                foreach (var pussy in Dick1)
+                try
+                {
+                    FirebaseResponse response1 = client.Get("SAO/Proposal/");
+
+                    Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
+                    foreach (var pussy in Dick1)
+                    {
+
+                        string pens = pussy.Value.status;
+                        string namepro = pussy.Value.name_of_project;
+                        string prp = pussy.Value.prepared_by;
+                        string venue = pussy.Value.venue;
+                        string stat = pussy.Value.status;
+                        if (pens == "Pending")
+                        {
+                            this.Alert(namepro, prp, venue, stat);
+                        }
+
+                    }
+                }
+                catch
                 {
 
-                    string pens = pussy.Value.status;
-                    string namepro = pussy.Value.name_of_project;
-                    string prp = pussy.Value.prepared_by;
-                    string venue = pussy.Value.venue;
-                    string stat = pussy.Value.status;
-                    if (pens == "Pending")
-                    {
-                        this.Alert(namepro, prp, venue, stat);
-                    }
-
                 }
-            }
-            catch
-            {
 
-            }
+            });
+
+
+
+            
 
           
             

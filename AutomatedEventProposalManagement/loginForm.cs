@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
- 
+using System.Threading.Tasks;
 namespace AutomatedEventProposalManagement
 {
 
@@ -46,30 +46,11 @@ namespace AutomatedEventProposalManagement
         private void loginForm_Load(object sender, System.EventArgs e)
         {
 
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                
-            }
-            
-            
+            this.CenterToScreen();
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.WindowState = FormWindowState.Normal;
 
-            try
-            {
-                client = new FireSharp.FirebaseClient(config);
-                if(client != null)
-                {
-                    
-                    this.CenterToScreen();
-                    this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                    this.WindowState = FormWindowState.Normal;
-                    
-                    
-                }
-            }
-            catch
-            {
-                MessageBox.Show("No Internet or Connection Problem");
-            }
+            Connect();
 
             comboBox1.Items.Add("Approver");
             comboBox1.Items.Add("Organization");
@@ -81,6 +62,20 @@ namespace AutomatedEventProposalManagement
             textBox2.Enabled = false;
         }
       
+        public void Connect()
+        {
+            try
+            {
+                client = new FireSharp.FirebaseClient(config);
+                if (client != null)
+                {
+                }
+            }
+            catch
+            {
+
+            }
+        }
 
         private void bunifuCustomLabel1_Click(object sender, System.EventArgs e)
         {
@@ -89,6 +84,11 @@ namespace AutomatedEventProposalManagement
 
         private void button1_Click_1(object sender, System.EventArgs e)
         {
+
+
+       
+
+
             string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
             if(string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text)){
 

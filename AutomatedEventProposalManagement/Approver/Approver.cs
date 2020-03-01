@@ -119,9 +119,30 @@ namespace AutomatedEventProposalManagement
             }
         }
 
+        public void existo()
+        {
+            FirebaseResponse resp = client.Get("User/Organization/");
+            Dictionary<string, Appregis> dicks = resp.ResultAs<Dictionary<string, Appregis>>();
+            foreach (var getthem in dicks)
+            {
+                string orgsname = getthem.Value.org_name;
+
+                if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals(orgsname))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken."
+                        + Environment.NewLine + Environment.NewLine
+                        + orgsname);      
+                }
+
+            }
+        }
+
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals(comboBox2.Text))
+            {
+                existo();
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -85,84 +85,24 @@ namespace AutomatedEventProposalManagement
             {
                 string orgsname = getthem.Value.org_name;
                 
-                if (orgsname.Equals("Association of Civil Engineering Students(ACES)"))
+                if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals(orgsname))
                 {
-                    MessageBox.Show("This Type of Organization Name is taken." +orgsname);
-                    
-                }else if (orgsname.Equals("Association of Electrical Engineering Students(AEES)"))
-                {
-                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
-                }
-                else if  (orgsname.Equals("Association of Computer Studies and System Students"))
-                {
-                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
-                }else if (orgsname.Equals("Association of Computer Studies and System Students"))
-                {
-                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
-                }
-                else if (orgsname.Equals("Computer Engineering Students Society(COESS)"))
-                {
-                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
-                }
-                else if (orgsname.Equals("Electonics Engineering Society-Institute of Electronics"))
-                {
-                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
-                }
-                else if (orgsname.Equals("League of Information Technology Students(LITS)"))
-                {
-                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
-                }
-                else if (orgsname.Equals("Philipphine Society of Mechanical Engineers(PSME)"))
-                {
-                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
-                }
-                else if (orgsname.Equals("Institute of Electrical and Electronics Engineers - UE "))
-                {
-                    MessageBox.Show("This Type of Organization Name is taken." + orgsname);
+                    MessageBox.Show("This Type of Organization Name is taken."
+                        +Environment.NewLine+Environment.NewLine
+                        +orgsname);
+                    comboBox2.Text = "";
                 }
                
             }
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals(comboBox2.Text))
+            {
+                exists();
+            }
 
 
-            if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Association of Civil Engineering Students(ACES)"))
-            {
-                exists();
-            }
-            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Association of Electrical Engineering Students(AEES)"))
-            {
-                exists();
-            }
-            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Association of Computer Studies and System Students"))
-            {
-                exists();
-            }
-            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Computer Engineering Students Society(COESS)"))
-            {
-                exists();
-            }
-            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Electonics Engineering Society-Institute of Electronics"))
-            {
-                exists();
-            }
-            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Institute of Electrical and Electronics Engineers - UE "))
-            {
-                exists();
-            }
-            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("League of Information Technology Students(LITS)"))
-            {
-                exists();
-            }
-            else if (this.comboBox2.GetItemText(this.comboBox2.SelectedItem).Equals("Philipphine Society of Mechanical Engineers(PSME)"))
-            {
-                exists();
-            }
-            else
-            {
-                button1.Enabled = true;
-            }
 
         }
 
@@ -173,20 +113,20 @@ namespace AutomatedEventProposalManagement
             if (sel1.Equals("College of Arts Science"))
             {
                 comboBox2.Items.Clear();
-                comboBox2.Items.Add("Association of Communication Students(ACTIONS)");
-                comboBox2.Items.Add("University of the East Hospitality Management Society(UEHMS)");
-                comboBox2.Items.Add("University of the East Tourism Society(UETS)");
+                comboBox2.Items.Add("Association of Communication Students (ACTIONS)");
+                comboBox2.Items.Add("University of the East Hospitality Management Society (UEHMS)");
+                comboBox2.Items.Add("University of the East Tourism Society (UETS)");
 
             }
             else if (sel1.Equals("College of Business Administration"))
             {
 
                 comboBox2.Items.Clear();
-                comboBox2.Items.Add("Association of Tax and Law Students(ATLAS)");
-                comboBox2.Items.Add("Junior Financial Executives(JFINEX)");
-                comboBox2.Items.Add("Junior Philipphine Institute of Accountants(JPIA)");
-                comboBox2.Items.Add("Junior Executive Marketing Society(JEMS) ");
-                comboBox2.Items.Add("Management Association(MAUEK)");
+                comboBox2.Items.Add("Association of Tax and Law Students (ATLAS)");
+                comboBox2.Items.Add("Junior Financial Executives (JFINEX)");
+                comboBox2.Items.Add("Junior Philipphine Institute of Accountants (JPIA)");
+                comboBox2.Items.Add("Junior Executive Marketing Society (JEMS) ");
+                comboBox2.Items.Add("Management Association (MAUEK)");
                 comboBox2.Items.Add("Hiyas nang Silangan");
                 comboBox2.Items.Add("BES(Probationary)");
             }else if (sel1.Equals("College of Fine Arts, Architecture and Design"))
@@ -194,9 +134,9 @@ namespace AutomatedEventProposalManagement
                 comboBox2.Items.Clear();
                 comboBox2.Items.Add("Buklod Sining");
                 comboBox2.Items.Add("United Architects of the Philipphines Student Auxilliary");
-                comboBox2.Items.Add("Society of Interior Design Students(SIDS)");
+                comboBox2.Items.Add("Society of Interior Design Students (SIDS)");
                 comboBox2.Items.Add("Pintura(Probationary)");
-                comboBox2.Items.Add("ARK(Probationary)");
+                comboBox2.Items.Add("ARK(probationary)");
 
             }else if (sel1.Equals("College of Engeneering"))
             {
@@ -216,7 +156,7 @@ namespace AutomatedEventProposalManagement
                 comboBox2.Items.Clear();
                 comboBox2.Items.Add("CCP");
                 comboBox2.Items.Add("College Y Club");
-                comboBox2.Items.Add("Men in Board(MIB)");
+                comboBox2.Items.Add("Men in Board (MIB)");
                 comboBox2.Items.Add("Rotaract Club");
                 comboBox2.Items.Add("Lualhati LeagUE of Scholars");
                 comboBox2.Items.Add("Silangan Film Circle");

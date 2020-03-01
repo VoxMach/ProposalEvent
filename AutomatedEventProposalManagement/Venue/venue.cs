@@ -154,7 +154,29 @@ namespace AutomatedEventProposalManagement
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (this.comboBox1.GetItemText(this.comboBox1.SelectedItem).Equals(comboBox1.Text))
+            {
+                venExe();
+            }
         }
+        public void venExe()
+        {
+            FirebaseResponse resp = client.Get("User/Organization/");
+            Dictionary<string, venregis> dicks = resp.ResultAs<Dictionary<string, venregis>>();
+            foreach (var getthem in dicks)
+            {
+                string orgsname = getthem.Value.org_type;
+
+                if (this.comboBox1.GetItemText(this.comboBox1.SelectedItem).Equals(orgsname))
+                {
+                    MessageBox.Show("This Type of Organization Name is taken."
+                        + Environment.NewLine + Environment.NewLine
+                        + orgsname);
+                    
+                }
+
+            }
+        }
+
     }
 }
