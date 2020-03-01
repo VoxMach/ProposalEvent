@@ -33,8 +33,7 @@ namespace AutomatedEventProposalManagement
         public string implementation { get; set; }
         public string resource_req { get; set; }
         public string evaluation { get; set; }
-
-
+        public string readap { get; set; }
 
 
     }

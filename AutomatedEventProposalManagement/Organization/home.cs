@@ -30,7 +30,6 @@ namespace AutomatedEventProposalManagement
 
         private void home_Load(object sender, EventArgs e)
         {
-
             this.CenterToScreen();
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.WindowState = FormWindowState.Normal;
@@ -44,10 +43,51 @@ namespace AutomatedEventProposalManagement
             grids();
             grids1();
             customnotif();
+            SaoNotif();
+
+        }
+        public static string nameproj, venue, userid, status, dateevent;
+        public void SaoNotif()
+        {
+            string get = label2.Text;
+            FirebaseResponse response1 = client.Get("SAO/Proposal/");
+            Dictionary<string, propose> Dick1 = response1.ResultAs<Dictionary<string, propose>>();
+            foreach (var getPussy in Dick1)
+            {
+
+                if ( get == getPussy.Value.id)
+                {
+                    
+                    if (getPussy.Value.status == "Accepted" || getPussy.Value.status == "Rejected") {
+
+                        if (getPussy.Value.readap == "Mark As Read")
+                        {
+
+
+                        } else if (getPussy.Value.readap != "Mark As Read")
+                        {
+                            
+                            MessageBox.Show("Sao Confirm Your Proposal. Click OK for more info.","SAO MESSAGE");
+                            nameproj = getPussy.Value.name_of_project;
+                            venue = getPussy.Value.venue;
+                            userid = getPussy.Key;
+                            dateevent = getPussy.Value.date_of_event;
+                            status = getPussy.Value.status;
+
+                            CheckStatus stats = new CheckStatus();
+                            this.Hide();
+                            stats.ShowDialog();
+                            this.Close();
+                        }
+
+                    }
+                }
+
+            }
+
 
 
         }
-
 
         public void Conn()
         {
@@ -217,70 +257,73 @@ namespace AutomatedEventProposalManagement
                     {
 
                         string type = label4.Text;
-
-                        string namepro = pussy.Value.name_of_project;
                         string prp = pussy.Value.approver_name;
-                        string venue = pussy.Value.venue;
                         string stat = pussy.Value.status;
-                        string adname = pussy.Value.org_adviser;
-                        string pens = pussy.Value.org_adviser_status;
-                        string den1 = pussy.Value.org_dean;
-                        string den2 = pussy.Value.org_dean_status;
-                        string orp = pussy.Value.org_president;
-                        string orp1 = pussy.Value.org_president_status;
-
-                        string id = pussy.Value.id;
-                        string idyous = label2.Text;
-
-                        string proname = pussy.Value.approver;
-                        string provstat = pussy.Value.approver_name;
-
-                        string vname = pussy.Value.name_incharge;
-                        string vstats = pussy.Value.incharge;
-
-                        if (idyous == id)
+                        
+                        if (label2.Text == pussy.Value.id)
                         {
-                            if (proname == "Accepted")
+
+                            if (pussy.Value.readap == "Mark As Read")
                             {
-                                this.Alert(namepro, provstat, venue, proname);
-                            }
-                            else if (proname == "Rejected")
+
+
+
+                            }else if (pussy.Value.readap != "Mark As Read")
                             {
-                                this.Alert(namepro, provstat, venue, proname);
-                            }
-                            if (pens == "Accepted")
-                            {
-                                this.Alert(namepro, adname, venue, pens);
-                            }
-                            else if (pens == "Rejected")
-                            {
-                                this.Alert(namepro, adname, venue, pens);
+                                if (pussy.Value.approver == "Accepted")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.approver_name,
+                                        pussy.Value.venue, pussy.Value.approver);
+                                }
+                                else if (pussy.Value.approver == "Rejected")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.approver_name,
+                                        pussy.Value.venue, pussy.Value.approver);
+                                }
+                                if (pussy.Value.org_adviser_status == "Accepted")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.org_adviser,
+                                        pussy.Value.venue, pussy.Value.org_adviser_status);
+                                }
+                                else if (pussy.Value.org_adviser_status == "Rejected")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.org_adviser,
+                                        pussy.Value.venue, pussy.Value.org_adviser_status);
+                                }
+
+                                if (pussy.Value.org_dean_status == "Accepted")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.org_dean,
+                                        pussy.Value.venue, pussy.Value.org_dean_status);
+                                }
+                                else if (pussy.Value.org_dean_status == "Rejected")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.org_dean,
+                                        pussy.Value.venue, pussy.Value.org_dean_status);
+                                }
+                                if (pussy.Value.org_president_status == "Accepted")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.org_president,
+                                        pussy.Value.venue, pussy.Value.org_president_status);
+                                }
+                                else if (pussy.Value.org_president_status == "Rejected")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.org_president,
+                                        pussy.Value.venue, pussy.Value.org_president_status);
+                                }
+                                if (pussy.Value.incharge == "Accepted")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.name_incharge,
+                                        pussy.Value.venue, pussy.Value.incharge);
+                                }
+                                else if (pussy.Value.incharge == "Rejected")
+                                {
+                                    this.Alert(pussy.Value.name_of_project, pussy.Value.name_incharge,
+                                        pussy.Value.venue, pussy.Value.incharge);
+                                }
                             }
 
-                            if (den2 == "Accepted")
-                            {
-                                this.Alert(namepro, den1, venue, den2);
-                            }
-                            else if (den2 == "Rejected")
-                            {
-                                this.Alert(namepro, den1, venue, den2);
-                            }
-                            if (orp1 == "Accepted")
-                            {
-                                this.Alert(namepro, orp, venue, orp1);
-                            }
-                            else if (orp1 == "Rejected")
-                            {
-                                this.Alert(namepro, orp, venue, orp1);
-                            }
-                            if (vstats == "Accepted")
-                            {
-                                this.Alert(namepro, vname, venue, vstats);
-                            }
-                            else if (vstats == "Rejected")
-                            {
-                                this.Alert(namepro, vname, venue, vstats);
-                            }
+                            
                         }
                     }
                 }

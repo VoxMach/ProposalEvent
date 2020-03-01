@@ -101,7 +101,8 @@ namespace AutomatedEventProposalManagement
                             find.Value.org_dean,
                             find.Value.org_dean_status,
                             find.Value.date_of_event,
-                            find.Value.status
+                            find.Value.status,
+                            find.Key
                             );
                     }
 
@@ -149,6 +150,7 @@ namespace AutomatedEventProposalManagement
         public static string i30;
         public static string i31;
         public static string i32;
+        public static string i33;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -187,6 +189,7 @@ namespace AutomatedEventProposalManagement
             i21 = dataGridView1.CurrentRow.Cells[27].Value.ToString();
             i25 = dataGridView1.CurrentRow.Cells[28].Value.ToString();
             i26 = dataGridView1.CurrentRow.Cells[29].Value.ToString();
+            i33 = dataGridView1.CurrentRow.Cells[30].Value.ToString();
             pv.ShowDialog();
             this.Close();
         }

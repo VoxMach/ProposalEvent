@@ -57,6 +57,8 @@ namespace AutomatedEventProposalManagement
                 MessageBox.Show("No Internet or Connection Problem");
             }
 
+            
+
             bunifuMaterialTextbox1.Text = myevents.i12;
             bunifuMaterialTextbox2.Text = myevents.i13;
             bunifuMaterialTextbox3.Text = myevents.i17;
@@ -107,7 +109,7 @@ namespace AutomatedEventProposalManagement
                     time_to = myevents.i7,
                     venue =myevents.i3
                 };
-
+                MarkAsRead();
                 var set = client.Push(@"SAO/Proposal/",na);
 
                 MessageBox.Show("Propose Success.");
@@ -116,5 +118,50 @@ namespace AutomatedEventProposalManagement
 
 
         }
+
+        public void MarkAsRead()
+        {
+            FirebaseResponse resp = client.Get("Venue/VenueReservation/"+myevents.i33);
+            VenueReservation vr = resp.ResultAs<VenueReservation>();
+            VenueReservation nr = new VenueReservation() {
+
+                approver = vr.approver,
+                approver_name = vr.approver_name,
+                beneficiaries = vr.beneficiaries,
+                committee_in_charge = vr.committee_in_charge,
+                date = vr.date,
+                date_of_event = vr.date_of_event,
+                description = vr.description,
+                id = vr.id,
+                incharge = vr.incharge,
+                name_approver = vr.name_approver,
+                name_incharge = vr.name_incharge,
+                name_of_project = vr.name_of_project,
+                nature_of_project = vr.nature_of_project,
+                general_objective = vr.general_objective,
+                specific_objective = vr.specific_objective,
+                planning_statge = vr.planning_statge,
+                implementation = vr.implementation,
+                resource_req = vr.resource_req,
+                evaluation = vr.evaluation,
+                org_adviser = vr.org_adviser,
+                org_adviser_status = vr.org_adviser_status,
+                org_dean = vr.org_dean,
+                org_dean_status = vr.org_dean_status,
+                org_name = vr.org_name,
+                org_president = vr.org_president,
+                org_president_status = vr.org_president_status,
+                org_type = vr.org_type,
+                status = vr.status,
+                time_from = vr.time_from,
+                time_to = vr.time_to,
+                venue = vr.venue,
+                readap = "Mark As Read"
+            };
+            var setmeup = client.Set("Venue/VenueReservation/" +myevents.i33, nr);
+
+
+        }
+
     }
 }

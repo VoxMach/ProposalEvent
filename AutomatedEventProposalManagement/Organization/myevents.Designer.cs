@@ -62,6 +62,7 @@
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -137,7 +138,8 @@
             this.Column20,
             this.Column21,
             this.Column23,
-            this.Column24});
+            this.Column24,
+            this.Column31});
             this.dataGridView1.Location = new System.Drawing.Point(-4, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -387,6 +389,14 @@
             this.Column24.ReadOnly = true;
             this.Column24.Width = 150;
             // 
+            // Column31
+            // 
+            this.Column31.HeaderText = "Key ID";
+            this.Column31.MinimumWidth = 8;
+            this.Column31.Name = "Column31";
+            this.Column31.ReadOnly = true;
+            this.Column31.Width = 150;
+            // 
             // myevents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -443,5 +453,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
     }
 }

@@ -58,6 +58,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckStatus.Designer.cs">
+      <DependentUpon>CheckStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomNotif.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +440,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CheckStatus.resx">
+      <DependentUpon>CheckStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomNotif.resx">
       <DependentUpon>CustomNotif.cs</DependentUpon>
     </EmbeddedResource>

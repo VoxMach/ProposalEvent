@@ -369,3 +369,4 @@ C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalMana
 C:\Users\Jayce\Source\Repos\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.acclist.resources
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.SaoAcccs.resources
 C:\Users\arbit\Source\Repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.CustomNotif.resources
+C:\Users\arbit\source\repos\Arbiterchil\ProposalEvent\AutomatedEventProposalManagement\obj\Debug\AutomatedEventProposalManagement.CheckStatus.resources
