@@ -121,7 +121,7 @@ namespace AutomatedEventProposalManagement
 
         public void existo()
         {
-            FirebaseResponse resp = client.Get("User/Organization/");
+            FirebaseResponse resp = client.Get("User/Approver/");
             Dictionary<string, Appregis> dicks = resp.ResultAs<Dictionary<string, Appregis>>();
             foreach (var getthem in dicks)
             {
@@ -152,50 +152,50 @@ namespace AutomatedEventProposalManagement
             if (sel1.Equals("College of Arts Science"))
             {
                 comboBox2.Items.Clear();
-                comboBox2.Items.Add("Association of Communication Students(ACTIONS)");
-                comboBox2.Items.Add("University of the East Hospitality Management Society(UEHMS)");
-                comboBox2.Items.Add("University of the East Tourism Society(UETS)");
+                comboBox2.Items.Add("Association of Communication Students (ACTIONS)");
+                comboBox2.Items.Add("University of the East Hospitality Management Society (UEHMS)");
+                comboBox2.Items.Add("University of the East Tourism Society (UETS)");
 
             }
             else if (sel1.Equals("College of Business Administration"))
             {
 
                 comboBox2.Items.Clear();
-                comboBox2.Items.Add("Association of Tax and Law Students(ATLAS)");
-                comboBox2.Items.Add("Junior Financial Executives(JFINEX)");
-                comboBox2.Items.Add("Junior Philipphine Institute of Accountants(JPIA)");
-                comboBox2.Items.Add("Junior Executive Marketing Society(JEMS) ");
-                comboBox2.Items.Add("Management Association(MAUEK)");
+                comboBox2.Items.Add("Association of Tax and Law Students (ATLAS)");
+                comboBox2.Items.Add("Junior Financial Executives (JFINEX)");
+                comboBox2.Items.Add("Junior Philipphine Institute of Accountants (JPIA)");
+                comboBox2.Items.Add("Junior Executive Marketing Society (JEMS) ");
+                comboBox2.Items.Add("Management Association (MAUEK)");
                 comboBox2.Items.Add("Hiyas nang Silangan");
-                comboBox2.Items.Add("BES(Probationary)");
+                comboBox2.Items.Add("BES(probationary)");
             }
             else if (sel1.Equals("College of Fine Arts, Architecture and Design"))
             {
                 comboBox2.Items.Clear();
                 comboBox2.Items.Add("Buklod Sining");
                 comboBox2.Items.Add("United Architects of the Philipphines Student Auxilliary");
-                comboBox2.Items.Add("Society of Interior Design Students(SIDS)");
-                comboBox2.Items.Add("Pintura(Probationary)");
-                comboBox2.Items.Add("ARK(Probationary)");
+                comboBox2.Items.Add("Society of Interior Design Students (SIDS)");
+                comboBox2.Items.Add("Pintura (probationary)");
+                comboBox2.Items.Add("ARK (probationary)");
             }
             else if (sel1.Equals("College of Engeneering"))
             {
                 comboBox2.Items.Clear();
-                comboBox2.Items.Add("Association of Civil Engineering Students(ACES)");
-                comboBox2.Items.Add("Association of Electrical Engineering Students(AEES)");
+                comboBox2.Items.Add("Association of Civil Engineering Students (ACES)");
+                comboBox2.Items.Add("Association of Electrical Engineering Students (AEES)");
                 comboBox2.Items.Add("Association of Computer Studies and System Students");
-                comboBox2.Items.Add("Computer Engineering Students Society(COESS)");
+                comboBox2.Items.Add("Computer Engineering Students Society (COESS)");
                 comboBox2.Items.Add("Electonics Engineering Society-Institute of Electronics");
                 comboBox2.Items.Add("Institute of Electrical and Electronics Engineers - UE ");
-                comboBox2.Items.Add("League of Information Technology Students(LITS)");
-                comboBox2.Items.Add("Philipphine Society of Mechanical Engineers(PSME)");
+                comboBox2.Items.Add("League of Information Technology Students (LITS)");
+                comboBox2.Items.Add("Philipphine Society of Mechanical Engineers (PSME)");
             }
             else if (sel1.Equals("Campus-Wide"))
             {
                 comboBox2.Items.Clear();
                 comboBox2.Items.Add("CCP");
                 comboBox2.Items.Add("College Y Club");
-                comboBox2.Items.Add("Men in Board(MIB)");
+                comboBox2.Items.Add("Men in Board (MIB)");
                 comboBox2.Items.Add("Rotaract Club");
                 comboBox2.Items.Add("Lualhati LeagUE of Scholars");
                 comboBox2.Items.Add("Silangan Film Circle");

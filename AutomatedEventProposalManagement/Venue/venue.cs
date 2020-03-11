@@ -161,7 +161,7 @@ namespace AutomatedEventProposalManagement
         }
         public void venExe()
         {
-            FirebaseResponse resp = client.Get("User/Organization/");
+            FirebaseResponse resp = client.Get("User/Venue/");
             Dictionary<string, venregis> dicks = resp.ResultAs<Dictionary<string, venregis>>();
             foreach (var getthem in dicks)
             {

@@ -206,7 +206,7 @@ namespace AutomatedEventProposalManagement
 
                             if (pens == "Pending" || pens == "Nothing Yet")
                             {
-                                this.Alert(namepro, adname, venue, pens);
+                                this.Alert(namepro, adname, venue, pens, CustomNotif.enmtype.Pending);
                             }
 
                         }
@@ -214,14 +214,14 @@ namespace AutomatedEventProposalManagement
                         {
                             if (den2 == "Pending" || den2 == "Nothing Yet")
                             {
-                                this.Alert(namepro, den1, venue, den2);
+                                this.Alert(namepro, den1, venue, den2, CustomNotif.enmtype.Pending);
                             }
                         }
                         else
                         {
                             if (orp1 == "Pending" || orp1 == "Nothing Yet")
                             {
-                                this.Alert(namepro, orp, venue, orp1);
+                                this.Alert(namepro, orp, venue, orp1, CustomNotif.enmtype.Pending);
                             }
                         }
 
@@ -241,10 +241,10 @@ namespace AutomatedEventProposalManagement
 
         }
 
-        public void Alert(string namep, string prepby, string venue, string status)
+        public void Alert(string namep, string prepby, string venue, string status, CustomNotif.enmtype enmtype)
         {
             CustomNotif cus = new CustomNotif();
-            cus.shoWAlert(namep, prepby, venue, status);
+            cus.shoWAlert(namep, prepby, venue, status,enmtype);
         }
         private void button4_Click(object sender, EventArgs e)
         {

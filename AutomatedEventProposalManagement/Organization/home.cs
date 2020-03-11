@@ -46,7 +46,7 @@ namespace AutomatedEventProposalManagement
             SaoNotif();
 
         }
-        public static string nameproj, venue, userid, status, dateevent;
+        public static string nameproj, venue, userid, status, dateevent,reason;
         public void SaoNotif()
         {
             string get = label2.Text;
@@ -73,6 +73,7 @@ namespace AutomatedEventProposalManagement
                             userid = getPussy.Key;
                             dateevent = getPussy.Value.date_of_event;
                             status = getPussy.Value.status;
+                            reason = getPussy.Value.reason;
 
                             CheckStatus stats = new CheckStatus();
                             this.Hide();
@@ -88,6 +89,10 @@ namespace AutomatedEventProposalManagement
 
 
         }
+
+
+
+
 
         public void Conn()
         {
@@ -273,53 +278,53 @@ namespace AutomatedEventProposalManagement
                                 if (pussy.Value.approver == "Accepted")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.approver_name,
-                                        pussy.Value.venue, pussy.Value.approver);
+                                        pussy.Value.venue, pussy.Value.approver,CustomNotif.enmtype.Accepted);
                                 }
                                 else if (pussy.Value.approver == "Rejected")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.approver_name,
-                                        pussy.Value.venue, pussy.Value.approver);
+                                        pussy.Value.venue, pussy.Value.approver, CustomNotif.enmtype.Rejected);
                                 }
                                 if (pussy.Value.org_adviser_status == "Accepted")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.org_adviser,
-                                        pussy.Value.venue, pussy.Value.org_adviser_status);
+                                        pussy.Value.venue, pussy.Value.org_adviser_status, CustomNotif.enmtype.Accepted);
                                 }
                                 else if (pussy.Value.org_adviser_status == "Rejected")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.org_adviser,
-                                        pussy.Value.venue, pussy.Value.org_adviser_status);
+                                        pussy.Value.venue, pussy.Value.org_adviser_status , CustomNotif.enmtype.Rejected);
                                 }
 
                                 if (pussy.Value.org_dean_status == "Accepted")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.org_dean,
-                                        pussy.Value.venue, pussy.Value.org_dean_status);
+                                        pussy.Value.venue, pussy.Value.org_dean_status, CustomNotif.enmtype.Accepted);
                                 }
                                 else if (pussy.Value.org_dean_status == "Rejected")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.org_dean,
-                                        pussy.Value.venue, pussy.Value.org_dean_status);
+                                        pussy.Value.venue, pussy.Value.org_dean_status, CustomNotif.enmtype.Rejected);
                                 }
                                 if (pussy.Value.org_president_status == "Accepted")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.org_president,
-                                        pussy.Value.venue, pussy.Value.org_president_status);
+                                        pussy.Value.venue, pussy.Value.org_president_status, CustomNotif.enmtype.Accepted);
                                 }
                                 else if (pussy.Value.org_president_status == "Rejected")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.org_president,
-                                        pussy.Value.venue, pussy.Value.org_president_status);
+                                        pussy.Value.venue, pussy.Value.org_president_status, CustomNotif.enmtype.Rejected);
                                 }
                                 if (pussy.Value.incharge == "Accepted")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.name_incharge,
-                                        pussy.Value.venue, pussy.Value.incharge);
+                                        pussy.Value.venue, pussy.Value.incharge, CustomNotif.enmtype.Accepted);
                                 }
                                 else if (pussy.Value.incharge == "Rejected")
                                 {
                                     this.Alert(pussy.Value.name_of_project, pussy.Value.name_incharge,
-                                        pussy.Value.venue, pussy.Value.incharge);
+                                        pussy.Value.venue, pussy.Value.incharge, CustomNotif.enmtype.Rejected);
                                 }
                             }
 
@@ -337,10 +342,10 @@ namespace AutomatedEventProposalManagement
            
         }
 
-        public void Alert(string namep, string prepby, string venue, string status)
+        public void Alert(string namep, string prepby, string venue, string status,CustomNotif.enmtype enmtype)
         {
             CustomNotif cus = new CustomNotif();
-            cus.shoWAlert(namep, prepby, venue, status);
+            cus.shoWAlert(namep, prepby, venue, status ,enmtype);
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {}

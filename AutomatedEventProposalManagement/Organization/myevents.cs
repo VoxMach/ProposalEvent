@@ -219,7 +219,7 @@ namespace AutomatedEventProposalManagement
                     {
                         if (pens == "Accepted")
                         {
-                            this.Alert(namepro, prp, venue, stat);
+                            this.Alert(namepro, prp, venue, stat, CustomNotif.enmtype.Accepted);
                         }
                     }
 
@@ -236,10 +236,10 @@ namespace AutomatedEventProposalManagement
 
         }
 
-        public void Alert(string namep, string prepby, string venue, string status)
+        public void Alert(string namep, string prepby, string venue, string status, CustomNotif.enmtype enmtype)
         {
             CustomNotif cus = new CustomNotif();
-            cus.shoWAlert(namep, prepby, venue, status);
+            cus.shoWAlert(namep, prepby, venue, status,enmtype);
         }
 
 

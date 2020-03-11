@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,18 @@
             this.panel1.Size = new System.Drawing.Size(610, 89);
             this.panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(244, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 56);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "SAO";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Firebrick;
@@ -55,7 +68,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(435, 738);
+            this.button1.Location = new System.Drawing.Point(443, 766);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(162, 68);
@@ -168,23 +181,24 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "It Was";
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(244, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 56);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "SAO";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(30, 664);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 21);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "It Was";
             // 
             // CheckStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 836);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.bunifuMaterialTextbox4);
             this.Controls.Add(this.bunifuMaterialTextbox3);
@@ -215,5 +229,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }

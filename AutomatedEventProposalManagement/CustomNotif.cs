@@ -24,10 +24,18 @@ namespace AutomatedEventProposalManagement
             close
 
            }
+        public enum enmtype
+        { 
+        
+            Rejected,
+            Accepted,
+            Pending
+
+        }
 
         private CustomNotif.enAc action;
         private int x, y;
-        public void shoWAlert(string namep, string prepby, string venue, string status)
+        public void shoWAlert(string namep, string prepby, string venue, string status,enmtype type)
         {
 
             this.Opacity = 0.0;
@@ -43,20 +51,43 @@ namespace AutomatedEventProposalManagement
                 {
                     this.Name = fname;
                     this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15;
-                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i;
+                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i -5 * i;
                     this.Location = new Point(this.x,this.y);
                     break;
                 }
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
+            switch (type)
+            {
+                case enmtype.Pending:
+                    this.label1.Text = namep;
+                    this.label2.Text = prepby;
+                    this.label3.Text = venue;
+                    this.label5.Text = status;
+                    this.BackColor = Color.Green;
+                    break;
+                case enmtype.Accepted:
+                    this.label1.Text = namep;
+                    this.label2.Text = prepby;
+                    this.label3.Text = venue;
+                    this.label5.Text = status;
+                    this.BackColor = Color.RoyalBlue;
+                    break;
+                case enmtype.Rejected:
+                    this.label1.Text = namep;
+                    this.label2.Text = prepby;
+                    this.label3.Text = venue;
+                    this.label5.Text = status;
+                    this.BackColor = Color.DarkRed;
+                    break;
+            }
 
+
+           
+            
             
 
-            this.label1.Text = namep;
-            this.label2.Text = prepby;
-            this.label3.Text = venue;
-            this.label5.Text = status;
-            
+
             this.Show();
             this.action = enAc.start;
             this.timer1.Interval = 1;
@@ -122,6 +153,12 @@ namespace AutomatedEventProposalManagement
         private void CustomNotif_Load(object sender, EventArgs e)
         {
        
+        }
+
+        private void label00_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 1;
+            action = enAc.close;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

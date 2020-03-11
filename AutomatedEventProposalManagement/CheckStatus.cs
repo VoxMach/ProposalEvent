@@ -35,6 +35,7 @@ namespace AutomatedEventProposalManagement
             bunifuMaterialTextbox2.Text = home.dateevent;
             bunifuMaterialTextbox3.Text = home.venue;
             bunifuMaterialTextbox4.Text = home.status;
+            label2.Text = home.reason;
 
         }
         public void Conne()
@@ -86,7 +87,8 @@ namespace AutomatedEventProposalManagement
             time_from = prop.time_from,
             time_to  = prop.time_to,
             venue = prop.venue,
-            readap = "Mark As Read"
+            readap = "Mark As Read",
+            reason = prop.reason
            
             };
 

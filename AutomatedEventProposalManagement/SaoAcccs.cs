@@ -97,38 +97,47 @@ namespace AutomatedEventProposalManagement
             string tim2 = get.time_to;
             string vens = get.venue;
 
-            var hehe = new propose() { 
-            
+            if (string.IsNullOrEmpty(bunifuMaterialTextbox3.Text))
+            {
+                MessageBox.Show("Please Put a Word Below named Reason.");
+            }
+            else
+            {
 
-                beneficiaries = bene ,
-                committee_in_charge = comin ,
-                date= dater,
-                date_of_event = datev,
-                description = des,
-                evaluation = eval ,
-                general_objective = gens, 
-                id = idsame,
-                implementation = imp,
-                name_of_project = namp,
-                nature_of_project = natp,
-                noted_by_adviser = nota,
-                noted_by_org_president = notorg,
-                org_name = org,
-                org_type = orgt,
-                planning_statge = plan,
-                prepared_by = prep,
-                recommending_approval = remp,
-                resource_req = remreq,
-                specific_objective = spec,
-                status = status1 ,    
-                time_from = tim1,
-                time_to = tim2,
-                venue= vens
-            };
+                var hehe = new propose()
+                {
 
-            FirebaseResponse resp = client.Set("SAO/Proposal/" + SaoPen.e24,hehe);
-            MessageBox.Show("Accepted Successfully");
 
+                    beneficiaries = bene,
+                    committee_in_charge = comin,
+                    date = dater,
+                    date_of_event = datev,
+                    description = des,
+                    evaluation = eval,
+                    general_objective = gens,
+                    id = idsame,
+                    implementation = imp,
+                    name_of_project = namp,
+                    nature_of_project = natp,
+                    noted_by_adviser = nota,
+                    noted_by_org_president = notorg,
+                    org_name = org,
+                    org_type = orgt,
+                    planning_statge = plan,
+                    prepared_by = prep,
+                    recommending_approval = remp,
+                    resource_req = remreq,
+                    specific_objective = spec,
+                    status = status1,
+                    time_from = tim1,
+                    time_to = tim2,
+                    venue = vens,
+                    reason = bunifuMaterialTextbox3.Text
+                };
+
+                FirebaseResponse resp = client.Set("SAO/Proposal/" + SaoPen.e24, hehe);
+                MessageBox.Show("Accepted Successfully");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -160,38 +169,48 @@ namespace AutomatedEventProposalManagement
             string tim2 = get.time_to;
             string vens = get.venue;
 
-            var hehe = new propose()
+            if (string.IsNullOrEmpty(bunifuMaterialTextbox3.Text))
+            {
+                MessageBox.Show("Please Put a Word Below named Reason.");
+            }
+            else
             {
 
+                var hehe = new propose()
+                {
 
-                beneficiaries = bene,
-                committee_in_charge = comin,
-                date = dater,
-                date_of_event = datev,
-                description = des,
-                evaluation = eval,
-                general_objective = gens,
-                id = idsame,
-                implementation = imp,
-                name_of_project = namp,
-                nature_of_project = natp,
-                noted_by_adviser = nota,
-                noted_by_org_president = notorg,
-                org_name = org,
-                org_type = orgt,
-                planning_statge = plan,
-                prepared_by = prep,
-                recommending_approval = remp,
-                resource_req = remreq,
-                specific_objective = spec,
-                status = status1,
-                time_from = tim1,
-                time_to = tim2,
-                venue = vens
-            };
 
-            FirebaseResponse resp = client.Set("SAO/Proposal/" + SaoPen.e24, hehe);
-            MessageBox.Show("Accepted Successfully");
+                    beneficiaries = bene,
+                    committee_in_charge = comin,
+                    date = dater,
+                    date_of_event = datev,
+                    description = des,
+                    evaluation = eval,
+                    general_objective = gens,
+                    id = idsame,
+                    implementation = imp,
+                    name_of_project = namp,
+                    nature_of_project = natp,
+                    noted_by_adviser = nota,
+                    noted_by_org_president = notorg,
+                    org_name = org,
+                    org_type = orgt,
+                    planning_statge = plan,
+                    prepared_by = prep,
+                    recommending_approval = remp,
+                    resource_req = remreq,
+                    specific_objective = spec,
+                    status = status1,
+                    time_from = tim1,
+                    time_to = tim2,
+                    venue = vens,
+                    reason = bunifuMaterialTextbox3.Text
+                };
+
+                FirebaseResponse resp = client.Set("SAO/Proposal/" + SaoPen.e24, hehe);
+                MessageBox.Show("Accepted Successfully");
+
+            }
         }
     }
 }
