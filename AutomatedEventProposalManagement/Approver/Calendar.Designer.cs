@@ -90,6 +90,7 @@
             this.monthCalendar1.ForeColor = System.Drawing.Color.Maroon;
             this.monthCalendar1.Location = new System.Drawing.Point(0, 0);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.monthCalendar1.MaxSelectionCount = 999;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 21;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
@@ -321,7 +322,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView calendarDataGrid;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -340,5 +340,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

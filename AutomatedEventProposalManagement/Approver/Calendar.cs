@@ -122,13 +122,12 @@ namespace AutomatedEventProposalManagement.Approver
 
                 if ( monthCalendar1.BoldedDates.Contains(hehe))
                 {
-                    monthCalendar1.BackColor = SystemColors.ControlDark;
-
+                    this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2,1);
+                    this.monthCalendar1.ShowTodayCircle = true;
+                    this.monthCalendar1.ShowWeekNumbers = true;
+                    this.monthCalendar1.ShowToday = true;
                 }
-                else
-                {
-                    monthCalendar1.BackColor = SystemColors.Control;
-                }
+                
 
 
 
