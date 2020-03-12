@@ -221,6 +221,10 @@ namespace AutomatedEventProposalManagement
                         {
                             this.Alert(namepro, prp, venue, stat, CustomNotif.enmtype.Accepted);
                         }
+                        if (pens == "Rejected")
+                        {
+                            this.Alert(namepro, prp, venue, stat, CustomNotif.enmtype.Rejected);
+                        }
                     }
 
 

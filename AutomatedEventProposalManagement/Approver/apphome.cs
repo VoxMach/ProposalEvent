@@ -57,9 +57,8 @@ namespace AutomatedEventProposalManagement
                     foreach (var find in Dick)
                     {
 
-                        string datnow = find.Value.date_of_event;
-                        string pass = DateTime.Now.ToString("yyyy-MM-dd");
-                        if (pass.Equals(datnow))
+                        
+                        if (DateTime.Now.ToString("yyyy-MM-dd").Equals(find.Value.date_of_event))
                         {
                             if (find.Value.status.Equals("Accepted"))
                             {

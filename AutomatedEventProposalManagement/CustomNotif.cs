@@ -81,13 +81,6 @@ namespace AutomatedEventProposalManagement
                     this.BackColor = Color.DarkRed;
                     break;
             }
-
-
-           
-            
-            
-
-
             this.Show();
             this.action = enAc.start;
             this.timer1.Interval = 1;
@@ -115,8 +108,7 @@ namespace AutomatedEventProposalManagement
                     {
                         this.Left--;
                         this.BringToFront();
-                        this.Activate();
-                        this.Focus();
+                   
                     }
                     else
                     {

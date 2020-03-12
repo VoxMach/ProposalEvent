@@ -27,6 +27,9 @@ namespace AutomatedEventProposalManagement.Approver
 
         }
 
+      
+
+
         private void label3_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -85,8 +88,67 @@ namespace AutomatedEventProposalManagement.Approver
             {
                 MessageBox.Show("No Internet or Connection Problem");
             }
-            
+            ColorDateTaken();
+
+           
+           
+
         }
+
+        public void ColorDateTaken()
+        {
+
+            FirebaseResponse response1 = client.Get("SAO/Proposal/");
+
+            Dictionary<string, pending> pending = response1.ResultAs<Dictionary<string, pending>>();
+            string today = DateTime.Now.ToString("yyyy-MM-dd");
+            foreach (var pussy in pending)
+            {
+                DateTime myDate = Convert.ToDateTime(pussy.Value.date_of_event);
+
+                int year = DateTime.Now.Year;
+                int month = DateTime.Now.Month;
+                int day = DateTime.Now.Day;
+                var nowwe = new DateTime(year,month,day);
+                
+                var totalmonths = (nowwe.Year - myDate.Year) * 12 + nowwe.Month - myDate.Month;
+                totalmonths += nowwe.Day < myDate.Day ? -1 : 0;
+                var days = nowwe.Subtract(myDate.AddMonths(totalmonths)).Days;
+
+                string f = DateTime.Now.AddDays(-days).ToString("yyyy-MM-dd");
+                DateTime hehe = DateTime.Parse(f);
+                monthCalendar1.AddBoldedDate(hehe);
+                monthCalendar1.UpdateBoldedDates();
+
+                if ( monthCalendar1.BoldedDates.Contains(hehe))
+                {
+                    monthCalendar1.BackColor = SystemColors.ControlDark;
+
+                }
+                else
+                {
+                    monthCalendar1.BackColor = SystemColors.Control;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+        }
+
 
         private void calendarGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
