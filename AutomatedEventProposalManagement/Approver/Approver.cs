@@ -58,8 +58,6 @@ namespace AutomatedEventProposalManagement
         private void label4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            signup f1 = new signup();
-            f1.ShowDialog();
             this.Close();
         }
 

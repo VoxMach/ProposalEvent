@@ -111,6 +111,7 @@ namespace AutomatedEventProposalManagement
             }
             catch (Exception ex)
             {
+                ex.StackTrace.ToString();
                 MessageBox.Show("No Data to Show.");
             }
 

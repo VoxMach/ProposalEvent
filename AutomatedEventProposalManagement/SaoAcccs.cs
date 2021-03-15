@@ -62,9 +62,7 @@ namespace AutomatedEventProposalManagement
 
         private void label4_Click(object sender, EventArgs e)
         {
-            SaoPen sap = new SaoPen();
             this.Hide();
-            sap.ShowDialog();
             this.Close();
         }
 
@@ -208,7 +206,7 @@ namespace AutomatedEventProposalManagement
                 };
 
                 FirebaseResponse resp = client.Set("SAO/Proposal/" + SaoPen.e24, hehe);
-                MessageBox.Show("Accepted Successfully");
+                MessageBox.Show("Rejected Successfully");
 
             }
         }

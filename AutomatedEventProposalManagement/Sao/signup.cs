@@ -20,8 +20,6 @@ namespace AutomatedEventProposalManagement
         private void label4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            saohome f1 = new saohome();
-            f1.ShowDialog();
             this.Close();
         }
 

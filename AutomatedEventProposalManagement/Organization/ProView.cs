@@ -33,9 +33,7 @@ namespace AutomatedEventProposalManagement
 
         private void label4_Click(object sender, EventArgs e)
         {
-            myevents ven = new myevents();
             this.Hide();
-            ven.ShowDialog();
             this.Close();
 
         }

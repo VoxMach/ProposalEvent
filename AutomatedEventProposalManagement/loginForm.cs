@@ -23,6 +23,10 @@ namespace AutomatedEventProposalManagement
            
 
         }
+
+        
+        
+
         public static string s1;
         public static string s2;
         public static string s3;
@@ -31,6 +35,16 @@ namespace AutomatedEventProposalManagement
         public static string s6;
         public static string s7;
         public static string s8;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ExStyle |= 0x00000020;
+                return createParams;
+            }
+        }
 
         private void button1_Click(object sender, System.EventArgs e)
         {

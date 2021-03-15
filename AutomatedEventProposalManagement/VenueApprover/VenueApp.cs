@@ -259,9 +259,7 @@ namespace AutomatedEventProposalManagement
             venAppen vrn = new venAppen();
             full = nameu.Text;
             ortype = label5.Text;
-            this.Hide();
             vrn.ShowDialog();
-            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

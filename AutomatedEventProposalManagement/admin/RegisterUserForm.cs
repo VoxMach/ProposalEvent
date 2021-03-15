@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FireSharp.Config;
 using FireSharp.Interfaces;
-using FireSharp.Response;
 
 namespace AutomatedEventProposalManagement.admin
 {

@@ -117,9 +117,7 @@ namespace AutomatedEventProposalManagement
 
         private void label4_Click(object sender, EventArgs e)
         {
-            venhome ven = new venhome();
             this.Hide();
-            ven.ShowDialog();
             this.Close();
         }
     }

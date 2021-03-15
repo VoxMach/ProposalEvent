@@ -89,11 +89,6 @@ namespace AutomatedEventProposalManagement
 
 
         }
-
-
-
-
-
         public void Conn()
         {
             try
@@ -374,9 +369,7 @@ namespace AutomatedEventProposalManagement
             orgtype = label4.Text;
 
             createv c = new createv();
-            this.Hide();
             c.ShowDialog();
-            this.Close();
         }
         public static string names;
         public static string typ2;
@@ -396,27 +389,21 @@ namespace AutomatedEventProposalManagement
         {
             OAccept oa = new OAccept();
              idor = label2.Text;
-            this.Hide();
             oa.ShowDialog();
-            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             OPend oa = new OPend();
             idor = label2.Text;
-            this.Hide();
             oa.ShowDialog();
-            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ORej oa = new ORej();
             idor = label2.Text;
-            this.Hide();
             oa.ShowDialog();
-            this.Close();
         }
 
         private void button7_Click(object sender, EventArgs e)

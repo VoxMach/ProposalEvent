@@ -123,8 +123,6 @@ namespace AutomatedEventProposalManagement.Approver
         private void label4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            apphome a = new apphome();
-            a.ShowDialog();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

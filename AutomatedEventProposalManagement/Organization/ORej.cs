@@ -119,9 +119,7 @@ namespace AutomatedEventProposalManagement
 
         private void label4_Click(object sender, EventArgs e)
         {
-            home h = new home();
             this.Hide();
-            h.ShowDialog();
             this.Close();
         }
 

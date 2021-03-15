@@ -57,9 +57,7 @@ namespace AutomatedEventProposalManagement
 
         private void label4_Click(object sender, EventArgs e)
         {
-            venAppen ven = new venAppen();
             this.Hide();
-            ven.ShowDialog();
             this.Close();
         }
         public static string key;

@@ -101,9 +101,7 @@ namespace AutomatedEventProposalManagement
         {
 
             confirmation();
-            home h = new home();
             this.Hide();
-            h.ShowDialog();
             this.Close();
         }
     }

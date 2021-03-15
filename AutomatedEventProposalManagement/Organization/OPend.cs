@@ -25,6 +25,15 @@ namespace AutomatedEventProposalManagement
         {
             InitializeComponent();
         }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ExStyle |= 0x00000020;
+                return createParams;
+            }
+        }
 
         private void OPend_Load(object sender, EventArgs e)
         {
@@ -37,8 +46,59 @@ namespace AutomatedEventProposalManagement
                     this.CenterToScreen();
                     this.Size = Screen.PrimaryScreen.WorkingArea.Size;
                     this.WindowState = FormWindowState.Normal;
+                    FirebaseResponse response = client.Get("Venue/VenueReservation/");
+
+                    Dictionary<string, VenueReservation> Dick = response.ResultAs<Dictionary<string, VenueReservation>>();
+                    foreach (var find in Dick)
+                    {
 
 
+                        string ids = find.Value.id;
+
+                        if (home.idor.Equals(ids))
+                        {
+                            if (find.Value.status.Equals("Pending"))
+                            {
+
+                                dataGridView1.Update();
+                                dataGridView1.Refresh();
+                                dataGridView1.Rows.Add(
+                                 find.Value.approver,
+                                 find.Value.approver_name,
+                                 find.Value.beneficiaries,
+                                 find.Value.committee_in_charge,
+                                 find.Value.date,
+                                 find.Value.date_of_event,
+                                 find.Value.description,
+                                 find.Value.id,
+                                 find.Value.incharge,
+                                 find.Value.name_approver,
+                                 find.Value.name_incharge,
+                                 find.Value.name_of_project,
+                                 find.Value.general_objective,
+                                 find.Value.specific_objective,
+                                 find.Value.planning_statge,
+                                 find.Value.implementation,
+                                 find.Value.resource_req,
+                                 find.Value.evaluation,
+                                 find.Value.nature_of_project,
+                                 find.Value.org_adviser,
+                                 find.Value.org_adviser_status,
+                                 find.Value.org_dean,
+                                 find.Value.org_dean_status,
+                                 find.Value.org_name,
+                                 find.Value.org_president,
+                                 find.Value.org_president_status,
+                                 find.Value.org_type,
+                                 find.Value.status,
+                                 find.Value.time_from,
+                                 find.Value.time_to,
+                                 find.Value.venue
+                                    );
+
+                            }
+                        }
+                    }
                 }
             }
             catch
@@ -47,75 +107,14 @@ namespace AutomatedEventProposalManagement
             }
 
 
-            try
-            {
-                FirebaseResponse response = client.Get("Venue/VenueReservation/");
-
-                Dictionary<string, VenueReservation> Dick = response.ResultAs<Dictionary<string, VenueReservation>>();
-                foreach (var find in Dick)
-                {
-
-
-                    string ids = find.Value.id;
-
-                    if (home.idor.Equals(ids))
-                    {
-                        if (find.Value.status.Equals("Pending"))
-                        {
-
-                            dataGridView1.Update();
-                            dataGridView1.Refresh();
-                            dataGridView1.Rows.Add(
-                            find.Value.approver,
-                             find.Value.approver_name,
-                             find.Value.beneficiaries,
-                             find.Value.committee_in_charge,
-                             find.Value.date,
-                             find.Value.date_of_event,
-                             find.Value.description,
-                             find.Value.id,
-                             find.Value.incharge,
-                             find.Value.name_approver,
-                             find.Value.name_incharge,
-                             find.Value.name_of_project,
-                             find.Value.general_objective,
-                             find.Value.specific_objective,
-                             find.Value.planning_statge,
-                             find.Value.implementation,
-                             find.Value.resource_req,
-                             find.Value.evaluation,
-                             find.Value.nature_of_project,
-                             find.Value.org_adviser,
-                             find.Value.org_adviser_status,
-                              find.Value.org_dean,
-                             find.Value.org_dean_status,
-                             find.Value.org_name,
-                             find.Value.org_president,
-                             find.Value.org_president_status,
-                             find.Value.org_type,
-                             find.Value.status,
-                             find.Value.time_from,
-                             find.Value.time_to,
-                             find.Value.venue
-                                );
-
-                        }
-                    }
-                }
-            }
-            catch
-            {
-
-            }
+            
 
             
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            home h = new home();
             this.Hide();
-            h.ShowDialog();
             this.Close();
         }
 

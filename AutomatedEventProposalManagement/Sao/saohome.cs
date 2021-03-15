@@ -279,49 +279,37 @@ namespace AutomatedEventProposalManagement
         private void button6_Click(object sender, EventArgs e)
         {
             manageacc man = new manageacc();
-            this.Hide();
             man.ShowDialog();
-            this.Close();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             orgalist list = new orgalist();
-            this.Hide();
             list.ShowDialog();
-            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             signup si = new signup();
-            this.Hide();
             si.ShowDialog();
-            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Accept acc = new Accept();
-            this.Hide();
             acc.ShowDialog();
-            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             SaoPen acc = new SaoPen();
-            this.Hide();
             acc.ShowDialog();
-            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             SaoRej acc = new SaoRej();
-            this.Hide();
             acc.ShowDialog();
-            this.Close();
         }
 
         private void button9_Click(object sender, EventArgs e)

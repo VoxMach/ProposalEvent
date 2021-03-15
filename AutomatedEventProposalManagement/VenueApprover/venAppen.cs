@@ -31,9 +31,7 @@ namespace AutomatedEventProposalManagement
 
         private void label4_Click(object sender, EventArgs e)
         {
-            VenueApp vrn = new VenueApp();
             this.Hide();
-            vrn.ShowDialog();
             this.Close();
         }
         public static string full1;

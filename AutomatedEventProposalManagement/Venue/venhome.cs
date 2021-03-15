@@ -265,9 +265,7 @@ namespace AutomatedEventProposalManagement
             VenuePen vrn = new VenuePen();
             full1 = nameu.Text;
             otap = label5.Text;
-            this.Hide();
             vrn.ShowDialog();
-            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

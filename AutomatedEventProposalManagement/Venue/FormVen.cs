@@ -100,9 +100,7 @@ namespace AutomatedEventProposalManagement
 
             private void label4_Click(object sender, EventArgs e)
         {
-            VenuePen ven = new VenuePen();
             this.Hide();
-            ven.ShowDialog();
             this.Close();
         }
 

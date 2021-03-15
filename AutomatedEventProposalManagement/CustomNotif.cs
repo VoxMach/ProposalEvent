@@ -29,7 +29,9 @@ namespace AutomatedEventProposalManagement
         
             Rejected,
             Accepted,
-            Pending
+            Pending,
+            Upcoming,
+            Banned
 
         }
 
@@ -42,7 +44,7 @@ namespace AutomatedEventProposalManagement
             this.StartPosition = FormStartPosition.Manual;
             string fname;
 
-            for (int i = 1; i < 100; i++)
+            for (int i = 1; i < 10; i++)
             {
                 fname = "alert" + i.ToString();
                 CustomNotif cus = (CustomNotif)Application.OpenForms[fname];
@@ -71,14 +73,28 @@ namespace AutomatedEventProposalManagement
                     this.label2.Text = prepby;
                     this.label3.Text = venue;
                     this.label5.Text = status;
-                    this.BackColor = Color.RoyalBlue;
+                    this.BackColor = Color.ForestGreen;
                     break;
                 case enmtype.Rejected:
                     this.label1.Text = namep;
                     this.label2.Text = prepby;
                     this.label3.Text = venue;
                     this.label5.Text = status;
-                    this.BackColor = Color.DarkRed;
+                    this.BackColor = Color.IndianRed;
+                    break;
+                case enmtype.Upcoming:
+                    this.label1.Text = namep;
+                    this.label2.Text = prepby;
+                    this.label3.Text = venue;
+                    this.label5.Text = status;
+                    this.BackColor = Color.Red;
+                    break;
+                case enmtype.Banned:
+                    this.label1.Text = namep;
+                    this.label2.Text = prepby;
+                    this.label3.Text = venue;
+                    this.label5.Text = status;
+                    this.BackColor = Color.Blue;
                     break;
             }
             this.Show();
@@ -100,7 +116,7 @@ namespace AutomatedEventProposalManagement
 
                     break;
 
-                case enAc.start:
+                case CustomNotif.enAc.start:
 
                     timer1.Interval = 1;
                     this.Opacity += 0.1;
@@ -129,6 +145,7 @@ namespace AutomatedEventProposalManagement
                     if (base.Opacity == 0.0)
                     {
                         base.Close();
+                        base.Hide();
                     }
 
                     break;
