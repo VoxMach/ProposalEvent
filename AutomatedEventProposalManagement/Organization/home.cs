@@ -25,7 +25,10 @@ namespace AutomatedEventProposalManagement
         public home()
         {
             InitializeComponent();
-           
+
+            this.dataGridView2.DefaultCellStyle.ForeColor = Color.Black;
+            this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+
         }
 
         private void home_Load(object sender, EventArgs e)
@@ -47,7 +50,7 @@ namespace AutomatedEventProposalManagement
 
         }
         public static string nameproj, venue, userid, status, dateevent,reason;
-        public void SaoNotif()
+        private void SaoNotif()
         {
             string get = label2.Text;
             FirebaseResponse response1 = client.Get("SAO/Proposal/");
@@ -55,7 +58,7 @@ namespace AutomatedEventProposalManagement
             foreach (var getPussy in Dick1)
             {
 
-                if ( get == getPussy.Value.id)
+                if ( get.Equals(getPussy.Value.id))
                 {
                     
                     if (getPussy.Value.status == "Accepted" || getPussy.Value.status == "Rejected") {
@@ -76,13 +79,12 @@ namespace AutomatedEventProposalManagement
                             reason = getPussy.Value.reason;
 
                             CheckStatus stats = new CheckStatus();
-                            this.Hide();
                             stats.ShowDialog();
-                            this.Close();
                         }
 
                     }
                 }
+               
 
             }
 
@@ -156,7 +158,9 @@ namespace AutomatedEventProposalManagement
                             find.Value.evaluation,
                             find.Value.time_from,
                             find.Value.time_to,
-                            find.Value.venue
+                            find.Value.venue,
+                            find.Value.venue_inchanger,
+                            find.Value.numberAttend
                                     );
 
                             }
@@ -222,7 +226,9 @@ namespace AutomatedEventProposalManagement
                             find.Value.evaluation,
                             find.Value.time_from,
                             find.Value.time_to,
-                            find.Value.venue
+                            find.Value.venue,
+                             find.Value.venue_inchanger,
+                            find.Value.numberAttend
                                 );
 
 
@@ -349,7 +355,7 @@ namespace AutomatedEventProposalManagement
         public static string orgtype;
         private void button4_Click(object sender, EventArgs e)
         {
-            var select = MessageBox.Show("Are you Sure Want to Log-out?", "",MessageBoxButtons.OKCancel);
+            var select = MessageBox.Show("Are you Sure Want to Log-out?", "Exit",MessageBoxButtons.OKCancel);
 
             if (select == DialogResult.OK)
             {
@@ -361,15 +367,89 @@ namespace AutomatedEventProposalManagement
            
         }
 
+        public void buttonUps()
+        {
+
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
 
-            id = label2.Text;
-            orgname = label3.Text;
-            orgtype = label4.Text;
+            string curMonth = DateTime.Now.Month.ToString();
+            string curYear = DateTime.Now.Year.ToString();
+            string curDay = DateTime.Now.Day.ToString();
 
-            createv c = new createv();
-            c.ShowDialog();
+            string combineAll = curMonth+"-"+curDay+"-"+ curYear;
+
+            string staticDates = "7-23-"+curYear;
+            string staticDates1 = "7-24-" + curYear;
+            string staticDates2 = "7-25-" + curYear;
+            string staticDates3 = "7-26-" + curYear;
+
+
+            string staticDates4 = "9-5-" + curYear;
+            string staticDates5 = "9-6-" + curYear;
+            string staticDates6 = "9-7-" + curYear;
+            string staticDates7 = "9-8-" + curYear;
+            string staticDates8 = "9-9-" + curYear;
+            string staticDates9 = "9-10-" + curYear;
+
+            string staticDates10 = "10-21-" + curYear;
+            string staticDates11 = "10-22-" + curYear;
+            string staticDates12 = "10-23-" + curYear;
+
+
+            string staticDates13 = "12-16-" + curYear;
+            string staticDates14 = "12-17-" + curYear;
+            string staticDates15 = "12-18-" + curYear;
+            string staticDates16 = "12-19-" + curYear;
+
+            string staticDates17 = "2-10-" + curYear;
+            string staticDates18 = "2-11-" + curYear;
+            string staticDates19 = "2-12-" + curYear;
+            string staticDates20 = "2-13-" + curYear;
+
+
+            string staticDates21 = "3-26-" + curYear;
+            string staticDates22 = "3-27-" + curYear;
+            string staticDates23 = "3-28-" + curYear;
+            string staticDates24 = "3-29-" + curYear;
+            string staticDates25 = "3-30-" + curYear;
+
+            string trialNow = "3-15-" + curYear;
+            string trialNow1 = "3-16-" + curYear;
+
+            if (combineAll.Equals(trialNow))
+            {
+                MessageBox.Show("Can't Create Event Due To upcoming Exams","Alert",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }else if (combineAll.Equals(staticDates) || combineAll.Equals(staticDates1) || combineAll.Equals(staticDates2) ||
+                    combineAll.Equals(staticDates3) || combineAll.Equals(staticDates4) || combineAll.Equals(staticDates5) ||
+                    combineAll.Equals(staticDates6) || combineAll.Equals(staticDates7) || combineAll.Equals(staticDates8) ||
+                    combineAll.Equals(staticDates9) || combineAll.Equals(staticDates10) || combineAll.Equals(staticDates11) ||
+                    combineAll.Equals(staticDates12) || combineAll.Equals(staticDates13) || combineAll.Equals(staticDates14) ||
+                    combineAll.Equals(staticDates15) || combineAll.Equals(staticDates16) || combineAll.Equals(staticDates17) ||
+                    combineAll.Equals(staticDates18) || combineAll.Equals(staticDates19) || combineAll.Equals(staticDates20) ||
+                    combineAll.Equals(staticDates21) || combineAll.Equals(staticDates22) || combineAll.Equals(staticDates23) ||
+                    combineAll.Equals(staticDates24) || combineAll.Equals(staticDates25))
+            {
+                MessageBox.Show("Can't Create Event Due To upcoming Exams", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                id = label2.Text;
+                orgname = label3.Text;
+                orgtype = label4.Text;
+
+                createv c = new createv();
+                c.ShowDialog();
+            }
+
+            
+
+
+
+
+
         }
         public static string names;
         public static string typ2;
@@ -379,12 +459,26 @@ namespace AutomatedEventProposalManagement
             names = nameu.Text;
             id = label2.Text;
             typ2 = label4.Text;
-            this.Hide();
             me.ShowDialog();
-            this.Close();
 
         }
         public static string idor;
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             OAccept oa = new OAccept();

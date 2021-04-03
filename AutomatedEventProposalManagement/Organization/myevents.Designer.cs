@@ -63,6 +63,8 @@
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.venue_incharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -139,7 +141,9 @@
             this.Column21,
             this.Column23,
             this.Column24,
-            this.Column31});
+            this.Column31,
+            this.venue_incharge,
+            this.count});
             this.dataGridView1.Location = new System.Drawing.Point(-4, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -397,6 +401,22 @@
             this.Column31.ReadOnly = true;
             this.Column31.Width = 150;
             // 
+            // venue_incharge
+            // 
+            this.venue_incharge.HeaderText = "Venue incharge";
+            this.venue_incharge.MinimumWidth = 8;
+            this.venue_incharge.Name = "venue_incharge";
+            this.venue_incharge.ReadOnly = true;
+            this.venue_incharge.Width = 150;
+            // 
+            // count
+            // 
+            this.count.HeaderText = "Number of Attendes";
+            this.count.MinimumWidth = 8;
+            this.count.Name = "count";
+            this.count.ReadOnly = true;
+            this.count.Width = 150;
+            // 
             // myevents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -454,5 +474,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn venue_incharge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
     }
 }

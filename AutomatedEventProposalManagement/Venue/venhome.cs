@@ -273,5 +273,15 @@ namespace AutomatedEventProposalManagement
             Calendar cal = new Calendar();
             cal.Show();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void nameu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

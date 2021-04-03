@@ -63,6 +63,7 @@ namespace AutomatedEventProposalManagement
                         dataGridView1.Update();
                         dataGridView1.Refresh();
                         dataGridView1.Rows.Add(
+                     
                     find.Value.beneficiaries,
                         find.Value.committee_in_charge,
                         find.Value.date,
@@ -87,7 +88,8 @@ namespace AutomatedEventProposalManagement
                         find.Value.time_from,
                         find.Value.time_to,
                         find.Value.venue,
-                        find.Key
+                        find.Key,
+                        find.Value.vruid
                             );
 
                     }
@@ -135,6 +137,7 @@ namespace AutomatedEventProposalManagement
         public static string e22;
         public static string e23;
         public static string e24;
+        public static string e25;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             SaoAcccs asaka = new SaoAcccs();
@@ -164,8 +167,8 @@ namespace AutomatedEventProposalManagement
             e22 = dataGridView1.CurrentRow.Cells[22].Value.ToString();
             e23 = dataGridView1.CurrentRow.Cells[23].Value.ToString();
             e24 = dataGridView1.CurrentRow.Cells[24].Value.ToString();
+            e25 = dataGridView1.CurrentRow.Cells[25].Value.ToString();
             asaka.ShowDialog();
-            this.Close();
         }
     }
 }

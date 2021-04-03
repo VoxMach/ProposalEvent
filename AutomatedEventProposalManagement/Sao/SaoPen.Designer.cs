@@ -57,6 +57,7 @@
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vruid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +127,8 @@
             this.Column17,
             this.Column18,
             this.Column19,
-            this.Column25});
+            this.Column25,
+            this.vruid});
             this.dataGridView1.Location = new System.Drawing.Point(-2, 129);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -336,6 +338,14 @@
             this.Column25.ReadOnly = true;
             this.Column25.Width = 150;
             // 
+            // vruid
+            // 
+            this.vruid.HeaderText = "vruid";
+            this.vruid.MinimumWidth = 8;
+            this.vruid.Name = "vruid";
+            this.vruid.ReadOnly = true;
+            this.vruid.Width = 150;
+            // 
             // SaoPen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -386,5 +396,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vruid;
     }
 }

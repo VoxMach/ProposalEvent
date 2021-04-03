@@ -55,20 +55,11 @@ namespace AutomatedEventProposalManagement
             oname = home.orgname;
             otype = home.orgtype;
 
-            comboBox1.Items.Add("TYK Study Area");
-            comboBox1.Items.Add("UE Open Field");
-            comboBox1.Items.Add("TYK Lobby");
-            comboBox1.Items.Add("Gazebo");
-            comboBox1.Items.Add("MMR 3A");
-            comboBox1.Items.Add("MMR 3B");
-            comboBox1.Items.Add("Computer Laboratories");
-            comboBox1.Items.Add("MPH1");
-            comboBox1.Items.Add("MPH2");
-            comboBox1.Items.Add("MPH3");
-            comboBox1.Items.Add("Briefing Room");
+            
 
             bunifuMaterialTextbox3.Enabled = false;
             bunifuMaterialTextbox4.Enabled = false;
+            comboBox1.Enabled = false;
 
             MessageBox.Show("The collection of data is for the" +
                 " purpose of creating event. By signing this form, you are " +
@@ -94,7 +85,8 @@ namespace AutomatedEventProposalManagement
                 bunifuMaterialTextbox3.Text = "ESO";
                 bunifuMaterialTextbox4.Text = "Chancellor";
 
-            }else if (sel1.Equals("UE Open Field"))
+            }
+            else if (sel1.Equals("UE Open Field"))
             {
                 bunifuMaterialTextbox3.Text = "ESO";
                 bunifuMaterialTextbox4.Text = "Chancellor";
@@ -139,12 +131,11 @@ namespace AutomatedEventProposalManagement
                 bunifuMaterialTextbox3.Text = "Library Head";
                 bunifuMaterialTextbox4.Text = "Chancellor";
             }
-            else 
+            else
             {
                 bunifuMaterialTextbox3.Text = "Eng.";
                 bunifuMaterialTextbox4.Text = "Dean's Office";
             }
-            
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -161,6 +152,7 @@ namespace AutomatedEventProposalManagement
             string timef = dateTimePicker1.Text;
             string timeU = dateTimePicker2.Text;
             string dateev = dateTimePicker3.Text;
+            string getNumber = bunifuMaterialTextbox13.Text;
             if (string.IsNullOrEmpty(bunifuMaterialTextbox11.Text) ||
                 string.IsNullOrEmpty(bunifuMaterialTextbox12.Text) || 
                 string.IsNullOrEmpty(bunifuMaterialTextbox9.Text)  ||
@@ -169,7 +161,8 @@ namespace AutomatedEventProposalManagement
                 string.IsNullOrEmpty(bunifuMaterialTextbox6.Text)  || 
                 string.IsNullOrEmpty(bunifuMaterialTextbox1.Text)  || 
                 string.IsNullOrEmpty(bunifuMaterialTextbox2.Text)  || 
-                string.IsNullOrEmpty(bunifuMaterialTextbox5.Text)  || 
+                string.IsNullOrEmpty(bunifuMaterialTextbox5.Text)  ||
+                string.IsNullOrEmpty(bunifuMaterialTextbox13.Text) ||
                 string.IsNullOrEmpty(bunifuMaterialTextbox7.Text)) {
 
                 MessageBox.Show("Please Specify All Data.");
@@ -209,7 +202,10 @@ namespace AutomatedEventProposalManagement
                     status = pending,
                     time_from = timef,
                     time_to = timeU,
-                    venue = sel1
+                    venue = sel1,
+                    venue_incharge = "Nothing Yet",
+                    numberAttend = bunifuMaterialTextbox13.Text
+                    
                 };
 
                 var set = client.Push(@"Venue/VenueReservation/", vr);
@@ -266,7 +262,9 @@ namespace AutomatedEventProposalManagement
                     status = pending,
                     time_from = timef,
                     time_to = timeU,
-                    venue = sel1
+                    venue = sel1,
+                    venue_incharge = "Nothing Yet",
+                    numberAttend = bunifuMaterialTextbox13.Text
                 };
 
                 var set = client.Push(@"Venue/VenueReservation/", vr);
@@ -296,6 +294,53 @@ namespace AutomatedEventProposalManagement
 
 
 
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void bunifuMaterialTextbox13_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuMaterialTextbox13_OnValueChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            string getNumber = bunifuMaterialTextbox13.Text;
+            if (String.IsNullOrWhiteSpace(getNumber))
+            {
+                MessageBox.Show("Please input number of Attendees", "Please be inform.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                comboBox1.Items.Clear();
+            }
+            else
+            {
+                // MessageBox.Show("not null");
+                int numberAtten = int.Parse(getNumber);
+                comboBox1.Enabled = true;
+                if (numberAtten >= 1 && numberAtten <= 55)
+                {
+                    comboBox1.Items.Add("MPH2");
+                    comboBox1.Items.Add("MMR 3A");
+                    comboBox1.Items.Add("MMR 3B");
+                    comboBox1.Items.Add("Computer Laboratories");
+
+
+                }
+                else
+                {
+                    comboBox1.Items.Add("TYK Study Area");
+                    comboBox1.Items.Add("UE Open Field");
+                    comboBox1.Items.Add("TYK Lobby");
+                    comboBox1.Items.Add("Gazebo");
+                    comboBox1.Items.Add("MPH1");
+                    comboBox1.Items.Add("MPH3");
+                    comboBox1.Items.Add("Briefing Room");
+                }
+            }
         }
     }
 }

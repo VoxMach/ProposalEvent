@@ -22,7 +22,7 @@ namespace AutomatedEventProposalManagement
         IFirebaseClient client;
         public SaoAcccs()
         {
-           
+
             InitializeComponent();
         }
 
@@ -57,7 +57,7 @@ namespace AutomatedEventProposalManagement
             bunifuMaterialTextbox4.Text = SaoPen.e23;
             bunifuMaterialTextbox5.Text = SaoPen.e14;
 
-           
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -66,8 +66,102 @@ namespace AutomatedEventProposalManagement
             this.Close();
         }
 
+        public static string vruid;
+
+        public void StatusUpdateReject()
+        {
+            vruid = SaoPen.e25;
+            FirebaseResponse resp = client.Get("Venue/VenueReservation/" + vruid);
+            VenueReservation vr = resp.ResultAs<VenueReservation>();
+            string status1 = "Rejected";
+            VenueReservation nr = new VenueReservation()
+            {
+
+                approver = vr.approver,
+                approver_name = vr.approver_name,
+                beneficiaries = vr.beneficiaries,
+                committee_in_charge = vr.committee_in_charge,
+                date = vr.date,
+                date_of_event = vr.date_of_event,
+                description = vr.description,
+                id = vr.id,
+                incharge = vr.incharge,
+                name_approver = vr.name_approver,
+                name_incharge = vr.name_incharge,
+                name_of_project = vr.name_of_project,
+                nature_of_project = vr.nature_of_project,
+                general_objective = vr.general_objective,
+                specific_objective = vr.specific_objective,
+                planning_statge = vr.planning_statge,
+                implementation = vr.implementation,
+                resource_req = vr.resource_req,
+                evaluation = vr.evaluation,
+                org_adviser = vr.org_adviser,
+                org_adviser_status = vr.org_adviser_status,
+                org_dean = vr.org_dean,
+                org_dean_status = vr.org_dean_status,
+                org_name = vr.org_name,
+                org_president = vr.org_president,
+                org_president_status = vr.org_president_status,
+                org_type = vr.org_type,
+                status = status1,
+                time_from = vr.time_from,
+                time_to = vr.time_to,
+                venue = vr.venue,
+                readap = vr.readap
+            };
+            var setmeup = client.Set("Venue/VenueReservation/" + vruid, nr);
+        }
+
+        public void StatusupdateAccept()
+        {
+            vruid = SaoPen.e25;
+            FirebaseResponse resp = client.Get("Venue/VenueReservation/" + vruid);
+            VenueReservation vr = resp.ResultAs<VenueReservation>();
+            string status1 = "Accepted";
+            VenueReservation nr = new VenueReservation()
+            {
+
+                approver = vr.approver,
+                approver_name = vr.approver_name,
+                beneficiaries = vr.beneficiaries,
+                committee_in_charge = vr.committee_in_charge,
+                date = vr.date,
+                date_of_event = vr.date_of_event,
+                description = vr.description,
+                id = vr.id,
+                incharge = vr.incharge,
+                name_approver = vr.name_approver,
+                name_incharge = vr.name_incharge,
+                name_of_project = vr.name_of_project,
+                nature_of_project = vr.nature_of_project,
+                general_objective = vr.general_objective,
+                specific_objective = vr.specific_objective,
+                planning_statge = vr.planning_statge,
+                implementation = vr.implementation,
+                resource_req = vr.resource_req,
+                evaluation = vr.evaluation,
+                org_adviser = vr.org_adviser,
+                org_adviser_status = vr.org_adviser_status,
+                org_dean = vr.org_dean,
+                org_dean_status = vr.org_dean_status,
+                org_name = vr.org_name,
+                org_president = vr.org_president,
+                org_president_status = vr.org_president_status,
+                org_type = vr.org_type,
+                status = status1,
+                time_from = vr.time_from,
+                time_to = vr.time_to,
+                venue = vr.venue,
+                readap = vr.readap
+            };
+            var setmeup = client.Set("Venue/VenueReservation/" + vruid, nr);
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
+            
             FirebaseResponse response = client.Get("SAO/Proposal/" + SaoPen.e24); 
             propose get = response.ResultAs<propose>(); 
             string status1 = "Accepted";
@@ -94,6 +188,8 @@ namespace AutomatedEventProposalManagement
             string tim1 = get.time_from;
             string tim2 = get.time_to;
             string vens = get.venue;
+            string veni_ic = get.venue_inchanger;
+            string numbs = get.numberAttend;
 
             if (string.IsNullOrEmpty(bunifuMaterialTextbox3.Text))
             {
@@ -130,10 +226,15 @@ namespace AutomatedEventProposalManagement
                     time_from = tim1,
                     time_to = tim2,
                     venue = vens,
-                    reason = bunifuMaterialTextbox3.Text
+                    reason = bunifuMaterialTextbox3.Text,
+                    venue_inchanger = veni_ic,
+                    numberAttend = numbs
+                    
+                    
                 };
 
                 FirebaseResponse resp = client.Set("SAO/Proposal/" + SaoPen.e24, hehe);
+                StatusupdateAccept();
                 MessageBox.Show("Accepted Successfully");
             }
         }
@@ -166,7 +267,8 @@ namespace AutomatedEventProposalManagement
             string tim1 = get.time_from;
             string tim2 = get.time_to;
             string vens = get.venue;
-
+            string ven_inc = get.venue_inchanger;
+            string numbs = get.numberAttend;
             if (string.IsNullOrEmpty(bunifuMaterialTextbox3.Text))
             {
                 MessageBox.Show("Please Put a Word Below named Reason.");
@@ -202,10 +304,12 @@ namespace AutomatedEventProposalManagement
                     time_from = tim1,
                     time_to = tim2,
                     venue = vens,
-                    reason = bunifuMaterialTextbox3.Text
+                    reason = bunifuMaterialTextbox3.Text,
+                    numberAttend = numbs
                 };
 
                 FirebaseResponse resp = client.Set("SAO/Proposal/" + SaoPen.e24, hehe);
+                StatusUpdateReject();
                 MessageBox.Show("Rejected Successfully");
 
             }

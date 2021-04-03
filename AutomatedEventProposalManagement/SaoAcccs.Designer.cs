@@ -219,11 +219,11 @@
             this.bunifuMaterialTextbox3.LineIdleColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox3.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox3.LineThickness = 3;
-            this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(13, 630);
+            this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(98, 630);
             this.bunifuMaterialTextbox3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox3.MaxLength = 32767;
             this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
-            this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(673, 50);
+            this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(511, 50);
             this.bunifuMaterialTextbox3.TabIndex = 26;
             this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 

@@ -24,6 +24,8 @@ namespace AutomatedEventProposalManagement
         public OAccept()
         {
             InitializeComponent();
+
+            dataGridView1.RowsAdded += (s, a) => onRowNumbers();
         }
 
         private void OAccept_Load(object sender, EventArgs e)
@@ -96,7 +98,8 @@ namespace AutomatedEventProposalManagement
                              find.Value.status,
                              find.Value.time_from,
                              find.Value.time_to,
-                             find.Value.venue
+                             find.Value.venue,
+                             find.Key
                                 );
 
                         }
@@ -113,7 +116,16 @@ namespace AutomatedEventProposalManagement
             }
 
 
+            
+            
            
+        }
+
+
+        private void onRowNumbers()
+        {
+            label3.Text = dataGridView1.Rows.Count.ToString();
+           // MessageBox.Show(label3.Text);
         }
 
         private void label4_Click(object sender, EventArgs e)

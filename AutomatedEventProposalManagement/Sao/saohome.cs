@@ -104,7 +104,8 @@ namespace AutomatedEventProposalManagement
                             find.Value.evaluation,
                             find.Value.time_from,
                             find.Value.time_to,
-                            find.Value.venue
+                            find.Value.venue,
+                            find.Value.venue_inchanger
                                     );
 
                             }
@@ -151,7 +152,8 @@ namespace AutomatedEventProposalManagement
                             find.Value.evaluation,
                             find.Value.time_from,
                             find.Value.time_to,
-                            find.Value.venue
+                            find.Value.venue,
+                            find.Value.venue_inchanger
                                 );
 
                         }
@@ -335,6 +337,11 @@ namespace AutomatedEventProposalManagement
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

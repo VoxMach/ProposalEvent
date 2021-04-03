@@ -24,8 +24,15 @@ namespace AutomatedEventProposalManagement
         public ORej()
         {
             InitializeComponent();
+
+            dataGridView1.RowsAdded += (s, a) => onRowNumbers();
         }
 
+        private void onRowNumbers()
+        {
+            label3.Text = dataGridView1.Rows.Count.ToString();
+            // MessageBox.Show(label3.Text);
+        }
         private void ORej_Load(object sender, EventArgs e)
         {
 

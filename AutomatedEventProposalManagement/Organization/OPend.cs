@@ -24,7 +24,16 @@ namespace AutomatedEventProposalManagement
         public OPend()
         {
             InitializeComponent();
+
+            dataGridView1.RowsAdded += (s, a) => onRowNumbers();
         }
+
+        private void onRowNumbers()
+        {
+            label3.Text = dataGridView1.Rows.Count.ToString();
+            // MessageBox.Show(label3.Text);
+        }
+
         protected override CreateParams CreateParams
         {
             get
@@ -93,7 +102,8 @@ namespace AutomatedEventProposalManagement
                                  find.Value.status,
                                  find.Value.time_from,
                                  find.Value.time_to,
-                                 find.Value.venue
+                                 find.Value.venue,
+                                 find.Key
                                     );
 
                             }

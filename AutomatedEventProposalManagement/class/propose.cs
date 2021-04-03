@@ -36,7 +36,10 @@ namespace AutomatedEventProposalManagement
         public string readap { get; set; }
         public string reason { get; set; }
 
+        public string vruid { get; set; }
 
+        public string venue_inchanger { get; set; }
+        public string numberAttend { get; set; }
 
     }
 

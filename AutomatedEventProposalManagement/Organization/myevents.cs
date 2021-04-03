@@ -30,9 +30,7 @@ namespace AutomatedEventProposalManagement
 
         private void label4_Click(object sender, EventArgs e)
         {
-            home h = new home();
             this.Hide();
-            h.ShowDialog();
             this.Close();
         }
 
@@ -102,7 +100,9 @@ namespace AutomatedEventProposalManagement
                             find.Value.org_dean_status,
                             find.Value.date_of_event,
                             find.Value.status,
-                            find.Key
+                            find.Key,
+                            find.Value.venue_incharge,
+                            find.Value.numberAttend
                             );
                     }
 
@@ -152,11 +152,13 @@ namespace AutomatedEventProposalManagement
         public static string i31;
         public static string i32;
         public static string i33;
+        public static string vruid;
+        public static string ven_in;
+        public static string numb;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             ProView pv = new ProView();
-            this.Hide();
             i22 = home.names;
             i23 = home.id;
             i24 = home.typ2;
@@ -191,8 +193,9 @@ namespace AutomatedEventProposalManagement
             i25 = dataGridView1.CurrentRow.Cells[28].Value.ToString();
             i26 = dataGridView1.CurrentRow.Cells[29].Value.ToString();
             i33 = dataGridView1.CurrentRow.Cells[30].Value.ToString();
+            ven_in = dataGridView1.CurrentRow.Cells[31].Value.ToString();
+            numb = dataGridView1.CurrentRow.Cells[32].Value.ToString();
             pv.ShowDialog();
-            this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -218,13 +221,9 @@ namespace AutomatedEventProposalManagement
 
                     if (home.id == idyou)
                     {
-                        if (pens == "Accepted")
+                        if (pens == "Pending")
                         {
                             this.Alert(namepro, prp, venue, stat, CustomNotif.enmtype.Accepted);
-                        }
-                        if (pens == "Rejected")
-                        {
-                            this.Alert(namepro, prp, venue, stat, CustomNotif.enmtype.Rejected);
                         }
                     }
 

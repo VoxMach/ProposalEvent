@@ -192,6 +192,7 @@
             this.nameu.Size = new System.Drawing.Size(84, 30);
             this.nameu.TabIndex = 3;
             this.nameu.Text = "name";
+            this.nameu.Click += new System.EventHandler(this.nameu_Click);
             // 
             // label2
             // 
@@ -216,6 +217,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1032, 146);
             this.panel2.TabIndex = 12;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label5
             // 

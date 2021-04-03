@@ -105,6 +105,8 @@ namespace AutomatedEventProposalManagement
             string imp = vr0.implementation;
             string req = vr0.resource_req;
             string eva = vr0.evaluation;
+            string ven_in = vr0.venue_incharge;
+            string nums = vr0.numberAttend;
 
             if (ins == "Pending" )
             {
@@ -150,7 +152,9 @@ namespace AutomatedEventProposalManagement
                     status = stats,
                     time_from = time1,
                     time_to = time2,
-                    venue = venus
+                    venue = venus,
+                    venue_incharge = ven_in,
+                    numberAttend = nums
 
                 };
 
@@ -198,6 +202,8 @@ namespace AutomatedEventProposalManagement
             string orgp = vr0.org_president;
             string orgps = vr0.org_president_status;
             string stats = vr0.status;
+            string ven_in = vr0.venue_incharge;
+            string nums = vr0.numberAttend;
             VenueReservation vr = new VenueReservation()
             {
 
@@ -225,7 +231,9 @@ namespace AutomatedEventProposalManagement
                 status = stats,
                 time_from = time1,
                 time_to = time2,
-                venue = venus
+                venue = venus,
+                venue_incharge = ven_in,
+                numberAttend = nums
 
             };
 

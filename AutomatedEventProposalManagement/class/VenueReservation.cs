@@ -40,6 +40,9 @@ namespace AutomatedEventProposalManagement
         public string time_to { get; set; }
         public string venue { get; set; }
         public string readap { get; set; }
+        public string uid { get; set; }
+        public string venue_incharge { get; set; }
+        public string numberAttend { get; set; }
 
     }
 }

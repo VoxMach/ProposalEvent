@@ -75,6 +75,7 @@ namespace AutomatedEventProposalManagement
             bunifuMaterialTextbox7.Enabled = false;
         }
         public static string id00;
+        public static string vruid;
         private void button1_Click(object sender, EventArgs e)
         {
             string typ22 = myevents.i24;
@@ -105,7 +106,10 @@ namespace AutomatedEventProposalManagement
                     status = "Pending",
                     time_from = myevents.i6,
                     time_to = myevents.i7,
-                    venue =myevents.i3
+                    venue = myevents.i3,
+                    vruid = myevents.i33,
+                    venue_inchanger = myevents.ven_in,
+                    numberAttend = myevents.numb
                 };
                 MarkAsRead();
                 var set = client.Push(@"SAO/Proposal/",na);
@@ -154,7 +158,10 @@ namespace AutomatedEventProposalManagement
                 time_from = vr.time_from,
                 time_to = vr.time_to,
                 venue = vr.venue,
-                readap = "Mark As Read"
+                readap = "Mark As Read",
+                venue_incharge = vr.venue_incharge,
+                numberAttend = vr.numberAttend
+                
             };
             var setmeup = client.Set("Venue/VenueReservation/" +myevents.i33, nr);
 
