@@ -88,7 +88,9 @@ namespace AutomatedEventProposalManagement
             time_to  = prop.time_to,
             venue = prop.venue,
             readap = "Mark As Read",
-            reason = prop.reason
+            reason = prop.reason,
+            venue_inchanger = prop.venue_inchanger,
+            numberAttend = prop.numberAttend
            
             };
 
