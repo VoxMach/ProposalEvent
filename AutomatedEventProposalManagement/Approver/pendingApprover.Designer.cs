@@ -59,6 +59,8 @@
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pendinggrid)).BeginInit();
             this.SuspendLayout();
@@ -66,13 +68,15 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label1);
             this.panel2.ForeColor = System.Drawing.Color.Maroon;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1575, 84);
+            this.panel2.Size = new System.Drawing.Size(1772, 105);
             this.panel2.TabIndex = 10;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -82,9 +86,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(12, 12);
+            this.label4.Location = new System.Drawing.Point(14, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 47);
+            this.label4.Size = new System.Drawing.Size(53, 56);
             this.label4.TabIndex = 19;
             this.label4.Text = "<";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -94,9 +98,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(67, 21);
+            this.label1.Location = new System.Drawing.Point(75, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 33);
+            this.label1.Size = new System.Drawing.Size(281, 39);
             this.label1.TabIndex = 18;
             this.label1.Text = "Pending Request";
             // 
@@ -134,13 +138,13 @@
             this.Column21,
             this.Column22,
             this.Column23});
-            this.pendinggrid.Location = new System.Drawing.Point(0, 83);
+            this.pendinggrid.Location = new System.Drawing.Point(0, 104);
             this.pendinggrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pendinggrid.Name = "pendinggrid";
             this.pendinggrid.ReadOnly = true;
             this.pendinggrid.RowHeadersWidth = 62;
             this.pendinggrid.RowTemplate.Height = 28;
-            this.pendinggrid.Size = new System.Drawing.Size(1375, 641);
+            this.pendinggrid.Size = new System.Drawing.Size(1547, 801);
             this.pendinggrid.TabIndex = 11;
             this.pendinggrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pendinggrid_CellContentClick);
             // 
@@ -253,91 +257,139 @@
             // Column14
             // 
             this.Column14.HeaderText = "Nature of Project";
+            this.Column14.MinimumWidth = 8;
             this.Column14.Name = "Column14";
             this.Column14.ReadOnly = true;
+            this.Column14.Width = 150;
             // 
             // Column15
             // 
             this.Column15.HeaderText = "Organization Adviser";
+            this.Column15.MinimumWidth = 8;
             this.Column15.Name = "Column15";
             this.Column15.ReadOnly = true;
+            this.Column15.Width = 150;
             // 
             // a
             // 
             this.a.HeaderText = "Adviser Status";
+            this.a.MinimumWidth = 8;
             this.a.Name = "a";
             this.a.ReadOnly = true;
+            this.a.Width = 150;
             // 
             // Column24
             // 
             this.Column24.HeaderText = "Organization Dean";
+            this.Column24.MinimumWidth = 8;
             this.Column24.Name = "Column24";
             this.Column24.ReadOnly = true;
+            this.Column24.Width = 150;
             // 
             // Column25
             // 
             this.Column25.HeaderText = "Dean Status";
+            this.Column25.MinimumWidth = 8;
             this.Column25.Name = "Column25";
             this.Column25.ReadOnly = true;
+            this.Column25.Width = 150;
             // 
             // Column16
             // 
             this.Column16.HeaderText = "Organization Name";
+            this.Column16.MinimumWidth = 8;
             this.Column16.Name = "Column16";
             this.Column16.ReadOnly = true;
+            this.Column16.Width = 150;
             // 
             // Column17
             // 
             this.Column17.HeaderText = "Organization President";
+            this.Column17.MinimumWidth = 8;
             this.Column17.Name = "Column17";
             this.Column17.ReadOnly = true;
+            this.Column17.Width = 150;
             // 
             // Column18
             // 
             this.Column18.HeaderText = "President Status";
+            this.Column18.MinimumWidth = 8;
             this.Column18.Name = "Column18";
             this.Column18.ReadOnly = true;
+            this.Column18.Width = 150;
             // 
             // Column19
             // 
             this.Column19.HeaderText = "Organization Type";
+            this.Column19.MinimumWidth = 8;
             this.Column19.Name = "Column19";
             this.Column19.ReadOnly = true;
+            this.Column19.Width = 150;
             // 
             // Column20
             // 
             this.Column20.HeaderText = "Proposal Status";
+            this.Column20.MinimumWidth = 8;
             this.Column20.Name = "Column20";
             this.Column20.ReadOnly = true;
+            this.Column20.Width = 150;
             // 
             // Column21
             // 
             this.Column21.HeaderText = "Time From";
+            this.Column21.MinimumWidth = 8;
             this.Column21.Name = "Column21";
             this.Column21.ReadOnly = true;
+            this.Column21.Width = 150;
             // 
             // Column22
             // 
             this.Column22.HeaderText = "Time To";
+            this.Column22.MinimumWidth = 8;
             this.Column22.Name = "Column22";
             this.Column22.ReadOnly = true;
+            this.Column22.Width = 150;
             // 
             // Column23
             // 
             this.Column23.HeaderText = "Venue";
+            this.Column23.MinimumWidth = 8;
             this.Column23.Name = "Column23";
             this.Column23.ReadOnly = true;
+            this.Column23.Width = 150;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(719, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 39);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Total :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(832, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 39);
+            this.label3.TabIndex = 21;
             // 
             // pendingApprover
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 724);
+            this.ClientSize = new System.Drawing.Size(1546, 905);
             this.ControlBox = false;
             this.Controls.Add(this.pendinggrid);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1374, 724);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(1546, 905);
             this.Name = "pendingApprover";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pendingApprover";
@@ -381,5 +433,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

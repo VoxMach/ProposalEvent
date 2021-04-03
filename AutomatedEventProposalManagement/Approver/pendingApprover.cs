@@ -32,10 +32,16 @@ namespace AutomatedEventProposalManagement.Approver
             org_type = orgtype;
             approver_type = approvertype;
             org_name = orgname;
-         
-            
-           
-            
+
+            pendinggrid.RowsAdded += (s, a) => onRowNumbers();
+
+
+        }
+
+        private void onRowNumbers()
+        {
+            label3.Text = pendinggrid.Rows.Count.ToString();
+            // MessageBox.Show(label3.Text);
         }
 
         private void pendingApprover_Load(object sender, EventArgs e)

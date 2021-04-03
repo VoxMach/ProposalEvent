@@ -65,6 +65,8 @@
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.venue_incharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +74,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(-4, -2);
@@ -417,6 +421,27 @@
             this.count.ReadOnly = true;
             this.count.Width = 150;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(482, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 49);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Total :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(624, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 49);
+            this.label3.TabIndex = 13;
+            // 
             // myevents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -476,5 +501,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
         private System.Windows.Forms.DataGridViewTextBoxColumn venue_incharge;
         private System.Windows.Forms.DataGridViewTextBoxColumn count;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -105,7 +105,9 @@ namespace AutomatedEventProposalManagement
                             find.Value.time_from,
                             find.Value.time_to,
                             find.Value.venue,
-                            find.Value.venue_inchanger
+                            find.Value.venue_inchanger,
+                            find.Value.numberAttend
+
                                     );
 
                             }
@@ -153,7 +155,8 @@ namespace AutomatedEventProposalManagement
                             find.Value.time_from,
                             find.Value.time_to,
                             find.Value.venue,
-                            find.Value.venue_inchanger
+                             find.Value.venue_inchanger,
+                            find.Value.numberAttend
                                 );
 
                         }

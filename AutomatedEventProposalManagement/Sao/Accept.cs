@@ -25,8 +25,15 @@ namespace AutomatedEventProposalManagement
         public Accept()
         {
             InitializeComponent();
+
+            dataGridView1.RowsAdded += (s, a) => onRowNumbers();
         }
 
+        private void onRowNumbers()
+        {
+            label3.Text = dataGridView1.Rows.Count.ToString();
+            // MessageBox.Show(label3.Text);
+        }
         private void label4_Click(object sender, EventArgs e)
         {
             this.Hide();

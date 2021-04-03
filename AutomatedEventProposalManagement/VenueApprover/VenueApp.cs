@@ -112,7 +112,9 @@ namespace AutomatedEventProposalManagement
                             find.Value.evaluation,
                             find.Value.time_from,
                             find.Value.time_to,
-                            find.Value.venue
+                            find.Value.venue,
+                             find.Value.venue_inchanger,
+                            find.Value.numberAttend
                                     );
 
                             }
@@ -162,7 +164,9 @@ namespace AutomatedEventProposalManagement
                             find.Value.evaluation,
                             find.Value.time_from,
                             find.Value.time_to,
-                            find.Value.venue
+                            find.Value.venue,
+                             find.Value.venue_inchanger,
+                            find.Value.numberAttend
                                 );
 
 
@@ -266,6 +270,11 @@ namespace AutomatedEventProposalManagement
         {
             Calendar cal = new Calendar();
             cal.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

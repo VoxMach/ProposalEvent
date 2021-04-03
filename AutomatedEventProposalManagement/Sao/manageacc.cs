@@ -286,5 +286,71 @@ namespace AutomatedEventProposalManagement
 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string sel1 = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
+            if (sel1.Equals("Approver"))
+            {
+                bunifuMaterialTextbox1.Enabled = true;
+
+                FirebaseResponse resp1 = client.Get("User/Approver/" + bunifuMaterialTextbox1.Text);
+
+                Class1 cl1 = resp1.ResultAs<Class1>();
+
+
+                if (bunifuMaterialTextbox1.Text == cl1.id)
+                {
+  
+                   
+                    FirebaseResponse resp = client.Delete("User/Approver/" + bunifuMaterialTextbox1.Text);
+                    MessageBox.Show("Delete Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Fail");
+                }
+
+
+            }
+            else if (sel1.Equals("Organization"))
+            {
+                bunifuMaterialTextbox1.Enabled = true;
+
+                FirebaseResponse resp1 = client.Get("User/Organization/" + bunifuMaterialTextbox1.Text);
+                orgregis cl1 = resp1.ResultAs<orgregis>();
+                if (bunifuMaterialTextbox1.Text == cl1.id)
+                {
+                    string get1 = cl1.org_name;
+                    string get2 = cl1.org_type;
+               
+                    FirebaseResponse resp = client.Delete("User/Organization/" + bunifuMaterialTextbox1.Text);
+                    MessageBox.Show("Delete Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Fail");
+                }
+
+            }
+            else if (sel1.Equals("Venue"))
+            {
+                bunifuMaterialTextbox1.Enabled = true;
+                FirebaseResponse resp1 = client.Get("User/Venue/" + bunifuMaterialTextbox1.Text);
+                venregis cl1 = resp1.ResultAs<venregis>();
+                if (bunifuMaterialTextbox1.Text == cl1.id)
+                {
+                    string get1 = cl1.org_type;
+                    FirebaseResponse resp = client.Delete("User/Venue/" + bunifuMaterialTextbox1.Text);
+                    MessageBox.Show("Delete Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Fail");
+                }
+
+            }
+
+        }
     }
 }
