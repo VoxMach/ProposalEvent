@@ -33,11 +33,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuMaterialTextbox13 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox11 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox12 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox9 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox10 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox8 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox6 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -51,11 +46,23 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.bunifuMaterialTextbox7 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox5 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox4 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomTextbox1 = new Bunifu.Framework.BunifuCustomTextbox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.bunifuCustomTextbox2 = new Bunifu.Framework.BunifuCustomTextbox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.bunifuCustomTextbox3 = new Bunifu.Framework.BunifuCustomTextbox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.bunifuCustomTextbox4 = new Bunifu.Framework.BunifuCustomTextbox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.bunifuCustomTextbox5 = new Bunifu.Framework.BunifuCustomTextbox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.bunifuCustomTextbox6 = new Bunifu.Framework.BunifuCustomTextbox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.bunifuCustomTextbox7 = new Bunifu.Framework.BunifuCustomTextbox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -96,12 +103,21 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.bunifuCustomTextbox7);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.bunifuCustomTextbox6);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.bunifuCustomTextbox5);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.bunifuCustomTextbox4);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.bunifuCustomTextbox3);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.bunifuCustomTextbox2);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.bunifuCustomTextbox1);
             this.panel2.Controls.Add(this.bunifuMaterialTextbox13);
-            this.panel2.Controls.Add(this.bunifuMaterialTextbox11);
-            this.panel2.Controls.Add(this.bunifuMaterialTextbox12);
-            this.panel2.Controls.Add(this.bunifuMaterialTextbox9);
-            this.panel2.Controls.Add(this.bunifuMaterialTextbox10);
-            this.panel2.Controls.Add(this.bunifuMaterialTextbox8);
             this.panel2.Controls.Add(this.bunifuMaterialTextbox6);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.dateTimePicker3);
@@ -115,10 +131,8 @@
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.bunifuMaterialTextbox7);
-            this.panel2.Controls.Add(this.bunifuMaterialTextbox5);
             this.panel2.Controls.Add(this.bunifuMaterialTextbox3);
             this.panel2.Controls.Add(this.bunifuMaterialTextbox4);
-            this.panel2.Controls.Add(this.bunifuMaterialTextbox2);
             this.panel2.Controls.Add(this.bunifuMaterialTextbox1);
             this.panel2.Location = new System.Drawing.Point(13, 119);
             this.panel2.Name = "panel2";
@@ -152,126 +166,6 @@
             this.bunifuMaterialTextbox13.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox13_OnValueChanged);
             this.bunifuMaterialTextbox13.Leave += new System.EventHandler(this.bunifuMaterialTextbox13_Leave);
             // 
-            // bunifuMaterialTextbox11
-            // 
-            this.bunifuMaterialTextbox11.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuMaterialTextbox11.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuMaterialTextbox11.CausesValidation = false;
-            this.bunifuMaterialTextbox11.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMaterialTextbox11.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuMaterialTextbox11.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox11.ForeColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox11.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox11.HintText = "Evaluation";
-            this.bunifuMaterialTextbox11.isPassword = false;
-            this.bunifuMaterialTextbox11.LineFocusedColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox11.LineIdleColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox11.LineMouseHoverColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox11.LineThickness = 3;
-            this.bunifuMaterialTextbox11.Location = new System.Drawing.Point(453, 553);
-            this.bunifuMaterialTextbox11.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox11.MaxLength = 32767;
-            this.bunifuMaterialTextbox11.Name = "bunifuMaterialTextbox11";
-            this.bunifuMaterialTextbox11.Size = new System.Drawing.Size(348, 50);
-            this.bunifuMaterialTextbox11.TabIndex = 28;
-            this.bunifuMaterialTextbox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMaterialTextbox12
-            // 
-            this.bunifuMaterialTextbox12.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuMaterialTextbox12.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuMaterialTextbox12.CausesValidation = false;
-            this.bunifuMaterialTextbox12.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMaterialTextbox12.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuMaterialTextbox12.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox12.ForeColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox12.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox12.HintText = "Resource Requirement";
-            this.bunifuMaterialTextbox12.isPassword = false;
-            this.bunifuMaterialTextbox12.LineFocusedColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox12.LineIdleColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox12.LineMouseHoverColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox12.LineThickness = 3;
-            this.bunifuMaterialTextbox12.Location = new System.Drawing.Point(453, 453);
-            this.bunifuMaterialTextbox12.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox12.MaxLength = 32767;
-            this.bunifuMaterialTextbox12.Name = "bunifuMaterialTextbox12";
-            this.bunifuMaterialTextbox12.Size = new System.Drawing.Size(348, 50);
-            this.bunifuMaterialTextbox12.TabIndex = 27;
-            this.bunifuMaterialTextbox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMaterialTextbox9
-            // 
-            this.bunifuMaterialTextbox9.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuMaterialTextbox9.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuMaterialTextbox9.CausesValidation = false;
-            this.bunifuMaterialTextbox9.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMaterialTextbox9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuMaterialTextbox9.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox9.ForeColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox9.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox9.HintText = "Implementation";
-            this.bunifuMaterialTextbox9.isPassword = false;
-            this.bunifuMaterialTextbox9.LineFocusedColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox9.LineIdleColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox9.LineMouseHoverColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox9.LineThickness = 3;
-            this.bunifuMaterialTextbox9.Location = new System.Drawing.Point(453, 351);
-            this.bunifuMaterialTextbox9.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox9.MaxLength = 32767;
-            this.bunifuMaterialTextbox9.Name = "bunifuMaterialTextbox9";
-            this.bunifuMaterialTextbox9.Size = new System.Drawing.Size(348, 50);
-            this.bunifuMaterialTextbox9.TabIndex = 26;
-            this.bunifuMaterialTextbox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMaterialTextbox10
-            // 
-            this.bunifuMaterialTextbox10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuMaterialTextbox10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuMaterialTextbox10.CausesValidation = false;
-            this.bunifuMaterialTextbox10.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMaterialTextbox10.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuMaterialTextbox10.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox10.ForeColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox10.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox10.HintText = "Planning Stage";
-            this.bunifuMaterialTextbox10.isPassword = false;
-            this.bunifuMaterialTextbox10.LineFocusedColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox10.LineIdleColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox10.LineMouseHoverColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox10.LineThickness = 3;
-            this.bunifuMaterialTextbox10.Location = new System.Drawing.Point(453, 251);
-            this.bunifuMaterialTextbox10.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox10.MaxLength = 32767;
-            this.bunifuMaterialTextbox10.Name = "bunifuMaterialTextbox10";
-            this.bunifuMaterialTextbox10.Size = new System.Drawing.Size(348, 50);
-            this.bunifuMaterialTextbox10.TabIndex = 25;
-            this.bunifuMaterialTextbox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMaterialTextbox8
-            // 
-            this.bunifuMaterialTextbox8.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuMaterialTextbox8.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuMaterialTextbox8.CausesValidation = false;
-            this.bunifuMaterialTextbox8.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMaterialTextbox8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuMaterialTextbox8.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox8.ForeColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox8.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox8.HintText = "Specific Objectives";
-            this.bunifuMaterialTextbox8.isPassword = false;
-            this.bunifuMaterialTextbox8.LineFocusedColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox8.LineIdleColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox8.LineMouseHoverColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox8.LineThickness = 3;
-            this.bunifuMaterialTextbox8.Location = new System.Drawing.Point(453, 164);
-            this.bunifuMaterialTextbox8.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox8.MaxLength = 32767;
-            this.bunifuMaterialTextbox8.Name = "bunifuMaterialTextbox8";
-            this.bunifuMaterialTextbox8.Size = new System.Drawing.Size(348, 50);
-            this.bunifuMaterialTextbox8.TabIndex = 24;
-            this.bunifuMaterialTextbox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // bunifuMaterialTextbox6
             // 
             this.bunifuMaterialTextbox6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
@@ -288,7 +182,7 @@
             this.bunifuMaterialTextbox6.LineIdleColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox6.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox6.LineThickness = 3;
-            this.bunifuMaterialTextbox6.Location = new System.Drawing.Point(453, 64);
+            this.bunifuMaterialTextbox6.Location = new System.Drawing.Point(440, 64);
             this.bunifuMaterialTextbox6.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox6.MaxLength = 32767;
             this.bunifuMaterialTextbox6.Name = "bunifuMaterialTextbox6";
@@ -301,7 +195,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Firebrick;
-            this.label8.Location = new System.Drawing.Point(856, 275);
+            this.label8.Location = new System.Drawing.Point(843, 295);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(146, 23);
             this.label8.TabIndex = 22;
@@ -315,7 +209,7 @@
             this.dateTimePicker3.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(1014, 264);
+            this.dateTimePicker3.Location = new System.Drawing.Point(1001, 284);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(224, 37);
             this.dateTimePicker3.TabIndex = 21;
@@ -327,7 +221,7 @@
             this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.Color.WhiteSmoke;
             this.dateTimePicker2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(1014, 164);
+            this.dateTimePicker2.Location = new System.Drawing.Point(1014, 225);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(211, 37);
@@ -338,7 +232,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Firebrick;
-            this.label7.Location = new System.Drawing.Point(873, 175);
+            this.label7.Location = new System.Drawing.Point(873, 236);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 23);
             this.label7.TabIndex = 19;
@@ -349,7 +243,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Firebrick;
-            this.label6.Location = new System.Drawing.Point(873, 88);
+            this.label6.Location = new System.Drawing.Point(873, 149);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 23);
             this.label6.TabIndex = 18;
@@ -362,7 +256,7 @@
             this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.WhiteSmoke;
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1014, 77);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1014, 138);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(211, 37);
@@ -374,7 +268,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Firebrick;
-            this.label3.Location = new System.Drawing.Point(20, 526);
+            this.label3.Location = new System.Drawing.Point(20, 461);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 23);
             this.label3.TabIndex = 16;
@@ -385,7 +279,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(20, 407);
+            this.label2.Location = new System.Drawing.Point(20, 342);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 23);
             this.label2.TabIndex = 15;
@@ -396,7 +290,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(20, 315);
+            this.label1.Location = new System.Drawing.Point(20, 250);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 23);
             this.label1.TabIndex = 14;
@@ -409,7 +303,7 @@
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.SystemColors.Info;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 351);
+            this.comboBox1.Location = new System.Drawing.Point(24, 286);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(374, 38);
             this.comboBox1.TabIndex = 11;
@@ -420,10 +314,11 @@
             this.button1.BackColor = System.Drawing.Color.Firebrick;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(406, 636);
+            this.button1.Location = new System.Drawing.Point(860, 636);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(457, 73);
+            this.button1.Size = new System.Drawing.Size(365, 73);
             this.button1.TabIndex = 10;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = false;
@@ -439,43 +334,20 @@
             this.bunifuMaterialTextbox7.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.bunifuMaterialTextbox7.ForeColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox7.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox7.HintText = "Benificiaries";
+            this.bunifuMaterialTextbox7.HintText = "Beneficiaries";
             this.bunifuMaterialTextbox7.isPassword = false;
             this.bunifuMaterialTextbox7.LineFocusedColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox7.LineIdleColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox7.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox7.LineThickness = 3;
-            this.bunifuMaterialTextbox7.Location = new System.Drawing.Point(877, 468);
+            this.bunifuMaterialTextbox7.Location = new System.Drawing.Point(860, 507);
             this.bunifuMaterialTextbox7.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox7.MaxLength = 32767;
             this.bunifuMaterialTextbox7.Name = "bunifuMaterialTextbox7";
             this.bunifuMaterialTextbox7.Size = new System.Drawing.Size(348, 50);
             this.bunifuMaterialTextbox7.TabIndex = 9;
+            this.bunifuMaterialTextbox7.Text = "Benificiaries";
             this.bunifuMaterialTextbox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMaterialTextbox5
-            // 
-            this.bunifuMaterialTextbox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuMaterialTextbox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuMaterialTextbox5.CausesValidation = false;
-            this.bunifuMaterialTextbox5.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMaterialTextbox5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuMaterialTextbox5.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox5.ForeColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox5.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox5.HintText = "Project Description";
-            this.bunifuMaterialTextbox5.isPassword = false;
-            this.bunifuMaterialTextbox5.LineFocusedColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox5.LineIdleColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox5.LineMouseHoverColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox5.LineThickness = 3;
-            this.bunifuMaterialTextbox5.Location = new System.Drawing.Point(877, 349);
-            this.bunifuMaterialTextbox5.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox5.MaxLength = 32767;
-            this.bunifuMaterialTextbox5.Name = "bunifuMaterialTextbox5";
-            this.bunifuMaterialTextbox5.Size = new System.Drawing.Size(348, 50);
-            this.bunifuMaterialTextbox5.TabIndex = 8;
-            this.bunifuMaterialTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuMaterialTextbox3
             // 
@@ -493,7 +365,7 @@
             this.bunifuMaterialTextbox3.LineIdleColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox3.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox3.LineThickness = 3;
-            this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(24, 434);
+            this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(24, 369);
             this.bunifuMaterialTextbox3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox3.MaxLength = 32767;
             this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
@@ -517,37 +389,13 @@
             this.bunifuMaterialTextbox4.LineIdleColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox4.LineMouseHoverColor = System.Drawing.Color.Firebrick;
             this.bunifuMaterialTextbox4.LineThickness = 3;
-            this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(24, 553);
+            this.bunifuMaterialTextbox4.Location = new System.Drawing.Point(24, 488);
             this.bunifuMaterialTextbox4.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuMaterialTextbox4.MaxLength = 32767;
             this.bunifuMaterialTextbox4.Name = "bunifuMaterialTextbox4";
             this.bunifuMaterialTextbox4.Size = new System.Drawing.Size(348, 50);
             this.bunifuMaterialTextbox4.TabIndex = 5;
             this.bunifuMaterialTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMaterialTextbox2
-            // 
-            this.bunifuMaterialTextbox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuMaterialTextbox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuMaterialTextbox2.CausesValidation = false;
-            this.bunifuMaterialTextbox2.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMaterialTextbox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox2.ForeColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox2.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox2.HintText = "Nature of Project";
-            this.bunifuMaterialTextbox2.isPassword = false;
-            this.bunifuMaterialTextbox2.LineFocusedColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.Firebrick;
-            this.bunifuMaterialTextbox2.LineThickness = 3;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(24, 251);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox2.MaxLength = 32767;
-            this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(348, 50);
-            this.bunifuMaterialTextbox2.TabIndex = 4;
-            this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuMaterialTextbox1
             // 
@@ -572,6 +420,139 @@
             this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(348, 50);
             this.bunifuMaterialTextbox1.TabIndex = 3;
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomTextbox1
+            // 
+            this.bunifuCustomTextbox1.BorderColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCustomTextbox1.Location = new System.Drawing.Point(440, 326);
+            this.bunifuCustomTextbox1.Multiline = true;
+            this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
+            this.bunifuCustomTextbox1.Size = new System.Drawing.Size(355, 60);
+            this.bunifuCustomTextbox1.TabIndex = 30;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(434, 276);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(134, 34);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Planning";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(434, 428);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(232, 34);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Implementation";
+            // 
+            // bunifuCustomTextbox2
+            // 
+            this.bunifuCustomTextbox2.BorderColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCustomTextbox2.Location = new System.Drawing.Point(440, 475);
+            this.bunifuCustomTextbox2.Multiline = true;
+            this.bunifuCustomTextbox2.Name = "bunifuCustomTextbox2";
+            this.bunifuCustomTextbox2.Size = new System.Drawing.Size(355, 66);
+            this.bunifuCustomTextbox2.TabIndex = 32;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(434, 573);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(323, 34);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Resource Requirement";
+            // 
+            // bunifuCustomTextbox3
+            // 
+            this.bunifuCustomTextbox3.BorderColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCustomTextbox3.Location = new System.Drawing.Point(440, 620);
+            this.bunifuCustomTextbox3.Multiline = true;
+            this.bunifuCustomTextbox3.Name = "bunifuCustomTextbox3";
+            this.bunifuCustomTextbox3.Size = new System.Drawing.Size(348, 61);
+            this.bunifuCustomTextbox3.TabIndex = 34;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(434, 154);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(282, 34);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "Specific Objectives";
+            // 
+            // bunifuCustomTextbox4
+            // 
+            this.bunifuCustomTextbox4.BorderColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCustomTextbox4.Location = new System.Drawing.Point(440, 201);
+            this.bunifuCustomTextbox4.Multiline = true;
+            this.bunifuCustomTextbox4.Name = "bunifuCustomTextbox4";
+            this.bunifuCustomTextbox4.Size = new System.Drawing.Size(348, 61);
+            this.bunifuCustomTextbox4.TabIndex = 36;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(18, 573);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(300, 34);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "Nature of the Project";
+            // 
+            // bunifuCustomTextbox5
+            // 
+            this.bunifuCustomTextbox5.BorderColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCustomTextbox5.Location = new System.Drawing.Point(24, 620);
+            this.bunifuCustomTextbox5.Multiline = true;
+            this.bunifuCustomTextbox5.Name = "bunifuCustomTextbox5";
+            this.bunifuCustomTextbox5.Size = new System.Drawing.Size(348, 61);
+            this.bunifuCustomTextbox5.TabIndex = 38;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(871, 17);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(160, 34);
+            this.label14.TabIndex = 41;
+            this.label14.Text = "Evaluation";
+            // 
+            // bunifuCustomTextbox6
+            // 
+            this.bunifuCustomTextbox6.BorderColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCustomTextbox6.Location = new System.Drawing.Point(877, 64);
+            this.bunifuCustomTextbox6.Multiline = true;
+            this.bunifuCustomTextbox6.Name = "bunifuCustomTextbox6";
+            this.bunifuCustomTextbox6.Size = new System.Drawing.Size(348, 61);
+            this.bunifuCustomTextbox6.TabIndex = 40;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(854, 354);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(273, 34);
+            this.label15.TabIndex = 43;
+            this.label15.Text = "Project Decriptions";
+            // 
+            // bunifuCustomTextbox7
+            // 
+            this.bunifuCustomTextbox7.BorderColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCustomTextbox7.Location = new System.Drawing.Point(860, 401);
+            this.bunifuCustomTextbox7.Multiline = true;
+            this.bunifuCustomTextbox7.Name = "bunifuCustomTextbox7";
+            this.bunifuCustomTextbox7.Size = new System.Drawing.Size(348, 61);
+            this.bunifuCustomTextbox7.TabIndex = 42;
             // 
             // createv
             // 
@@ -606,10 +587,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox7;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox5;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox4;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox2;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -617,12 +596,21 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox11;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox12;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox9;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox10;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox8;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox6;
         private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox13;
+        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox1;
+        private System.Windows.Forms.Label label10;
+        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox3;
+        private System.Windows.Forms.Label label12;
+        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox4;
+        private System.Windows.Forms.Label label13;
+        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox5;
+        private System.Windows.Forms.Label label14;
+        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox6;
+        private System.Windows.Forms.Label label15;
+        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox7;
     }
 }

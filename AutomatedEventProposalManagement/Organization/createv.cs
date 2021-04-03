@@ -27,7 +27,13 @@ namespace AutomatedEventProposalManagement
         public createv()
         {
             InitializeComponent();
+
+            
+
         }
+
+        
+
         public static string id;
         public static string oname;
         public static string otype;
@@ -153,15 +159,15 @@ namespace AutomatedEventProposalManagement
             string timeU = dateTimePicker2.Text;
             string dateev = dateTimePicker3.Text;
             string getNumber = bunifuMaterialTextbox13.Text;
-            if (string.IsNullOrEmpty(bunifuMaterialTextbox11.Text) ||
-                string.IsNullOrEmpty(bunifuMaterialTextbox12.Text) || 
-                string.IsNullOrEmpty(bunifuMaterialTextbox9.Text)  ||
-                string.IsNullOrEmpty(bunifuMaterialTextbox10.Text) ||
-                string.IsNullOrEmpty(bunifuMaterialTextbox8.Text)  || 
+            if (string.IsNullOrEmpty(bunifuCustomTextbox1.Text) ||
+                string.IsNullOrEmpty(bunifuCustomTextbox2.Text) || 
+                string.IsNullOrEmpty(bunifuCustomTextbox3.Text)  ||
+                string.IsNullOrEmpty(bunifuCustomTextbox4.Text) ||
+                string.IsNullOrEmpty(bunifuCustomTextbox5.Text)  || 
                 string.IsNullOrEmpty(bunifuMaterialTextbox6.Text)  || 
                 string.IsNullOrEmpty(bunifuMaterialTextbox1.Text)  || 
-                string.IsNullOrEmpty(bunifuMaterialTextbox2.Text)  || 
-                string.IsNullOrEmpty(bunifuMaterialTextbox5.Text)  ||
+                string.IsNullOrEmpty(bunifuCustomTextbox6.Text)  || 
+                string.IsNullOrEmpty(bunifuCustomTextbox7.Text)  ||
                 string.IsNullOrEmpty(bunifuMaterialTextbox13.Text) ||
                 string.IsNullOrEmpty(bunifuMaterialTextbox7.Text)) {
 
@@ -180,19 +186,19 @@ namespace AutomatedEventProposalManagement
                     committee_in_charge = bunifuMaterialTextbox3.Text,
                     date = today,
                     date_of_event = dateev,
-                    description = bunifuMaterialTextbox5.Text,
+                    description = bunifuCustomTextbox7.Text,
                     id = id,
                     incharge = pending,
                     name_approver = "Nothing Yet",
                     name_incharge = "Nothing Yet",
                     name_of_project = bunifuMaterialTextbox1.Text,
-                    nature_of_project = bunifuMaterialTextbox2.Text,
+                    nature_of_project = bunifuCustomTextbox5.Text,
                     general_objective = bunifuMaterialTextbox6.Text,
-                    specific_objective = bunifuMaterialTextbox8.Text,
-                    planning_statge = bunifuMaterialTextbox10.Text,
-                    implementation = bunifuMaterialTextbox9.Text,
-                    resource_req = bunifuMaterialTextbox12.Text,
-                    evaluation = bunifuMaterialTextbox11.Text,
+                    specific_objective = bunifuCustomTextbox4.Text,
+                    planning_statge = bunifuCustomTextbox1.Text,
+                    implementation = bunifuCustomTextbox2.Text,
+                    resource_req = bunifuCustomTextbox3.Text,
+                    evaluation = bunifuCustomTextbox6.Text,
                     org_adviser = "Nothing Yet",
                     org_adviser_status = pending,
                     org_name = oname,
@@ -213,17 +219,17 @@ namespace AutomatedEventProposalManagement
                 MessageBox.Show("Register Success.");
 
                 bunifuMaterialTextbox1.Text = string.Empty;
-                bunifuMaterialTextbox2.Text = string.Empty;
+                bunifuCustomTextbox1.Text = string.Empty;
                 bunifuMaterialTextbox3.Text = string.Empty;
                 bunifuMaterialTextbox4.Text = string.Empty;
-                bunifuMaterialTextbox5.Text = string.Empty;
+                bunifuCustomTextbox7.Text = string.Empty;
                 bunifuMaterialTextbox7.Text = string.Empty;
                 bunifuMaterialTextbox6.Text = string.Empty;
-                bunifuMaterialTextbox8.Text = string.Empty;
-                bunifuMaterialTextbox9.Text = string.Empty;
-                bunifuMaterialTextbox10.Text = string.Empty;
-                bunifuMaterialTextbox11.Text = string.Empty;
-                bunifuMaterialTextbox12.Text = string.Empty;
+                bunifuCustomTextbox2.Text = string.Empty;
+                bunifuCustomTextbox3.Text = string.Empty;
+                bunifuCustomTextbox4.Text = string.Empty;
+                bunifuCustomTextbox5.Text = string.Empty;
+                bunifuCustomTextbox6.Text = string.Empty;
 
                 comboBox1.Text = string.Empty;
             }
@@ -238,19 +244,19 @@ namespace AutomatedEventProposalManagement
                     committee_in_charge = bunifuMaterialTextbox3.Text,
                     date = today,
                     date_of_event = dateev,
-                    description = bunifuMaterialTextbox5.Text,
+                    description = bunifuCustomTextbox7.Text,
                     id = id,
                     incharge = pending,
                     name_approver = "Nothing Yet",
                     name_incharge = "Nothing Yet",
                     name_of_project = bunifuMaterialTextbox1.Text,
-                    nature_of_project = bunifuMaterialTextbox2.Text,
+                    nature_of_project = bunifuCustomTextbox5.Text,
                     general_objective = bunifuMaterialTextbox6.Text,
-                    specific_objective = bunifuMaterialTextbox8.Text,
-                    planning_statge =  bunifuMaterialTextbox10.Text,
-                    implementation = bunifuMaterialTextbox9.Text,
-                    resource_req = bunifuMaterialTextbox12.Text,
-                    evaluation = bunifuMaterialTextbox11.Text,
+                    specific_objective = bunifuCustomTextbox4.Text,
+                    planning_statge = bunifuCustomTextbox1.Text,
+                    implementation = bunifuCustomTextbox2.Text,
+                    resource_req = bunifuCustomTextbox3.Text,
+                    evaluation = bunifuCustomTextbox6.Text,
                     org_adviser = "Nothing Yet",
                     org_adviser_status = pending,
                     org_dean = "Nothing Yet",
@@ -272,17 +278,17 @@ namespace AutomatedEventProposalManagement
                 MessageBox.Show("Register Success.");
 
                 bunifuMaterialTextbox1.Text = string.Empty;
-                bunifuMaterialTextbox2.Text = string.Empty;
+                bunifuCustomTextbox1.Text = string.Empty;
                 bunifuMaterialTextbox3.Text = string.Empty;
                 bunifuMaterialTextbox4.Text = string.Empty;
-                bunifuMaterialTextbox5.Text = string.Empty;
+                bunifuCustomTextbox7.Text = string.Empty;
                 bunifuMaterialTextbox7.Text = string.Empty;
                 bunifuMaterialTextbox6.Text = string.Empty;
-                bunifuMaterialTextbox8.Text = string.Empty;
-                bunifuMaterialTextbox9.Text = string.Empty;
-                bunifuMaterialTextbox10.Text = string.Empty;
-                bunifuMaterialTextbox11.Text = string.Empty;
-                bunifuMaterialTextbox12.Text = string.Empty;
+                bunifuCustomTextbox2.Text = string.Empty;
+                bunifuCustomTextbox3.Text = string.Empty;
+                bunifuCustomTextbox4.Text = string.Empty;
+                bunifuCustomTextbox5.Text = string.Empty;
+                bunifuCustomTextbox6.Text = string.Empty;
 
                 comboBox1.Text = string.Empty;
 

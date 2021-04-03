@@ -416,7 +416,7 @@ namespace AutomatedEventProposalManagement
             string staticDates24 = "3-29-" + curYear;
             string staticDates25 = "3-30-" + curYear;
 
-            string trialNow = "3-15-" + curYear;
+            string trialNow = "0-0-" + curYear;
             string trialNow1 = "3-16-" + curYear;
 
             if (combineAll.Equals(trialNow))
